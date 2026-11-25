@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>EOS Padel Tour | EOS — Progress. Together.</title>
+<meta content="EOS Padel Tour brings recruitment agencies and suppliers together for singles and doubles, friendly competition and community. Explore the opening season, league tables and how to get involved." name="description"/>
+<meta content="noindex,nofollow" name="robots"/>
+<style>
+:root{--navy:#111b38;--deep:#0b1730;--ink:#1a2748;--body:#4a5870;--amber:#f2a638;--gold:#ffbc50;--paper:#f7f6f2;--line:#e8e9ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#eceae6}
+body{margin:0;color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.page{max-width:1440px;margin:auto;overflow:hidden;background:white;box-shadow:0 0 30px #14223f10}
+nav{height:90px;padding:0 99px;display:flex;align-items:center;justify-content:space-between;background:#fff;gap:30px}
+.logo{display:flex;align-items:flex-start;flex-direction:column;flex:0 0 160px;line-height:1}
+.logo .mark{font-size:62px;font-weight:270;letter-spacing:-6px;color:#1c2845;line-height:.86;white-space:nowrap}
+.logo .mark .o{color:#eea336}
+.logo .tag{font-size:9px;font-weight:630;color:#bd7d25;letter-spacing:2.2px;margin:8px 0 0 3px}
+.links{display:flex;gap:32px;align-items:center;margin-left:auto}
+.links span{font-size:13px;color:#43506a;font-weight:550;white-space:nowrap}
+.links span.active{font-weight:720;color:#192644}
+.links span.active:after{content:'';display:block;background:var(--amber);height:2px;margin-top:12px}
+.join{background:linear-gradient(135deg,#f6b348,#f8cd78);padding:14px 22px;border-radius:30px;font-size:12px;font-weight:750;white-space:nowrap;color:#18233e}
+.join span{padding-left:14px;font-size:19px;vertical-align:-1px}
+/* Hero */
+.hero{min-height:610px;background-color:var(--deep);background-image:url('/images/padel-tour-01.jpg');background-size:cover;background-position:center;position:relative;color:white}
+.hero .inner{position:relative;z-index:1;padding:88px 100px 78px}
+.eyebrow{display:flex;gap:17px;align-items:center;color:#d88e25;font-size:15px;font-weight:730;letter-spacing:3.7px;text-transform:uppercase;margin-bottom:23px}
+.eyebrow:after{content:'';height:2px;width:51px;background:#e8a537}
+.hero .eyebrow{color:#f5b85d}
+.hero h1{font-family:'Inter Display',Inter,Arial,sans-serif;font-size:70px;line-height:1.045;letter-spacing:-3.8px;max-width:1020px;margin:0 0 25px;font-weight:720}
+.hero h1 span{color:#ffc05b}
+.hero .lead{font-size:21px;line-height:1.58;max-width:630px;color:#ebedf3;margin:0}
+.hero .line{width:62px;height:3px;background:#f2af40;margin-top:29px}
+.sponsor{position:absolute;right:99px;top:76px;display:flex;flex-direction:column;align-items:flex-start;color:#fff;padding-left:24px;border-left:2px solid #efa73a85}
+.sponsor small{font-size:10px;letter-spacing:3.2px;font-weight:660;margin-bottom:8px;color:#f2e7d7}
+.sponsor strong{font-size:39px;font-weight:250;line-height:1;letter-spacing:5.6px}
+.sponsor em{font-size:11px;font-weight:650;font-style:normal;letter-spacing:8.4px;margin-top:6px}
+/* Fixture and standings zone */
+.dashboard{padding:73px 100px 89px;background:#f8f7f4}
+.dashboard-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:33px}
+.dashboard-head .eyebrow{margin-bottom:13px}
+h2{font-family:'Inter Display',Inter,Arial,sans-serif;font-size:58px;font-weight:370;letter-spacing:-2.35px;line-height:1.09;margin:0}
+.dashboard-head p{font-size:19px;line-height:1.55;color:#5a6478;max-width:400px;margin:0 0 3px}
+.layout{display:grid;grid-template-columns:0.88fr 1.12fr;gap:27px;align-items:stretch}
+.panel{background:white;border:1px solid #ebedf1;border-radius:18px;box-shadow:0 14px 39px #121e3c09;min-width:0}
+.fixture{padding:37px 40px 39px;display:flex;flex-direction:column}
+.panel-title{font-size:14px;color:#182547;letter-spacing:3.3px;text-transform:uppercase;font-weight:750;display:flex;align-items:center;gap:11px;margin:0}
+.panel-title:before{content:'';width:4px;height:14px;background:#f6b54a;border-radius:4px;display:block}
+.fixture h3{font-size:37px;line-height:1.13;font-weight:620;letter-spacing:-1.2px;margin:25px 0 24px}
+.details{display:grid;gap:15px;font-size:18px;color:#4d5b76;padding-bottom:30px;border-bottom:1px solid #e4e6ea}
+.detail{display:flex;gap:13px;align-items:center}
+.detail svg{width:25px;height:25px;stroke:#e9a136;stroke-width:1.8;fill:none;flex:0 0 25px;stroke-linecap:round;stroke-linejoin:round}
+.score{display:flex;align-items:center;gap:17px;margin:28px 0 23px}
+.score .value{font-size:108px;letter-spacing:-7px;line-height:1;font-weight:770;color:#efaa3f}
+.score .out-of{display:flex;flex-direction:column;border-left:1px solid #d8dce5;padding-left:17px;gap:4px}
+.score .out-of strong{font-size:27px;letter-spacing:-1px;color:#1a2748;line-height:1}
+.score .out-of span{font-size:11px;letter-spacing:2px;font-weight:700;color:#9a9caa;white-space:nowrap}
+.progress{background:#f4f0e9;border-radius:100px;height:6px;overflow:hidden;margin:0 0 29px}
+.progress .bar{background:linear-gradient(90deg,#ffcc71,#ec9f26);height:100%;width:45%;border-radius:100px}
+.fixture-photo{width:100%;aspect-ratio:2.09;object-fit:cover;border-radius:12px;margin-top:auto;background:#112544}
+.leaderboard{padding:37px 39px 36px}
+.lb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:28px}
+.season{border:1px solid #dde2ec;border-radius:9px;color:#34415e;padding:10px 15px;font-size:14px;font-weight:590;white-space:nowrap;background:#fafbfc}
+.standings{border-collapse:collapse;width:100%;table-layout:fixed}
+.standings thead th{color:#9ca2b1;font-size:11.5px;font-weight:760;letter-spacing:2.4px;text-transform:uppercase;border-bottom:1px solid #e9ebef;padding:0 12px 16px;text-align:left}
+.standings thead th:first-child{width:105px}.standings thead th:last-child{width:92px;text-align:right;padding-right:16px}
+.standings tbody td{padding:12px 12px;font-size:18px;height:62px;border-bottom:1px solid #edf0f3}
+.standings tbody tr:last-child td{border-bottom:none}
+.standings .pos-cell{width:105px}
+.rank{height:36px;width:36px;border-radius:50%;display:grid;place-items:center;background:#eef0f3;color:#596278;font-weight:720;font-size:15px}
+.rank-1{background:#ffcb60;color:#523710}.rank-2{background:#cdd3df;color:#374056}.rank-3{background:#e7ad73;color:#68421a}
+.standings .agency{font-weight:530;letter-spacing:-.2px}
+.standings .points{font-weight:760;text-align:right;padding-right:17px;color:#182445}
+.standings tr.featured{background:linear-gradient(90deg,#fff8e9,#ffedc5)}
+.standings tr.featured td{border:0}
+.standings tr.featured td:first-child{border-radius:9px 0 0 9px}
+.standings tr.featured td:last-child{border-radius:0 9px 9px 0}
+.standings tr.featured .rank{background:#f8c06c;color:#523710;border:2px solid #fff1cf}
+/* Close */
+.cta-zone{background:#fff;padding:2px 100px 90px}
+.cta-banner{border-radius:19px;min-height:363px;background:radial-gradient(ellipse at 89% 98%,#3e6690 0%,#203453 30%,#0c1a37 64%);overflow:hidden;display:grid;grid-template-columns:1fr .67fr;position:relative;align-items:center}
+.cta-banner:before{content:'';position:absolute;right:-175px;bottom:-460px;width:870px;height:870px;border:3px solid #ffe1a54a;border-radius:50%;box-shadow:0 0 0 28px #eab36605,0 0 0 55px #f3bd6c07}
+.cta-banner:after{content:'';position:absolute;width:540px;height:540px;border-radius:50%;right:5px;top:-350px;border:75px solid #efb34f12}
+.cta-copy{padding:57px 55px;z-index:2;position:relative}
+.cta-copy .eyebrow{font-size:13px;color:#f4b558;margin-bottom:17px}
+.cta-banner h2{font-size:56px;color:#fff;margin-bottom:17px;font-weight:470;letter-spacing:-2.1px}
+.cta-banner p{font-size:18.5px;color:#cbd3e0;line-height:1.57;max-width:620px;margin:0 0 27px}
+.cta-button{display:inline-flex;align-items:center;gap:32px;border-radius:999px;background:#f8ba52;color:#152240;font-size:14px;font-weight:770;padding:17px 24px 17px 25px;letter-spacing:.2px;white-space:nowrap}
+.cta-button span{font-size:23px;font-weight:370;line-height:.7}
+.cta-art{height:300px;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.cta-art svg{width:290px;max-width:100%;opacity:.82;filter:drop-shadow(0 10px 20px #030e2455)}
+.footer{background:#0a1227;color:#b4bed0;display:flex;align-items:center;justify-content:space-between;font-size:13px;letter-spacing:1px;padding:25px 100px}
+.footer .brand{font-size:30px;letter-spacing:-2px;color:#fff;font-weight:300}
+/* Responsive design */
+@media(max-width:1120px){nav{padding:0 5%}.links{gap:17px}.hero .inner{padding-left:6%;padding-right:6%}.sponsor{right:6%}.dashboard{padding-left:6%;padding-right:6%}.cta-zone{padding-left:6%;padding-right:6%}.footer{padding-left:6%;padding-right:6%}.layout{grid-template-columns:1fr 1.06fr}.standings tbody td{font-size:16px}.standings thead th:first-child,.standings .pos-cell{width:65px}}
+@media(max-width:760px){nav{height:82px;padding:0 24px}.logo{flex-basis:auto}.logo .mark{font-size:52px}.logo .tag{font-size:8px}.links{display:none}.join{padding:11px 16px;font-size:12px}.hero{min-height:565px;background-position:58% center}.hero .inner{padding:60px 24px 55px}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#091630d4 0%,#08173299 100%)}.hero h1{font-size:53px;letter-spacing:-2.3px;max-width:590px}.hero .lead{font-size:18px;max-width:480px}.sponsor{right:24px;top:30px;position:relative;margin-left:24px;margin-bottom:0;top:auto;right:auto;max-width:210px}.sponsor strong{font-size:23px;letter-spacing:3px}.sponsor em{font-size:9px;letter-spacing:4px}.sponsor small{font-size:8px}.hero .eyebrow{margin-top:25px;font-size:11px;letter-spacing:2.6px}.dashboard{padding:47px 24px 56px}.dashboard-head{display:block}.dashboard-head h2{font-size:42px}.dashboard-head p{margin-top:12px;font-size:16px}.layout{grid-template-columns:1fr;gap:22px}.fixture,.leaderboard{padding:28px 25px}.fixture h3{font-size:31px;margin:20px 0}.details{font-size:16px}.score .value{font-size:92px}.standings tbody td{font-size:16px}.cta-zone{padding:0 24px 57px}.cta-banner{grid-template-columns:1fr;min-height:0}.cta-copy{padding:39px 31px 46px}.cta-banner h2{font-size:42px}.cta-banner p{font-size:16px}.cta-art{display:none}.footer{padding:23px 24px;gap:13px;flex-wrap:wrap}.footer .strap{display:none}}
+@media(max-width:425px){nav{padding:0 20px}.hero{min-height:550px;background-position:65% center}.hero .inner{padding:47px 23px 52px}.hero h1{font-size:45px;letter-spacing:-1.95px}.hero .lead{font-size:16.5px}.sponsor{margin-left:23px}.dashboard{padding:40px 17px 52px}.dashboard-head h2{font-size:39px}.panel-title{font-size:12px;letter-spacing:2.4px}.fixture,.leaderboard{padding:26px 20px}.lb-top{margin-bottom:20px}.season{font-size:12px;padding:8px 10px}.standings thead th{padding:0 6px 12px;font-size:9px;letter-spacing:1.4px}.standings thead th:first-child,.standings .pos-cell{width:53px}.standings thead th:first-child{font-size:0}.standings thead th:first-child:before{content:"RANK";font-size:9px;letter-spacing:1px}.standings thead th:last-child{width:56px;padding-right:7px}.standings tbody td{height:54px;padding:9px 6px;font-size:13.8px}.standings .points{padding-right:8px}.rank{height:30px;width:30px;font-size:13px}.cta-zone{padding:0 17px 45px}.cta-copy{padding:35px 24px 39px}.cta-banner h2{font-size:37px}.cta-banner p{font-size:15.5px}.cta-button{font-size:12px}.footer{padding:21px 20px}}
+</style><style id="eos-padel-editorial-refinement">
+.hero{background-position:center center!important;background-size:cover!important;}
+.hero:before{background:linear-gradient(90deg,rgba(9,20,42,.94) 0%,rgba(9,20,42,.74) 41%,rgba(9,20,42,.23) 80%,rgba(9,20,42,.22) 100%)!important;}
+.fixture-photo{filter:saturate(.93) contrast(1.06);object-position:center center;}
+.sponsor{backdrop-filter:blur(4px);border-left-color:#f2ba62;}
+@media(max-width:760px){.hero{background-position:69% center!important}.hero:before{background:linear-gradient(90deg,rgba(9,20,42,.93),rgba(9,20,42,.72))!important}}
+</style><style id="eos-padel-cta-editorial">
+.cta-editorial{border-left:1px solid rgba(255,207,131,.35);padding:8px 20px 8px 35px;display:flex;flex-direction:column;gap:0;color:#fff;}
+.cta-editorial span{color:#f5c277;font-size:10px;letter-spacing:2.8px;font-weight:800;margin-bottom:17px;}
+.cta-editorial strong{font-size:clamp(29px,3.0vw,45px);font-weight:550;line-height:1.17;letter-spacing:-1.1px;}
+.cta-editorial strong:nth-of-type(2){color:#f4bc6d;}
+.cta-editorial i{margin-top:23px;width:68px;height:3px;background:linear-gradient(90deg,#e99d31,#ffdb9b);border-radius:6px;}
+</style><link href="../assets/eos-shell-overrides.css" rel="stylesheet"/><script defer="" src="../assets/eos-site-shell.js"></script><link rel="stylesheet" href="../assets/eos-final-editorial.css"/><style id="eos-padel-review-update">
+.eos-review-notice{background:#fff5df;color:#59411d;text-align:center;font:600 12px/1.5 Inter,Arial,sans-serif;padding:9px 18px;letter-spacing:.15px;}
+.eos-format-guide{margin-top:28px;padding:30px 34px;}
+.eos-format-guide h3{font-size:clamp(23px,2.2vw,30px);line-height:1.2;letter-spacing:-.7px;margin:0 0 14px;}
+.eos-format-guide p{font-size:16px;line-height:1.65;color:var(--body);margin:0 0 12px;max-width:980px;}
+.eos-format-guide p:last-child{margin-bottom:0;}
+.eos-scoring-detail{border-top:1px solid var(--line);margin-top:18px;padding-top:16px;}
+.eos-scoring-detail summary{font-size:15px;font-weight:650;cursor:pointer;color:var(--ink);}
+.eos-scoring-detail[open] summary{margin-bottom:14px;}
+.eos-division-tabs button:focus-visible,.eos-scoring-detail summary:focus-visible{outline:3px solid var(--amber);outline-offset:4px;}
+.eos-season-board .standings thead th:nth-child(3){width:86px;}
+.eos-season-board .standings thead th:last-child{width:100px;}
+@media(max-width:760px){.eos-format-guide{padding:25px;}.eos-format-guide p{font-size:15px;}}
+@media(max-width:425px){.eos-format-guide{padding:23px 20px;}.eos-season-board .standings thead th:nth-child(3){width:61px;}.eos-season-board .standings thead th:last-child{width:70px;}}
+
+/* Scoped follow-up after verifying the original shared stylesheet. */
+.eos-season-dashboard .eos-format-guide{min-height:0;}
+@media(max-width:425px){
+.eos-season-board .standings thead th:first-child{width:40px;}
+.eos-season-board .standings thead th:nth-child(3){width:58px;}
+.eos-season-board .standings thead th:last-child{width:64px;}
+.eos-season-board .standings thead th{letter-spacing:.6px;}
+.eos-season-board .standings th:nth-child(2),.eos-season-board .standings td:nth-child(2){overflow-wrap:anywhere;}
+}
+</style></head><body data-eos-unified="padel-tour"><aside aria-label="Review status" class="eos-review-notice">Private review reference · Not for publication</aside><eos-site-header></eos-site-header><div class="page">
+<header><nav aria-label="Main navigation"><div aria-label="EOS, Progress Together" class="logo"><span class="mark">e<span class="o">o</span>s</span><span class="tag">PROGRESS. TOGETHER.</span></div><div class="links"><span>For Contractors</span><span>For Recruitment Agencies</span><span>Our Services</span><span class="active">Resources</span><span>About Us</span></div><a class="join" href="#register">Join the Tour <span aria-hidden="true">→</span></a></nav></header>
+<main id="main-content" tabindex="-1">
+<section aria-labelledby="hero-title" class="hero"><div class="inner"><div class="sponsor"><small>IN ASSOCIATION WITH</small><strong>RADAR</strong><em>INSURANCE</em></div><div class="eyebrow">EOS PADEL TOUR / OPENING SEASON</div><h1 id="hero-title">Competition. Connection. Community.</h1><p class="lead">Bringing recruitment agencies and our supplier partners together through padel, friendly competition and meaningful connections.</p><div aria-hidden="true" class="line"></div></div></section>
+<section class="dashboard eos-season-dashboard" id="fixture"><div class="eos-season-head"><span class="eos-gold-label">EOS PADEL TOUR / UPCOMING</span><h2>The first serve is still to come.</h2><p>Our inaugural fixtures are being arranged. Join the Agency League or Supplier League, with singles and doubles available.</p></div>
+<div class="eos-tour-columns"><article class="panel eos-fixtures"><div class="panel-title">Upcoming fixtures</div><h3>Opening fixtures to be confirmed</h3><div class="eos-fixture-row"><strong>Agency League</strong><span>Opponent, date and venue TBC</span></div><div class="eos-fixture-row"><strong>Supplier League</strong><span>Opponent, date and venue TBC</span></div><p class="eos-tbc-note">Fixtures will be announced once the participants, dates and venues are confirmed.</p><div class="eos-agency-fixture"><strong>Join the Tour</strong><p>Recruitment agencies and suppliers can register interest in singles or doubles.</p><a href="mailto:sales@eospayroll.co.uk?subject=EOS%20Padel%20Tour%20Interest&amp;body=Organisation:%0D%0ALeague%20(Agency%20or%20Supplier):%0D%0AFormat%20(Singles%20or%20Doubles):">Register your interest ↗</a></div></article>
+<article class="panel eos-season-board" id="leaderboard"><div class="lb-top"><div class="panel-title">The Leaderboards</div><span class="season">Opening season</span></div><div aria-label="Padel Tour leaderboard divisions" class="eos-division-tabs" role="tablist"><button aria-controls="eos-leaderboard-panel" aria-selected="true" data-division="agencies" id="eos-agency-tab" role="tab" tabindex="0" type="button">Agency League</button><button aria-controls="eos-leaderboard-panel" aria-selected="false" data-division="suppliers" id="eos-supplier-tab" role="tab" tabindex="-1" type="button">Supplier League</button></div><div aria-labelledby="eos-agency-tab" aria-live="polite" id="eos-leaderboard-panel" role="tabpanel" tabindex="0"><table class="standings"><thead><tr><th scope="col">Position</th><th id="eos-team-col" scope="col">Agency</th><th scope="col">Format</th><th scope="col">Points /100</th></tr></thead><tbody id="eos-leaderboard-body"></tbody></table><div class="eos-preseason-empty"><strong>A new season. A fresh start.</strong><p id="eos-board-empty-text">The Agency League has no results yet. Standings will appear after the first completed fixture.</p></div></div></article></div><section aria-labelledby="eos-format-heading" class="panel eos-format-guide"><h3 id="eos-format-heading">Five games. 100 points available.</h3><p>Each fixture has five games, with 20 service points played in each game. Play all five games to record your organisation’s score out of 100.</p><p><strong>Singles:</strong> two players each serve 10 points per game. <strong>Doubles:</strong> four players each serve five points per game.</p><details class="eos-scoring-detail"><summary>How scoring and rankings work</summary><p>Each point is awarded to one side. The visiting agency or supplier records its points from each game; EOS receives the remaining points. A game is drawn at 10–10. More than 10 points wins the game.</p><p>Count service points rather than individual serve attempts. Any permitted second serve or replayed let remains part of the same point.</p><p>Results are ranked separately in the Agency League and Supplier League by total points, then games won, then best game. Identical results share a position.</p><p>Each leaderboard entry is one completed fixture. Singles and doubles share their league’s scoring basis, with the format shown. Organisations may appear more than once for separate fixtures.</p></details></section></section>
+<section class="cta-zone" id="register"><div class="cta-banner"><div class="cta-copy"><div class="eyebrow">FANCY GETTING INVOLVED?</div><h2>Join the Tour.</h2><p>We're welcoming recruitment agencies and suppliers for singles and doubles fixtures. It's an opportunity to meet peers, compete and support community initiatives.</p><a class="cta-button" href="mailto:sales@eospayroll.co.uk?subject=EOS%20Padel%20Tour%20Interest&amp;body=Organisation:%0D%0ALeague%20(Agency%20or%20Supplier):%0D%0AFormat%20(Singles%20or%20Doubles):">Join the Tour <span aria-hidden="true">→</span></a></div><div aria-hidden="true" class="cta-art"><div class="cta-editorial"><span>THE EOS PADEL TOUR</span><strong>PLAY.</strong><strong>CONNECT.</strong><strong>GIVE BACK.</strong><i></i></div></div></div></section>
+</main><footer class="footer"><span class="brand">eos</span><span class="strap">PROGRESS. TOGETHER.</span><span>EOS PADEL TOUR  •  OPENING SEASON</span></footer></div><eos-site-footer></eos-site-footer><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const buttons=[...document.querySelectorAll('.eos-division-tabs button')];
+  const message=document.getElementById('eos-board-empty-text');
+  const col=document.getElementById('eos-team-col');
+  const panel=document.getElementById('eos-leaderboard-panel');
+  function selectDivision(button,moveFocus=false){
+    const supplier=button.dataset.division==='suppliers';
+    buttons.forEach(item=>{
+      const selected=item===button;
+      item.setAttribute('aria-selected',String(selected));
+      item.setAttribute('tabindex',selected?'0':'-1');
+    });
+    col.textContent=supplier?'Supplier':'Agency';
+    panel.setAttribute('aria-labelledby',button.id);
+    message.textContent=supplier
+      ?'The Supplier League has no results yet. Standings will appear after the first completed fixture.'
+      :'The Agency League has no results yet. Standings will appear after the first completed fixture.';
+    if(moveFocus)button.focus();
+  }
+  buttons.forEach((button,index)=>{
+    button.addEventListener('click',()=>selectDivision(button));
+    button.addEventListener('keydown',event=>{
+      let next;
+      if(event.key==='ArrowRight')next=(index+1)%buttons.length;
+      else if(event.key==='ArrowLeft')next=(index+buttons.length-1)%buttons.length;
+      else if(event.key==='Home')next=0;
+      else if(event.key==='End')next=buttons.length-1;
+      else return;
+      event.preventDefault();
+      selectDivision(buttons[next],true);
+    });
+  });
+});
+</script></body></html>

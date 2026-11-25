@@ -1,0 +1,43 @@
+/* Working review shell. Hides original individual headers/footers while preserving page interiors. */
+body[data-eos-unified] > header,
+body[data-eos-unified] > .page > header,
+body[data-eos-unified] > main.page > header,
+body[data-eos-unified] > .site > header,
+body[data-eos-unified] > main.page > nav,
+body[data-eos-unified] > .page > nav,
+body[data-eos-unified] > footer,
+body[data-eos-unified] footer:not(eos-site-footer),
+body[data-eos-unified="about-eos"] > .page > .footer {display:none!important;}
+body[data-eos-unified]{overflow-x:hidden;}
+eos-site-header,eos-site-footer{display:block!important;width:100%;position:relative;}
+/* Rehabilitate the prior approved About Us design, which was fixed at 1440px. */
+body[data-eos-unified="about-eos"] .page{width:min(100%,1440px)!important;max-width:1440px!important;}
+body[data-eos-unified="about-eos"] img.hero{height:auto!important;min-height:0!important;}
+@media(max-width:980px){
+body[data-eos-unified="about-eos"] .section{padding:54px 5vw;}
+body[data-eos-unified="about-eos"] .story,body[data-eos-unified="about-eos"] .people,body[data-eos-unified="about-eos"] .built{gap:26px;}
+body[data-eos-unified="about-eos"] h2{font-size:clamp(32px,5.1vw,57px);letter-spacing:-1.4px;}
+body[data-eos-unified="about-eos"] .built h2{font-size:clamp(32px,5.1vw,57px);}
+body[data-eos-unified="about-eos"] .card h3{font-size:23px;}
+body[data-eos-unified="about-eos"] p{font-size:17px;}
+body[data-eos-unified="about-eos"] .card p{font-size:15px;}
+body[data-eos-unified="about-eos"] .closing{padding:55px 5vw;}
+body[data-eos-unified="about-eos"] .closing h2{font-size:clamp(32px,5.5vw,60px);}
+}
+@media(max-width:670px){
+body[data-eos-unified="about-eos"] .section{padding:40px 22px;}
+body[data-eos-unified="about-eos"] .story,body[data-eos-unified="about-eos"] .people,body[data-eos-unified="about-eos"] .built{grid-template-columns:minmax(0,1fr);min-height:0;gap:26px;}
+body[data-eos-unified="about-eos"] .story .photo,body[data-eos-unified="about-eos"] .people img{height:245px;}
+body[data-eos-unified="about-eos"] .cards{grid-template-columns:minmax(0,1fr);gap:14px;}
+body[data-eos-unified="about-eos"] .card{min-height:0;padding:22px;}
+body[data-eos-unified="about-eos"] .card .top{height:72px;}
+body[data-eos-unified="about-eos"] .card .top img{width:125px;height:68px;}
+body[data-eos-unified="about-eos"] .built .art{min-height:220px;overflow:hidden;}
+body[data-eos-unified="about-eos"] .built .ring{width:300px;height:300px;}
+body[data-eos-unified="about-eos"] .built .ring-under{width:200px;height:200px;}
+body[data-eos-unified="about-eos"] .closing{padding:48px 22px;min-height:0;}
+body[data-eos-unified="about-eos"] .closing .arc{opacity:.3;}
+body[data-eos-unified="about-eos"] .ctas{flex-wrap:wrap;}
+body[data-eos-unified="about-eos"] .eyebrow{font-size:11px;letter-spacing:2.5px;}
+body[data-eos-unified="about-eos"] .hero{width:100%;}
+}

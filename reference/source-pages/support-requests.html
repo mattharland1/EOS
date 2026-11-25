@@ -1,0 +1,934 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="EOS Contractor Support design prototype: interactive holiday pay, personal details, absence, expenses and workplace incident request forms."><title>EOS | Contractor Support forms</title><style>
+:root{--navy:#111c39;--night:#0c1630;--ink:#182746;--gold:#eaa53b;--orange:#efb34f;--lightgold:#fff3df;--text:#576782;--line:#e4e8ef;--mist:#f7f8fa;--white:#fff;--blue:#225a9d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f7fa;color:var(--ink);font-family:Inter,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1296px;margin:auto;padding:0 42px}.topbar{background:var(--night);color:#fff}.top-inner{display:flex;align-items:center;min-height:83px;gap:28px}.logo{font-size:46px;letter-spacing:-4px;font-weight:300;line-height:35px}.logo span{color:#f5b34e}.strap{font-size:8.5px;letter-spacing:2.25px;color:#e9a943;margin-top:10px}.topnav{margin-left:auto;display:flex;align-items:center;gap:27px;color:#cbd5e6;font-size:12px}.topnav a:hover{text-decoration:underline}.topnav .active{color:#f7bb62}.topnav .pill{background:linear-gradient(90deg,#f6c372,#efad40);border-radius:22px;padding:12px 18px;color:#15233e;font-weight:800}.topnav .pill:hover{text-decoration:none}.hero{background:radial-gradient(circle at 84% 135%,#a56f43 0,#354264 27%,#152343 57%,#0d1731 92%);position:relative;overflow:hidden;color:#fff;min-height:255px}.hero:before{content:'';position:absolute;width:380px;height:380px;border:38px solid rgba(248,183,88,.54);right:8%;top:3px;border-radius:50%;mask:linear-gradient(125deg,transparent 4%,#000 48%);-webkit-mask:linear-gradient(125deg,transparent 4%,#000 48%)}.hero:after{content:'';position:absolute;height:280px;width:850px;border-radius:50%;right:-260px;bottom:-245px;background:radial-gradient(ellipse at 50% 8%,#f3b35b 0%,#dc8c51 9%,#1b3758 23%,#071b38 70%);box-shadow:0 -3px 35px #f3af6060}.hero .wrap{padding-top:37px;padding-bottom:44px;position:relative;z-index:1}.eyebrow{color:#f7b54a;text-transform:uppercase;font-size:10px;letter-spacing:2.3px;font-weight:800}.hero h1{font-size:clamp(33px,3.6vw,54px);line-height:1.07;letter-spacing:-1.6px;font-weight:400;margin:11px 0 10px}.hero p{font-size:15px;line-height:1.65;color:#d5deec;max-width:730px;margin:0}.back{display:inline-flex;gap:8px;align-items:center;color:#f3bc68;font-size:12px;margin-bottom:18px;font-weight:700}.back:hover{text-decoration:underline}.demo-strip{background:#fff7e9;border-bottom:1px solid #f0d8aa;color:#6e511f;padding:11px 0;font-size:12px;line-height:1.5}.demo-strip strong{color:#5d411b}.main{padding-top:34px;padding-bottom:70px}.intro{display:flex;align-items:end;gap:30px;justify-content:space-between;margin-bottom:22px}.intro h2{font-size:31px;font-weight:500;letter-spacing:-1px;line-height:1.1;margin:8px 0}.intro p{max-width:630px;color:var(--text);font-size:14px;line-height:1.6;margin:5px 0}.small-kicker{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#b06b1b;font-weight:900}.support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.support-card{background:#fff;border:1px solid #e4e8ef;border-radius:13px;min-height:225px;box-shadow:0 10px 28px #1127460b;padding:22px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;transition:transform .2s,border-color .2s,box-shadow .2s;width:100%;color:var(--ink)}.support-card:hover{transform:translateY(-3px);border-color:#e7bb74;box-shadow:0 14px 30px #11274617}.support-card .title{font-size:19px;font-weight:750;letter-spacing:-.3px;margin:12px 0 7px}.support-card .desc{font-size:13px;line-height:1.6;color:var(--text)}.support-card .foot{color:#a56b1c;margin-top:auto;padding-top:17px;font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:1.1px}.orbit{height:50px;width:50px;background:linear-gradient(150deg,#fff,#fff1d8);border:1.5px solid #ecaf55;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}.orbit:after{content:'';width:13px;height:13px;border-top:2px solid #eeac4d;border-right:2px solid #eeac4d;position:absolute;border-radius:0 95% 0 0;top:3px;right:3px}.orbit svg{width:28px;height:28px;stroke:#193460;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}.workflow{display:grid;grid-template-columns:225px minmax(0,1fr) 237px;gap:18px;align-items:start}.workflow-panel{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 6px 28px #122b4510}.steps-panel{padding:22px 16px;position:sticky;top:15px}.steps-panel h3{font-size:12px;text-transform:uppercase;color:#66728c;letter-spacing:1.6px;margin:0 0 22px 8px}.step-row{display:flex;gap:11px;align-items:flex-start;position:relative;padding:0 4px 28px;width:100%;border:0;background:none;text-align:left;color:#8390a4}.step-row:last-child{padding-bottom:3px}.step-row:after{content:'';position:absolute;left:19px;top:28px;height:calc(100% - 22px);width:2px;background:#e6eaf0}.step-row:last-child:after{display:none}.step-dot{position:relative;z-index:2;border-radius:50%;height:29px;width:29px;background:#e8ecf2;color:#7888a2;display:inline-flex;justify-content:center;align-items:center;font-size:12px;font-weight:800;flex-shrink:0}.step-row.current .step-dot{background:linear-gradient(140deg,#f3ad3e,#f9c774);color:#563503}.step-row.done .step-dot{background:#1f4778;color:#fff}.step-row.done:after{background:#d6ac65}.step-label{font-size:12px;font-weight:800;color:#748097;line-height:1.3;padding-top:5px}.step-row.current .step-label,.step-row.done .step-label{color:#1c2c4f}.form-panel{overflow:hidden}.form-header{padding:29px 32px 22px;border-bottom:1px solid var(--line);background:linear-gradient(108deg,#fff,#fffaf2 100%)}.form-header .meta{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:#c47b1e;font-weight:900}.form-header h2{font-size:29px;font-weight:600;letter-spacing:-.9px;margin:8px 0 8px}.form-header p{font-size:14px;color:var(--text);line-height:1.6;margin:0}.form-body{padding:27px 32px 30px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field.full{grid-column:1/-1}.field label,.fieldset-label{font-size:12px;font-weight:800;color:#243454;line-height:1.3}.req{color:#d07b16}.field input,.field select,.field textarea,.faux-upload{width:100%;padding:12px 13px;border:1px solid #d8e0e9;background:#fff;border-radius:7px;color:#1d3052;outline-color:#e8ae4b;font-size:13px;min-height:43px}.field input::placeholder,.field textarea::placeholder{color:#a7b0be}.field textarea{resize:vertical;min-height:102px;line-height:1.5}.field .hint{font-size:11px;line-height:1.55;color:#7a879c}.segment{border:1px solid #e3e8f0;border-radius:9px;padding:17px;margin:0 0 18px}.segment legend{font-size:13px;font-weight:850;padding:0 7px;color:#243354}.helpbar{background:#eef5fe;color:#305176;border-radius:8px;padding:13px 15px;line-height:1.55;font-size:12px;margin:0 0 20px}.warnbar{background:#fff6e7;color:#77531b;border-radius:8px;padding:13px 15px;line-height:1.6;font-size:12px;margin:0 0 19px}.dangerbar{background:#fff2ef;color:#9c3a2d;border-radius:8px;padding:13px 15px;line-height:1.55;font-size:12px;margin-bottom:18px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.choice-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.choice{display:block;position:relative;min-width:0;border:1.5px solid #dfe5ee;border-radius:10px;background:#fff;text-align:left;padding:17px 15px;color:#233759;min-height:90px}.choice.selected{border-color:#eca83e;background:#fff8eb;box-shadow:0 0 0 2px #f8dfb885}.choice strong{font-size:13px;line-height:1.4;display:block}.choice small{font-size:11px;line-height:1.55;color:#6d7990;display:block;margin-top:6px}.choice .tick{position:absolute;top:12px;right:12px;border:1px solid #dfe5ed;border-radius:50%;width:17px;height:17px}.choice.selected .tick{background:#eead48;border-color:#eead48;box-shadow:inset 0 0 0 4px white}.section-title{font-size:14px;font-weight:850;letter-spacing:-.25px;margin:7px 0 18px}.form-actions{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 32px;border-top:1px solid var(--line);background:#fff}.btn{border-radius:24px;border:1px solid #d0d8e4;background:white;padding:12px 21px;font-size:12px;color:#1c3153;font-weight:800}.btn.primary{background:linear-gradient(90deg,#f6c46c,#efa53a);color:#1d2d48;border-color:#f0b24a;min-width:161px}.btn.primary:hover{filter:brightness(.98)}.btn:disabled{opacity:.45;cursor:not-allowed}.side{display:flex;flex-direction:column;gap:13px}.side-card{background:#fff;border:1px solid #e3e7ed;border-radius:11px;padding:18px 17px;line-height:1.55}.side-card.gold{background:linear-gradient(145deg,#fff9ec,#fff);border-color:#f6e5ca}.side-card.blue{background:#eff6fd;border-color:#e1ebf7}.side-card.dark{background:#111e3b;border-color:#111e3b;color:white}.side-card h3{font-size:14px;line-height:1.35;margin:0 0 8px}.side-card p{font-size:12px;color:#66748a;margin:0}.side-card.dark p{color:#d1dcee}.side-card a{font-size:12px;color:#19579c;text-decoration:underline}.side-card.dark a{color:#ffc166}.side-lead{color:#bb771b;text-transform:uppercase;font-size:9px;font-weight:900;letter-spacing:1.7px;margin-bottom:10px}.review-list{display:grid;gap:15px}.review-section{border:1px solid #e3e8ee;border-radius:10px;padding:17px}.review-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #eef0f5;padding-bottom:11px;margin-bottom:14px}.review-head h3{font-size:14px;margin:0}.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 16px}.review-item{min-width:0}.review-item .lbl{font-size:10px;color:#8490a2;letter-spacing:.25px;margin-bottom:3px}.review-item .val{font-size:12px;color:#20314d;font-weight:700;word-break:break-word;line-height:1.4}.review-item .val.missing{color:#a5acb7;font-weight:400}.inline-link{border:0;background:none;color:#1d69a7;text-decoration:underline;font-size:11px;font-weight:700}.confirm-check{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.6;color:#3a4960;padding:14px;background:#fff8ec;border-radius:8px;margin-top:15px}.confirm-check input{height:16px;width:16px;margin-top:2px;accent-color:#d48b21;flex-shrink:0}.confirmation{text-align:center;padding:18px 9px}.confirmation .mark{width:65px;height:65px;display:inline-flex;align-items:center;justify-content:center;background:#e7f4ec;border:1px solid #b7dfc5;border-radius:50%;font-size:33px;color:#2b8457;margin-bottom:10px}.confirmation h2{font-size:27px;margin:4px 0 10px}.confirmation p{font-size:14px;color:#5b6a7d;line-height:1.65;max-width:550px;margin:0 auto 19px}.confirmation .not-submitted{padding:14px 18px;border:1px solid #e7c18a;background:#fff5e6;border-radius:9px;color:#7a4c16;font-size:13px;font-weight:700;max-width:570px;margin:17px auto}.expense-card{border:1px solid #e0e5ed;border-radius:10px;padding:19px;margin:0 0 15px;background:#fbfcfe}.expense-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.expense-head h3{font-size:14px;margin:0}.expense-tally{font-size:17px;font-weight:800;color:#1d345d;text-align:right}.file-note{font-size:11px;color:#748198;margin-top:6px;line-height:1.5}.file-summary{color:#345a73;font-size:11px;margin-top:6px}.form-split{display:flex;justify-content:space-between;align-items:center;gap:16px}.footer{background:#0d1731;color:#e2e9f2;padding:22px 0}.footer .wrap{display:flex;align-items:center;justify-content:space-between;font-size:12px}.footer-logo{font-size:28px;letter-spacing:-2px}.assist-links{display:flex;gap:15px;flex-wrap:wrap}.field-error{font-size:12px;color:#a43e34;margin:7px 0 0}.hidden{display:none!important}
+@media(max-width:1150px){.workflow{grid-template-columns:180px minmax(0,1fr)}.side{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.steps-panel{position:static}.wrap{padding:0 24px}}
+@media(max-width:740px){.wrap{padding:0 17px}.top-inner{min-height:69px}.logo{font-size:38px}.strap{font-size:7px}.topnav{gap:10px;font-size:11px}.topnav a:not(.pill){display:none}.hero{min-height:230px}.hero .wrap{padding-top:28px;padding-bottom:42px}.hero h1{font-size:39px}.hero:before{right:-110px;width:260px;height:260px;border-width:27px}.hero:after{right:-330px}.main{padding-top:22px}.intro{display:block}.intro h2{font-size:29px}.support-grid{grid-template-columns:1fr;gap:12px}.support-card{min-height:190px}.workflow{display:block}.steps-panel{display:flex;flex-direction:row;overflow-x:auto;gap:4px;margin-bottom:13px;padding:12px 9px;scrollbar-width:thin;position:static}.steps-panel h3{display:none}.step-row{width:auto;min-width:82px;flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;padding:4px 3px;text-align:center}.step-row:after{width:calc(100% - 31px);height:2px;left:calc(50% + 16px);top:18px}.step-row:last-child:after{display:none}.step-label{padding:0;font-size:10px}.step-dot{width:27px;height:27px}.form-header{padding:20px 18px 18px}.form-header h2{font-size:25px}.form-body{padding:20px 18px 23px}.fields{grid-template-columns:1fr;gap:14px}.field.full{grid-column:auto}.choice-grid,.choice-grid.three{grid-template-columns:1fr}.choice{min-height:74px}.form-actions{padding:18px;gap:9px}.form-actions .btn{padding:12px 13px;font-size:11px}.side{display:grid;grid-template-columns:1fr;gap:10px;margin-top:13px}.side-card{padding:14px 16px}.review-grid{grid-template-columns:1fr 1fr}.footer .wrap{display:flex;flex-direction:column;align-items:start;gap:10px}.expense-tally{font-size:15px}}
+@media(max-width:410px){.review-grid{grid-template-columns:1fr}.steps-panel{gap:2px;padding:12px 5px}.step-row{min-width:0;flex-basis:0;padding:4px 1px}.step-label{font-size:9px;overflow-wrap:anywhere;line-height:1.2}.hero h1{font-size:35px}}
+
+.urgent-note{border:1px solid #dd947e;background:#fff0eb;color:#7c3425;padding:15px 17px;border-radius:13px;line-height:1.55;font-size:13px;margin:18px 0;box-shadow:inset 4px 0 #ba5137}
+.urgent-note strong{color:#702b20}.form-panel .warnbar.compact{font-size:12px}
+@media(max-width:700px){.urgent-note{font-size:12.5px}}
+</style>
+<style>
+.form-section-title{margin:23px 0 14px;font-weight:800;color:#172847;font-size:14px}.expense-num{display:inline-grid;place-items:center;background:#fff4e0;color:#925a0f;width:27px;height:27px;border-radius:50%;font-size:12px;margin-right:8px;border:1px solid #f1ca8b}.helpbar.compact,.warnbar.compact{margin:10px 0 17px}.expense-card .field input[readonly]{background:#ecf4fb;border-color:#cfdcec;color:#18345c;font-weight:800}.expense-card{background:#fff}.expense-card .expense-head h3{display:flex;align-items:center}.expense-card .field textarea{min-height:92px}.form-split{flex-wrap:wrap}.expense-tally{margin-left:auto}.review-item .val{overflow-wrap:anywhere}
+</style><meta name="robots" content="noindex,nofollow"><style>
+/* Batch 12 accessibility and validation; the supplied orbital art and layout remain. */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip-link{position:absolute;left:16px;top:-70px;background:#fff;color:#111c39;padding:12px 18px;z-index:1000;border-radius:8px}
+.skip-link:focus{top:12px}
+.eos-support-logo{display:block;width:145px;height:auto;max-width:100%;object-fit:contain}.footer-brand{width:110px}
+.choice-fieldset{border:0;margin:0;padding:0;min-width:0}.choice{cursor:pointer;padding-right:39px}.choice-radio{position:absolute;top:12px;right:12px;width:18px;height:18px;margin:0;accent-color:#9c620f}
+.choice:focus-within{outline:3px solid #225a9d;outline-offset:2px}.choice-fieldset:focus{outline:3px solid #225a9d;outline-offset:3px}
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #225a9d;outline-offset:3px}.topbar :focus-visible,.hero :focus-visible,.side-card.dark :focus-visible,.footer :focus-visible{outline-color:#ffca76}
+.error-summary{border:2px solid #a43e34;border-radius:8px;padding:16px 18px;margin-bottom:22px;color:#843027;background:#fff8f5}.error-summary h3{font-size:17px;margin:0 0 10px}.error-summary ul{margin:0;padding-left:22px}.error-summary li+li{margin-top:8px}.error-summary a{text-decoration:underline;font-weight:600}.error-summary:focus{outline:3px solid #225a9d;outline-offset:3px}
+[aria-invalid="true"]{border-color:#a43e34!important}.b12-field-error{font-weight:600;line-height:1.5}.inline-link,.side-card a,.helpbar a,.warnbar a{text-decoration:underline;text-underline-offset:2px}.form-actions a{text-align:center}.form-body .inline-link{min-height:30px;display:inline-flex;align-items:center}
+.form-panel,.field,.side,.workflow-panel{min-width:0}.form-header h2,.hero h1,.review-item .val{overflow-wrap:anywhere}input,select,textarea{max-width:100%}.topnav{flex-wrap:wrap}
+@media(max-width:700px){.top-inner{gap:15px}.eos-support-logo{width:112px}.form-actions{flex-wrap:wrap}.form-actions>*{max-width:100%}.topnav{gap:12px}.choice-grid{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style></head><body><div id="journeyStatus" class="sr-only" role="status" aria-live="polite"></div><div id="app"></div><noscript><main class="wrap"><h1>Contractor Support preview</h1><p>JavaScript is needed for this interactive preview. No details have been submitted.</p><p><a href="contractor-support.html">Return to Contractor Support</a></p></main></noscript><script>
+document.addEventListener('submit',event=>event.preventDefault(),true);
+
+const FLOW_META = {"holiday": ["Holiday Pay Request", "Request payment of accrued holiday pay where available.", "5 steps", ["Your details", "Holiday period", "Payment request", "Review request", "Next steps"]], "change": ["Change My Details", "Secure requests for changes to your contact, address, banking or personal records.", "4 steps", ["Select change", "Complete details", "Review request", "What happens next"]], "absence": ["Report an Absence", "Report sickness, statutory family leave, compassionate leave or another absence.", "4 steps", ["Absence type", "Absence details", "Review & submit", "Next steps"]], "expenses": ["Expenses Claim", "Request review of genuine work-related expenses with itemised evidence and authorisation details.", "5 steps", ["Your details", "Expense items", "Evidence", "Review request", "Next steps"]], "incident": ["Workplace Accident or Incident", "Report an injury, near miss or unsafe event for human review and appropriate follow-up.", "6 steps", ["Your details", "Incident details", "Injury & medical", "Additional details", "Review & submit", "Next steps"]]};
+const ICONS = {"holiday": "<rect x=\"7\" y=\"8\" width=\"22\" height=\"23\" rx=\"3\"/><path d=\"M7 14h22M12 4v8M24 4v8M13 21h10M13 25h7\"/>", "change": "<circle cx=\"17\" cy=\"13\" r=\"5\"/><path d=\"M7 31c0-8 4-12 10-12 4 0 7 1 9 5M26 24v8m-4-4h8\"/>", "absence": "<rect x=\"6\" y=\"8\" width=\"24\" height=\"22\" rx=\"3\"/><path d=\"M6 14h24M11 4v8M25 4v8\"/><circle cx=\"20\" cy=\"22\" r=\"5\"/><path d=\"M20 19v4l2 1\"/>", "expenses": "<path d=\"M10 4h14l5 5v23H10zM24 4v6h5M14 16h11M14 21h11M14 26h6\"/>", "incident": "<path d=\"M18 4 33 31H3zM18 13v10M18 27v1\"/>", "questions": "<path d=\"M5 6h26v20H16l-8 6v-6H5zM11 13h14M11 19h10\"/>"};
+const ABSENCE_TYPES = [['sickness','Sickness','Report illness or an inability to attend work'],['maternity','Maternity leave','Notify EOS about maternity leave'],['paternity','Paternity leave','Tell us about your planned paternity leave'],['adoption','Adoption & shared parental leave','Including adoption and shared parental arrangements'],['compassionate','Compassionate leave','Bereavement or another compassionate circumstance'],['other','Other absence','Any other absence or planned leave']];
+const CHANGE_TYPES = [['bank','Bank details','Update the account used to pay your wages'],['address','Home address','Tell us your new residential address'],['contact','Contact details','Update your email address or telephone number'],['other','Other details','Request another amendment to your records']];
+let flow = allowedSupportRoute(new URLSearchParams(location.search).get('flow'));
+let activeErrors=[];
+let step=0, data={}, files={}, expenseSequence=1, expenseItems=[{id:1}], finished=false;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pretty=s=>String(s||'').replace(/(^|\s)([a-z])/g,(m,a,b)=>a+b.toUpperCase()).replaceAll('_',' ');
+function money(value){if(value===null||value===undefined||value===''||typeof value==='boolean')return '—';const n=Number(value);return Number.isFinite(n)?'£'+n.toFixed(2):'—';}
+function icon(name){return `<span class="orbit"><svg viewBox="0 0 36 36" aria-hidden="true">${ICONS[name]}</svg></span>`;}
+
+
+
+
+
+
+
+function personFields({agency=false,phone=true,employee=true,extra=false}={}){return `<div class="fields">${txt('first','First name',{req:true,place:'First name'})}${txt('last','Last name',{req:true,place:'Last name'})}${txt('email','Email address',{type:'email',req:true,place:'you@example.com'})}${phone?txt('phone','Mobile number',{type:'tel',req:true,place:'07...',attrs:'pattern="[0-9+() -]{7,20}"'}):''}${employee?txt('employee','Employee/payroll number',{place:'Optional'}):''}${agency?txt('agency','Recruitment agency',{req:true,place:'Agency name'}):''}${extra?txt('assignment','Current assignment / client',{place:'Optional'}):''}</div>`}
+function section(txtx,body){return `<div class="section-title">${txtx}</div>${body}`}
+function holidayPersonFields(){return `<div class="fields">${txt('first','First name',{req:true,place:'First name'})}${txt('last','Last name',{req:true,place:'Last name'})}${txt('email','Email address',{type:'email',req:true,place:'you@example.com'})}${txt('phone','Contact number (optional)',{type:'tel',place:'07...',attrs:'pattern="[0-9+() -]{7,20}"'})}${txt('employee','Employee / payroll number (optional)',{place:'If known'})}${txt('agency','Recruitment agency',{req:true,place:'Agency name'})}</div>`}
+function holidayContent(){switch(step){
+case 0:return `<div class="helpbar"><strong>Before you begin</strong><br>EOS can process a request for <strong>accrued holiday pay</strong> where a balance is available. This is different from <strong>advanced holiday pay</strong> (also called rolled-up holiday pay, where permitted), which has already been paid alongside your wages. Rolled-up holiday pay is limited to qualifying irregular-hours or part-year workers. You are still entitled to take annual leave under your applicable arrangements.</div><p class="fieldset-label" style="margin:18px 0 10px">How is your holiday pay handled? <span class="req">*</span></p>${choices('holidayArrangement',[['accrued','Accrued holiday pay','Holiday pay is held and paid when leave is taken'],['advanced','Advanced holiday pay','Holiday pay is already paid with regular wages'],['unsure','I am not sure','I would like to check my arrangement before applying']])}${data.holidayArrangement==='advanced'?`<div class="warnbar" style="margin-top:18px"><strong>Already receiving holiday pay?</strong> You would not normally have a separate accrued balance for the same periods. Please check your payslip and pay statement or <a href="contact-us.html?topic=support#contact-form-card">contact EOS</a> if you believe an outstanding balance exists.</div>`:data.holidayArrangement==='unsure'?`<div class="helpbar" style="margin-top:18px"><strong>Not sure?</strong> Look at your payslip or contact EOS to establish whether you have an accrued holiday balance before requesting payment. <a href="contact-us.html?topic=support#contact-form-card">Ask our team →</a></div>`:data.holidayArrangement==='accrued'?`<div class="helpbar" style="margin-top:18px"><strong>Accrued holiday pay selected.</strong> Please complete the details below so EOS can identify your record and review the request. This form cannot confirm your available balance.</div>`:''}${data.holidayArrangement==='accrued'?`<div style="height:20px"></div>${holidayPersonFields()}`:''}`;
+case 1:return `<div class="warnbar"><strong>Booking time off:</strong> This request is for EOS to review holiday pay. It does not book or approve absence from your assignment. Please follow your agency's or assignment provider's arrangements for requesting leave.</div><div class="fields">${txt('holidayStart','Holiday start date',{type:'date',req:true})}${txt('holidayEnd','Holiday end date',{type:'date',req:true})}${radio('agencyNotified','Have you informed your recruitment agency about these holiday dates?')}${textarea('holidayNotes','Additional details (optional)',{place:'For example, whether this holiday has already been taken or any dates needing clarification'})}</div>`;
+case 2:return `<div class="helpbar"><strong>Payment requests are subject to verification.</strong> EOS will check your accrued holiday balance and applicable payroll arrangements. Any approved holiday pay will be processed through PAYE with applicable deductions. Your preferred date is not a guaranteed payment date.</div><div class="fields">${txt('paymentDate','Preferred payment date',{type:'date',req:true,full:true,hint:'Subject to available balance, payroll cut-offs and approval.'})}</div><p class="fieldset-label" style="margin:20px 0 10px">How much accrued holiday pay are you requesting? <span class="req">*</span></p>${choices('paymentChoice',[['full','Full available accrued balance','EOS will calculate and confirm the balance eligible for payment'],['amount','A specific gross amount','Request a particular amount for EOS to check against your balance']])}${data.paymentChoice==='amount'?`<div class="fields" style="margin-top:16px">${txt('amountRequested','Gross amount requested (£)',{type:'number',req:true,attrs:'min="0.01" step="0.01"',place:'0.00',hint:'Enter the amount before any Income Tax, National Insurance or other applicable deductions.'})}</div>`:''}`;
+case 3:return review();default:return confirmation()}}
+function changeContent(){switch(step){
+case 0:return `${section('What would you like to change?',choices('changeType',CHANGE_TYPES))}<div class="helpbar" style="margin-top:18px"><strong>One change at a time.</strong> Choose the information you need to update. Requests to change bank details or your name are reviewed separately to protect your records.</div><div class="helpbar compact"><strong>PAYE Bureau workers:</strong> use this form for your own personal details. Employer instructions about pay, rates or employment status must follow the separate authorised payroll process.</div>`;
+case 1:return `${section('Your existing contact details',`<div class="helpbar">Use the contact details already held by EOS, where possible. We'll use established contact methods to verify sensitive amendments, rather than relying only on details entered in this form.</div>${personFields({agency:false})}`)}<div style="height:25px"></div>${section((CHANGE_TYPES.find(x=>x[0]===data.changeType)||[])[1]+' — requested change',changeDetailFields())}`;
+case 2:return review();default:return confirmation()}}
+function changeDetailFields(){switch(data.changeType){
+case 'bank':return `<div class="warnbar"><strong>Protecting your wages.</strong> Submitting this request does not update your bank details. EOS must independently verify the request using contact information already on file and approve the change before it takes effect. A form, email, chatbot or support ticket alone cannot authorise a bank change. Never disclose one-time codes or send bank details by ordinary email.</div><div class="fields">${txt('accountHolder','Account holder name',{req:true,full:true,place:'Name on the account'})}${txt('bankName','Bank / building society name',{place:'Optional'})}${txt('sortCode','Sort code',{req:true,place:'12-34-56',attrs:'inputmode="numeric" autocomplete="off" maxlength="11"'})}${txt('accountNumber','Account number',{req:true,place:'8 digits',attrs:'inputmode="numeric" autocomplete="off" maxlength="15"'})}${txt('accountConfirm','Confirm account number',{req:true,place:'Re-enter 8 digits',attrs:'inputmode="numeric" autocomplete="off" maxlength="15"'})}${txt('buildingRef','Building Society Reference',{place:'Optional',full:true})}${txt('requestedEffectiveDate','When would you like this change to take effect? (optional)',{type:'date',full:true})}<div class="field full"><div class="fieldset-label">Is this bank account in your own name? <span class="req">*</span></div>${choices('bankOwnership',[['yes','Yes','I am the account holder'],['no','No','Please discuss an exceptional arrangement with EOS']])}</div>${select('verificationContact','Preferred existing contact method for an EOS verification call or message',[['existing-phone','Mobile number already on file'],['existing-email','Email address already on file']],{req:true,full:true})}</div><div class="helpbar" style="margin-top:17px">The requested date is not guaranteed. If payroll has already been processed, wages may still be sent to the currently verified account.</div>`;
+case 'address':return `<div class="fields">${txt('address1','New address line 1',{req:true,full:true,place:'Building / street'})}${txt('address2','Address line 2 (optional)',{full:true})}${txt('town','Town / city',{req:true})}${select('country','Country',[['UK','United Kingdom'],['other','Outside the United Kingdom']],{req:true})}${data.country==='other'?txt('otherCountry','Country name',{req:true}):''}${txt('postcode',data.country==='other'?'Postcode / ZIP code (if applicable)':'UK postcode',{req:data.country!=='other',place:data.country==='other'?'Optional':'e.g. B4 6AT'})}${txt('addressEffectiveDate','Date you moved / will move (optional)',{type:'date',full:true})}</div><div class="helpbar" style="margin-top:18px">The team may request additional evidence if required to keep employment and payroll records accurate.</div>`;
+case 'contact':return `<div class="helpbar">You may update your email address, telephone number or both. For security, EOS should verify a change using your <strong>existing</strong> registered contact method before switching future communications.</div><div class="fields">${txt('newEmail','New email address (if changing)',{type:'email',place:'new@example.com'})}${txt('confirmNewEmail','Confirm new email address',{type:'email',place:'Re-enter new email'})}${txt('newPhone','New contact number (if changing)',{type:'tel',place:'07...',attrs:'inputmode="tel"'})}${select('contactVerify','Preferred existing contact method for verification',[['existing-email','Email address already on file'],['existing-phone','Mobile number already on file']],{req:true})}</div>`;
+case 'other':return `<div class="fields">${select('otherType','What needs updating?',[['name','My name'],['emergency','Emergency contact'],['other','Another item on my record']],{req:true,full:true})}</div>${data.otherType==='name'?`<div class="fields" style="margin-top:17px">${txt('newFirst','New first name',{req:true})}${txt('newLast','New last name',{req:true})}${textarea('nameNote','Anything else the team should know? (optional)',{place:'Brief description is sufficient'})}${upload('changeEvidence','Supporting document (optional; never uploaded in this prototype)',{full:true})}</div><div class="warnbar" style="margin-top:17px">A name amendment may require identity verification and supporting evidence. The team will explain what is needed through a secure channel.</div>`:data.otherType==='emergency'?`<div class="fields" style="margin-top:17px">${txt('emergencyName','New emergency contact name',{req:true})}${txt('emergencyRelationship','Relationship to you',{req:true})}${txt('emergencyPhone','Emergency contact number',{type:'tel',req:true,attrs:'inputmode="tel"'})}${textarea('emergencyNote','Additional instructions (optional)',{place:'Only information needed in an emergency'})}</div>`:data.otherType==='other'?`<div class="fields" style="margin-top:17px">${textarea('otherDescription','What should we change? Please explain',{req:true,full:true,place:'Describe the record and the correct information'})}${upload('changeEvidence','Supporting document (optional; never uploaded in this prototype)',{full:true})}</div>`:''}`;
+default:return `<div class="warnbar">Choose a change type to continue.</div>`}}
+function absenceContent(){switch(step){case 0:return `${section('What type of absence would you like to report?',choices('absenceType',ABSENCE_TYPES,{cols:3}))}<div class="helpbar" style="margin-top:19px">Please notify your recruitment agency or assignment provider too, where an absence affects your assignment. Selecting a category doesn't determine eligibility for statutory leave or pay.</div>`;
+case 1:return `${section('Your details',personFields({agency:true}))}<div style="height:25px"></div>${section(pretty((ABSENCE_TYPES.find(a=>a[0]===data.absenceType)||[])[1]||'Absence')+' details',absenceDetailFields())}`;
+case 2:return review();default:return confirmation()}}
+function absenceDetailFields(){
+const typeName = ABSENCE_TYPES.find(x=>x[0]===data.absenceType)?.[1] || 'Absence';
+const intro = `<div class="helpbar" style="margin-bottom:17px"><strong>${esc(typeName)}</strong> — provide the essential information below. EOS will review any statutory leave/pay entitlement and may ask for a formal notice or further evidence. This form does not approve leave or guarantee pay.</div>`;
+const common = radio('agencyNotified','Have you notified your recruitment agency or assignment provider?');
+const docs = upload('absenceEvidence','Supporting evidence (optional)',{full:true});
+const shortText = textarea('absenceNotes','Additional information (optional)',{place:'Only include what EOS needs to arrange support. Avoid detailed medical or family information.'});
+switch(data.absenceType){
+case 'sickness':return `${intro}<div class="fields">${txt('absenceStart','First date you were unable to work',{type:'date',req:true})}${txt('expectedReturn','Expected return to work (if known)',{type:'date'})}${radio('currentlyOff','Are you currently unable to work?')}${common}${shortText}${docs}</div><div class="helpbar" style="margin-top:14px">If your sickness lasts more than seven consecutive calendar days, a fit note is normally needed. You can report the absence now even if you do not yet have one. Eligibility for Statutory Sick Pay is assessed using the rules in force for the dates of your absence.</div>`;
+case 'maternity':return `${intro}<div class="fields">${txt('dueWeek','Expected week of childbirth — choose a date within that week',{type:'date',req:true,full:true})}${txt('plannedStart','Planned maternity leave start date',{type:'date',req:true})}${txt('actualBirth','Actual date of birth (if applicable)',{type:'date'})}${txt('plannedReturn','Planned return date (if known)',{type:'date'})}${radio('matb1','Do you currently have a MATB1 certificate?')}${common}${shortText}${docs}</div><div class="helpbar" style="margin-top:14px">EOS may need formal maternity notification and evidence to assess pay. You can notify us before obtaining your MATB1; we will explain any next steps.</div>`;
+case 'paternity':return `${intro}<div class="fields">${select('paternityReason','Is the leave related to a birth or adoption?',[['birth','Birth'],['adoption','Adoption']],{req:true})}${txt('dueDate','Expected or actual birth / placement date',{type:'date',req:true})}${txt('plannedStart','Planned paternity leave start date',{type:'date',req:true})}${select('duration','Anticipated leave period',[['one','One week'],['two','Two weeks'],['other','To be discussed']],{req:true})}${common}${shortText}${docs}</div><div class="helpbar" style="margin-top:14px">Eligibility and notice requirements for paternity leave and statutory pay are assessed separately. EOS will confirm the appropriate next steps.</div>`;
+case 'adoption':return `${intro}<div class="fields">${select('familyType','Which arrangement are you notifying EOS about?',[['adoption','Adoption leave'],['shared','Shared parental leave']],{req:true,full:true})}${txt('placementDate','Expected placement / birth date',{type:'date',req:true})}${txt('plannedStart','Planned leave start date',{type:'date',req:true})}${txt('plannedEnd','Planned leave end date (if known)',{type:'date'})}${common}${shortText}${docs}</div><div class="helpbar" style="margin-top:14px">Adoption and shared parental leave have different statutory notice and evidence requirements. EOS may request additional forms or documentation.</div>`;
+case 'compassionate':return `${intro}<div class="fields">${select('compassionateReason','Reason for leave',[['bereavement','Bereavement'],['parental_bereavement','Loss of a child / parental bereavement'],['family','Family emergency'],['other','Another compassionate circumstance']],{req:true})}${select('relationship','Relationship to the person involved',[['partner','Partner / spouse'],['child','Child'],['parent','Parent'],['relative','Other relative'],['other','Other'],['private','Prefer not to say']],{req:true})}${txt('absenceStart','Leave start date',{type:'date',req:true})}${txt('expectedReturn','Expected return date (if known)',{type:'date'})}${common}${textarea('absenceNotes','Anything you would like us to know (optional)',{place:'You do not need to provide private details here.'})}${docs}</div><div class="helpbar" style="margin-top:14px">We will review the type of leave and any relevant entitlement sensitively. If this concerns the loss of a child, EOS will assess the separate parental bereavement provisions where applicable.</div>`;
+default:return `${intro}<div class="fields">${select('otherAbsence','Nature of absence',[['personal','Personal leave'],['medical','Medical appointment'],['training','Training / appointment'],['neonatal','Neonatal care leave'],['other','Other']],{req:true})}${txt('absenceStart','Start date',{type:'date',req:true})}${txt('expectedReturn','Expected return date (if known)',{type:'date'})}${common}${data.otherAbsence==='neonatal'?`${txt('babyBirth','Baby’s date of birth (if known)',{type:'date'})}${txt('neonatalStart','Date neonatal care started (if known)',{type:'date'})}<div class="field full"><div class="helpbar">Neonatal care leave and neonatal care pay are assessed separately. EOS may request evidence and formal notice to confirm eligibility.</div></div>`:''}${textarea('absenceNotes','Brief description of your request',{req:data.otherAbsence==='other',place:'Please describe the absence without including sensitive details.'})}${docs}</div>`;
+}}
+function incidentContent(){switch(step){
+case 0:return `<div class="warnbar"><strong>Safety comes first.</strong> If someone is in immediate danger or there is a life-threatening emergency, call <strong>999</strong> and notify the on-site supervisor. Do not wait for an online response. For non-emergency incidents, inform your supervisor and recruitment agency promptly. This web prototype does not notify anyone.</div>
+${personFields({agency:true,extra:true})}
+<div class="fields">${select('engagementType','How are you engaged with EOS?',[['umbrella','Umbrella PAYE'],['cis','CIS / self-employed'],['other','Other or unsure']],{req:true,full:true})}</div>`;
+case 1:return `<div class="helpbar"><strong>Describe what happened.</strong> You can report an injury, a near miss or an unsafe event even if nobody was injured. Stick to what you know; do not delay seeking help to complete this form.</div>
+<div class="form-section-title">What type of event are you reporting?</div>
+${choices('incidentNature', [['injury','Accident involving injury','Someone was injured or became unwell following an event at work.'],['near-miss','Near miss','Something could have caused an injury but did not.'],['danger','Dangerous or unsafe event','A serious hazard, equipment failure or other unsafe incident.'],['damage','Property / equipment damage','An event involving damage, whether or not someone was injured.'],['other','Other workplace incident','A work-related event not listed above.']])}
+<div class="fields" style="margin-top:19px">${txt('incidentDate','Date of incident',{type:'date',req:true,attrs:`max="${detailsIncidentLocalDay()}"`})}${txt('incidentTime','Approximate time of incident',{type:'time',req:true})}
+${select('incidentPlace','Where did it happen?',[['onsite','At the assignment / client site'],['offsite','At another work location'],['travel','During work-related travel'],['other','Another location']],{req:true})}
+${txt('clientSite','Client / site name',{req:true})}${txt('locationDetail','Full address or precise location',{req:true,full:true,place:'Site, floor, room or area; include town/postcode if known'})}
+${textarea('incidentDescription','Please describe what happened',{req:true,place:'What happened, in what order, and what was the immediate result?'})}
+${txt('activity','What work or activity was taking place?',{req:true,full:true})}${textarea('cause','Possible cause (optional)',{place:'Only record what you know; avoid guessing about blame'})}</div>
+<div class="form-section-title">Is there an immediate risk to anyone?</div>
+${choices('ongoingDanger', [['yes','Yes — there may still be a danger','Take immediate action to protect people and alert the site contact.'],['no','No ongoing danger known','The situation appears safe now.'],['unsure','Not sure','Ask the site supervisor to assess the risk.']])}
+${data.ongoingDanger==='yes'?'<div class="urgent-note"><strong>Do not rely on this form for an urgent response.</strong> If anyone is in immediate danger, call 999 where appropriate. Notify the site supervisor or responsible person now and contact EOS directly.</div>':''}`;
+case 2:return `<div class="helpbar"><strong>Injuries and treatment:</strong> Please share only information relevant to this event. Detailed medical and work-impact questions below concern your own injury. These answers do not decide whether the event is reportable under RIDDOR.</div>
+<div class="form-section-title">Was anyone injured or made unwell?</div>
+${choices('injuryOccurred', [['yes','Yes','A physical injury or immediate health effect occurred.'],['no','No injury known','For example, a near miss or property damage.'],['unsure','Not sure yet','The impact is being checked or symptoms may develop.']])}
+${data.injuryOccurred==='yes'?`<div class="fields" style="margin-top:18px">${select('injuryTo','Who was injured?', [['self','I was injured'],['other','Another person was injured'],['both','I and another person were injured']],{req:true})}</div>
+${['self','both'].includes(data.injuryTo)?`<div class="fields">
+${select('injuredArea','Which part of your body was affected?', [['head','Head / neck'],['torso','Chest / abdomen'],['back','Back'],['arms','Arms / hands'],['legs','Legs / feet'],['eye','Eye'],['multiple','Multiple areas'],['other','Other / not known']],{req:true})}
+${select('injuryType','Nature of your injury',[['cut','Cut / bruise'],['sprain','Sprain / strain'],['burn','Burn / scald'],['fracture','Suspected or confirmed fracture'],['head','Head injury / loss of consciousness'],['breathing','Breathing problem / exposure'],['other','Other / not known']],{req:true,full:true})}
+${textarea('injuryDetails','What injury or symptoms did you experience?',{req:true,place:'Brief relevant facts only; do not include unrelated medical history or another person’s private details'})}</div>`:data.injuryTo==='other'?`<div class="helpbar compact">You do not need to provide another person’s name, private contact details, medical history or treatment details. Report only relevant facts you observed; the responsible team can obtain any necessary information securely.</div><div class="fields">${textarea('injuryDetails','Relevant observed information (optional)',{place:'A brief factual description, without identifying the other person'})}</div>`:''}
+${['self','other','both'].includes(data.injuryTo)?radio('firstAid','Was first aid given?',['Yes','No','Not sure']):''}
+${['self','both'].includes(data.injuryTo)?`${radio('medicalTreatment','Have you sought medical treatment?',['Yes','No','Not yet'])}${data.medicalTreatment==='yes'?`<div class="fields">${txt('treatmentDetails','Relevant treatment or support (brief details)',{req:true,full:true,hint:'Only information needed for this incident; do not add unrelated medical history.'})}</div>`:''}`:''}
+${['self','other','both'].includes(data.injuryTo)?radio('hospital',data.injuryTo==='self'?'Were you taken to hospital?':'Was an injured person taken to hospital?',['Yes','No','Not sure']):''}
+${['self','both'].includes(data.injuryTo)?`${radio('fitForWork','Are you currently able to do your normal work duties?',['Yes','No','Not sure'])}${select('daysAffected','Estimated time unable to perform normal duties',[['none','No time away / no restriction'],['1-3','1–3 days'],['4-7','4–7 days'],['over7','More than 7 consecutive days'],['unknown','Not yet known']],{req:true,full:true})}<p class="hint">Count consecutive calendar days after the day of the accident, including weekends and rest days. This estimate does not decide whether a statutory report is required.</p>`:''}
+${(['self','both'].includes(data.injuryTo)&&(['head','fracture','breathing'].includes(data.injuryType)||data.daysAffected==='over7'))||data.hospital==='yes'?'<div class="urgent-note"><strong>Prompt human review may be needed.</strong> Some injuries, hospital treatment and periods away from normal duties may require statutory reporting. Notify EOS, your recruitment agency and the site responsible person without delay. This prototype does not send alerts or make a statutory report.</div>':''}`:
+(['no','unsure'].includes(data.injuryOccurred)?`<div class="fields" style="margin-top:18px">${textarea('nonInjuryImpact',data.injuryOccurred==='unsure'?'What is being checked? (optional)':'What could have happened, or what was damaged? (optional)',{place:'A short factual summary; avoid private medical or third-party details'})}</div>${data.injuryOccurred==='unsure'?'<div class="warnbar compact">If symptoms develop or an injury becomes apparent, seek appropriate medical help and notify the relevant people promptly.</div>':''}`:'')}`;
+case 3:return `<div class="helpbar"><strong>Notify the people responsible.</strong> EOS will need to coordinate with the agency and site organisation as appropriate. Completing this demonstration does not notify them or make an HSE report.</div>
+${radio('supervisorTold','Have you notified the on-site supervisor or manager?',['Yes','No','Not yet'])}
+${radio('agencyTold','Have you informed your recruitment agency?',['Yes','No','Not yet'])}
+${radio('accidentBook','Has the event been recorded in the site accident book or incident system?',['Yes','No','Not sure'])}
+${radio('witnesses','Were there any witnesses?',['Yes','No','Not sure'])}
+${data.witnesses==='yes'?`<div class="fields">${textarea('witnessDetails','Witness name(s) or role(s), if known (optional)',{hint:'Use a role instead of a name if that is enough. Do not include private contact details.'})}</div>`:''}
+<div class="fields">${textarea('actionsTaken','What action was taken immediately afterwards? (optional)',{place:'First aid, stopped work, isolated equipment, advised supervisor, etc.'})}${textarea('otherInformation','Anything else EOS should know? (optional)',{place:'Relevant details or changes since the event'})}</div>
+${upload('incidentEvidence','Supporting evidence (optional: photo, accident-book extract, relevant document)',{full:true})}
+<div class="helpbar compact">Evidence selected here stays on your device. Include only relevant evidence you are authorised to share; avoid other people’s personal or medical details. A live service needs secure uploads and restricted access.</div>`;
+case 4:return review();default:return confirmation()}}
+function expenseTotal(){return calculateExpenseTotal(expenseItems) ?? Number.NaN;}
+function mileageAmount(x){return calculateExpenseAmount({...x,category:'Mileage'}) ?? Number.NaN;}
+function expenseDataField(i,k,label,{type='text',required=false,placeholder='',options=null,full=false,readonly=false,hint=''}={}){
+  const x=expenseItems.find(e=>e.id===i)||{}, id=`ex_${i}_${k}`, hintId=id+'_hint';
+  const described=hint?`aria-describedby="${esc(hintId)}"`:'';
+  let inp=options?`<select id="${esc(id)}" data-expense="${i}" data-exkey="${esc(k)}" ${required?'required':''} ${described}><option value="">Select an option</option>${options.map(o=>{let [v,l]=Array.isArray(o)?o:[o,o];return `<option value="${esc(v)}" ${x[k]===v?'selected':''}>${esc(l)}</option>`}).join('')}</select>`:`<input id="${esc(id)}" data-expense="${i}" data-exkey="${esc(k)}" type="${type}" ${required?'required':''} ${readonly?'readonly':''} ${described} ${type==='number'?`min="${k==='amount'?'0.01':'0'}" max="999999" step="${k==='amount'?'0.01':'any'}"`:''} ${type==='date'?`max="${expenseLocalToday()}"`:''} placeholder="${esc(placeholder)}" value="${esc(type==='number'&&readonly?expenseCalculatedDisplay(x):(x[k]??''))}">`;
+  return `<div class="field ${full?'full':''}"><label for="${esc(id)}">${esc(label)} ${required?'<span class="req">*</span>':''}</label>${inp}${hint?`<span class="hint" id="${esc(hintId)}">${esc(hint)}</span>`:''}</div>`;
+}
+function expenseEditor(i,x){
+ const f=(k,l,opts)=>expenseDataField(x.id,k,l,opts);
+ const businessTravel=EXPENSE_TRAVEL_CATEGORIES.includes(x.category);
+ const mileage=x.category==='Mileage';
+ const computed=mileage?expenseCalculatedDisplay(x):'';
+ return `<div class="expense-card" id="expense_${x.id}"><div class="expense-head"><h3><span class="expense-num">${i+1}</span> Expense ${i+1}</h3>${expenseItems.length>1?`<button type="button" class="inline-link" data-action="expense-remove" data-index="${x.id}" aria-label="Remove expense ${i+1}">Remove expense</button>`:''}</div>
+ <div class="fields">${f('category','Expense category',{options:EXPENSE_CATEGORIES,required:true})}${f('date','Date incurred',{type:'date',required:true})}
+ ${mileage?'':f('amount','Amount being claimed (£)',{type:'number',required:true,placeholder:'0.00'})}
+ ${f('description','Description and business purpose',{required:true,full:true,placeholder:'What was purchased, where, and why was it necessary for the assignment?'})}
+ ${businessTravel?f('journeyType','Type of journey / expense',{required:true,full:true,options:[['business','Business journey other than an ordinary commute'],['commuting','Travel between home and usual assignment workplace'],['unsure','Not sure – please review']] }):''}
+ ${mileage?`<div class="field full"><div class="helpbar compact"><strong>Mileage details:</strong> Enter the journey and the rate you are requesting. The amount is calculated from your entries; this does not decide HMRC tax treatment or confirm reimbursement.</div></div>
+ ${f('vehicle','Vehicle type',{options:EXPENSE_VEHICLES,required:true})}${f('miles','Miles travelled',{type:'number',required:true,placeholder:'e.g. 24.5'})}
+ ${f('from','From (location)',{required:true})}${f('to','To (location)',{required:true})}${f('rate','Requested rate (£ per mile)',{type:'number',required:true,placeholder:'Enter the requested rate'})}
+ <div class="field"><label for="ex_${x.id}_computed">Calculated request (£)</label><input id="ex_${x.id}_computed" class="calculated-amount" value="${esc(computed)}" readonly aria-label="Calculated claim amount for expense ${i+1}"><span class="hint">Based on your entries, rounded to the nearest penny. No rate or reimbursement is approved.</span></div>`:''}
+ ${f('approvedBy','Authorising agency / client contact (if known)',{full:true,placeholder:'Name or reference'})}
+ </div>
+ ${x.journeyType==='commuting'?'<div class="warnbar compact">Ordinary home-to-assignment commuting is generally not eligible for tax relief under the rules for employment intermediaries. This item will need individual review and may be treated as taxable if reimbursed.</div>':''}
+ </div>`
+}
+function expensesContent(){switch(step){
+case 0:return `<div class="warnbar"><strong>Before claiming:</strong> This is a request for EOS to review expenses, not a tax-relief claim. Reimbursement may require agency/client funding or prior approval. Expenses may be taxable, and ordinary commuting is generally not tax-relieved.</div>${personFields({agency:true,extra:true})}
+ <div class="form-section-title">How are these expenses being submitted?</div>
+ ${choices('expenseRoute', [['agency','Agency or client-authorised','Reimbursement has been agreed, or is being requested through your agency or end client.'],['other','Other potentially qualifying expense','Ask EOS to review a business expense which may meet the applicable rules.']])}
+ <div class="form-section-title" style="margin-top:22px">Authorisation status</div>
+ ${choices('preApproved',[['yes','Approved','The responsible person has already agreed.'],['pending','Awaiting approval','Approval has been requested but not confirmed.'],['no','Not approved / unsure','The EOS team needs to review whether this can be considered.']])}
+ <div class="fields" style="margin-top:18px">${txt('approvalReference','Approval reference or authorising person (optional)',{full:true,place:'Agency/client contact, job number or email reference'})}</div>`;
+case 1:return `<div class="helpbar"><strong>Itemise each cost:</strong> Record the date, amount and business purpose separately for every expense. For mileage, enter the rate you are requesting; EOS will review it against the agreement and applicable rules.</div>
+ ${expenseItems.map((x,i)=>expenseEditor(i,x)).join('')}
+ <div class="form-split"><button type="button" id="expenseItems" class="btn" data-action="expense-add">＋ Add another expense</button><div class="expense-tally" aria-live="polite">Total requested: ${money(expenseTotal())}</div></div>`;
+case 2:return `<div class="helpbar"><strong>Evidence for each item:</strong> Select an itemised receipt, mileage log or other supporting document for this preview. If you cannot provide evidence, explain why so the team can decide what else is required.</div>
+ ${expenseItems.map((x,i)=>{let k='expenseFile_'+x.id,missing='noReceipt_'+x.id;return `<div class="expense-card"><div class="expense-head"><h3><span class="expense-num">${i+1}</span>${esc(x.category||'Expense '+(i+1))} · ${money(calculateExpenseAmount(x) ?? Number.NaN)}</h3></div>${upload(k,'Receipt, mileage log or other supporting evidence',{full:true})}
+ <div class="fields" style="margin-top:14px">${textarea(missing,'If no file is available, explain why and describe alternative evidence',{hint:'Required if you have not selected a document. EOS may ask for further evidence.'})}</div>
+ </div>`}).join('')}<div class="warnbar">Files selected in this prototype stay on your device and are not uploaded. A live implementation must use secure storage, file scanning and strict access controls.</div>`;
+case 3:return review();
+default:return confirmation()}}
+
+function review(){let blocks=[]; const add=(title,items,editStep)=>{let arr=items.filter(([k,v])=>v!==undefined&&v!==null&&String(v).trim()!=='');blocks.push(`<section class="review-section"><div class="review-head"><h3>${title}</h3><button type="button" data-action="go" data-go="${editStep}" class="inline-link" aria-label="Edit ${esc(title)}">Edit</button></div><div class="review-grid">${arr.map(([k,v])=>`<div class="review-item"><div class="lbl">${esc(k)}</div><div class="val">${esc(v)}</div></div>`).join('')}</div></section>`)};
+const personal=[['Name',[data.first,data.last].filter(Boolean).join(' ')],['Email',data.email],['Mobile',data.phone],['Employee number',data.employee],['Recruitment agency',data.agency],['Assignment',data.assignment]];
+if(flow!=='change') add('Your details',personal,flow==='absence'?1:0);
+if(flow==='holiday') {add('Holiday pay arrangement',[['Arrangement','Accrued holiday pay (payment requested after review)']],0);add('Holiday period',[['Holiday start',data.holidayStart],['Holiday end',data.holidayEnd],['Agency informed',data.agencyNotified==='yes'?'Yes':'No'],['Additional details',data.holidayNotes]],1);add('Payment request',[['Preferred payment date',data.paymentDate],['Amount requested',data.paymentChoice==='full'?'Full available accrued balance':'Gross '+money(data.amountRequested)]],2);blocks.push(`<div class="helpbar" style="margin-bottom:0"><strong>What happens next:</strong> EOS would verify the available balance, confirm whether the request can be processed, and tell you the payment date. This preview does not authorise payment or time off.</div>`)}
+if(flow==='change'){
+add('Requested amendment',[['Type',CHANGE_TYPES.find(x=>x[0]===data.changeType)?.[1]||'']],0);
+add('Details used to locate your record',personal,1);
+let v=[];
+if(data.changeType==='bank')v=[['Account holder',data.accountHolder],['Bank / building society',data.bankName],['Sort code',data.sortCode?'••-••-'+String(data.sortCode).replace(/\D/g,'').slice(-2):''],['Account number',data.accountNumber?'••••'+String(data.accountNumber).replace(/ /g,'').slice(-4):''],['Building Society Reference',data.buildingRef?'Provided (hidden in preview)':'Not supplied'],['Requested effective date',data.requestedEffectiveDate||'As soon as verified'],['Account in own name',data.bankOwnership==='yes'?'Yes':'No — needs team review'],['Verification via',data.verificationContact==='existing-phone'?'Existing mobile':'Existing email']];
+if(data.changeType==='address')v=[['Address line 1',data.address1],['Address line 2',data.address2],['Town / city',data.town],['Postcode',data.postcode],['Country',data.country==='other'?data.otherCountry:'United Kingdom'],['Move date',data.addressEffectiveDate]];
+if(data.changeType==='contact')v=[['New email',data.newEmail||'Not changing'],['New telephone',data.newPhone||'Not changing'],['Verify via',data.contactVerify==='existing-phone'?'Existing mobile':'Existing email']];
+if(data.changeType==='other'){v=[['Request type',data.otherType==='name'?'Name change':data.otherType==='emergency'?'Emergency contact':'Other details']];if(data.otherType==='name')v.push(['New name',[data.newFirst,data.newLast].filter(Boolean).join(' ')],['Notes',data.nameNote],['Supporting document',files.changeEvidence?.name?'Selected in prototype — not uploaded':'Not selected']);if(data.otherType==='emergency')v.push(['Emergency contact',data.emergencyName],['Relationship',data.emergencyRelationship],['Contact number',data.emergencyPhone],['Instructions',data.emergencyNote]);if(data.otherType==='other')v.push(['Explanation',data.otherDescription],['Supporting document',files.changeEvidence?.name?'Selected in prototype — not uploaded':'Not selected']);}
+add('Proposed new information',v,1);
+blocks.push(`<div class="warnbar" style="margin-bottom:0"><strong>Verification pending.</strong> This preview does not change any EOS records. The EOS team would need to authenticate the requester and approve sensitive changes, particularly bank details or legal names.</div>`);
+}
+if(flow==='absence'){
+  const labels={absenceStart:'Leave/absence start',expectedReturn:'Expected return',currentlyOff:'Currently unable to work',dueWeek:'Expected week of childbirth',plannedStart:'Planned leave start',actualBirth:'Actual birth date',plannedReturn:'Planned return',matb1:'MATB1 certificate available',agencyNotified:'Recruitment agency informed',paternityReason:'Birth or adoption',dueDate:'Expected birth / placement',duration:'Requested leave period',familyType:'Leave arrangement',placementDate:'Expected placement / birth',plannedEnd:'Planned leave end',compassionateReason:'Reason for compassionate leave',relationship:'Relationship',otherAbsence:'Other absence type',babyBirth:'Date of birth',neonatalStart:'Neonatal care started',absenceNotes:'Additional details'};
+  const answers={
+    currentlyOff:{yes:'Yes',no:'No'},matb1:{yes:'Yes',no:'No'},agencyNotified:{yes:'Yes',no:'No'},
+    paternityReason:{birth:'Birth',adoption:'Adoption'},duration:{one:'One week',two:'Two weeks',other:'To be discussed'},
+    familyType:{adoption:'Adoption leave',shared:'Shared parental leave'},
+    compassionateReason:{bereavement:'Bereavement',parental_bereavement:'Loss of a child / parental bereavement',family:'Family emergency',other:'Another compassionate circumstance'},
+    relationship:{partner:'Partner / spouse',child:'Child',parent:'Parent',relative:'Other relative',other:'Other',private:'Prefer not to say'},
+    otherAbsence:{personal:'Personal leave',medical:'Medical appointment',training:'Training / appointment',neonatal:'Neonatal care leave',other:'Other'}
+  };
+  const details=holidayAbsenceActiveKeys(data).filter(key=>holidayAbsenceText(data[key])!=='').map(key=>[labels[key],answers[key]?.[data[key]]??data[key]]);
+  details.push(['Supporting evidence',files.absenceEvidence?.name||'None selected']);
+  add('Absence',[['Type',ABSENCE_TYPES.find(value=>value[0]===data.absenceType)?.[1]],...details],1);
+}
+if(flow==='expenses'){
+ const journeyLabels={business:'Business journey other than an ordinary commute',commuting:'Home-to-assignment journey — review needed',unsure:'Journey type unsure — review needed'};
+ add('Claim route and authorisation',[['Claim route',data.expenseRoute==='agency'?'Agency / client reimbursement route':'Other expense for eligibility review'],['Authorisation reported by you',({yes:'Approved — EOS must verify',pending:'Awaiting approval',no:'Not approved or unclear'})[data.preApproved]||'Not provided'],['Approval reference or contact',data.approvalReference||'Not provided']],0);
+ const lines=expenseItems.map((x,i)=>{
+  const details=[x.category||'Unknown',x.date||'No date',money(calculateExpenseAmount(x) ?? Number.NaN),x.description||''];
+  if(EXPENSE_TRAVEL_CATEGORIES.includes(x.category)) details.push(journeyLabels[x.journeyType]||'Journey type not provided');
+  if(x.category==='Mileage') details.push('Vehicle: '+(x.vehicle||'Not provided'),(x.miles||'')+' miles × requested £'+(x.rate||'')+' per mile','From: '+(x.from||'')+'; to: '+(x.to||''));
+  details.push('Authorising contact: '+(x.approvedBy||'Not provided'));
+  return ['Expense '+(i+1),details.join(' · ')];
+ });
+ add('Items requested',[...lines,['Total requested',money(expenseTotal())]],1);
+ add('Evidence',expenseItems.map((x,i)=>{
+  const selected=files['expenseFile_'+x.id], explanation=data['noReceipt_'+x.id];
+  return ['Expense '+(i+1),selected?.name?'Selected in preview — not uploaded: '+selected.name+(explanation?' · Explanation: '+explanation:''):'No file — explanation: '+(explanation||'Not provided')];
+ }),2);
+ blocks.push(`<div class="warnbar" style="margin-bottom:0"><strong>Review only:</strong> A request would not confirm reimbursement, tax treatment or timing. EOS would check authorisation, evidence and eligibility, and liaise with the agency or client where needed. The requested rate and total do not establish an HMRC-approved amount.</div>`);
+}
+if(flow==='incident'){
+ const display={yes:'Yes',no:'No',unsure:'Not sure',other:'Other', 'not yet':'Not yet', 'not sure':'Not sure',injury:'Injury / accident', 'near-miss':'Near miss',danger:'Dangerous or unsafe event',damage:'Property / equipment damage',onsite:'At the assignment site',offsite:'At another work location',travel:'During work-related travel',self:'Person completing report',both:'Self and another person',head:'Head / neck',torso:'Chest / abdomen',arms:'Arms / hands',legs:'Legs / feet',eye:'Eye',multiple:'Multiple areas',fracture:'Suspected or confirmed fracture',sprain:'Sprain / strain',cut:'Cut / bruise',burn:'Burn / scald',breathing:'Breathing or exposure concern',umbrella:'Umbrella PAYE',cis:'CIS / self-employed', 'over7':'More than 7 consecutive days','1-3':'1–3 days','4-7':'4–7 days',none:'No time away',unknown:'Not known'};
+ const item=(key,label)=>{
+  const specific=key==='injuryType'?{head:'Head injury / loss of consciousness'}:key==='injuredArea'?{back:'Back'}:key==='injuryTo'?{self:'I was injured',other:'Another person was injured',both:'I and another person were injured'}:{};
+  return [label,specific[data[key]]||display[data[key]]||data[key]];
+ };
+ add('Engagement information',[item('engagementType','EOS service')],0);
+ add('Incident and location',[item('incidentNature','Event type'),item('incidentDate','Incident date'),item('incidentTime','Approximate time'),item('incidentPlace','Location type'),item('clientSite','Client / site'),item('locationDetail','Precise location'),item('incidentDescription','What happened'),item('activity','Activity'),item('cause','Possible cause'),item('ongoingDanger','Ongoing danger')],1);
+ let injuryRows=[item('injuryOccurred','Injury or illness reported')];
+ if(data.injuryOccurred==='yes'){
+  injuryRows.push(item('injuryTo','Person affected'));
+  if(['self','both'].includes(data.injuryTo))injuryRows.push(item('injuredArea','Your body area affected'),item('injuryType','Your injury type'),item('injuryDetails','Your injury or symptoms'));
+  if(data.injuryTo==='other')injuryRows.push(item('injuryDetails','Relevant observed information'));
+  if(['self','other','both'].includes(data.injuryTo))injuryRows.push(item('firstAid','First aid given'));
+  if(['self','both'].includes(data.injuryTo)){
+   injuryRows.push(item('medicalTreatment','Your medical treatment'));
+   if(data.medicalTreatment==='yes')injuryRows.push(item('treatmentDetails','Relevant treatment details'));
+  }
+  if(['self','other','both'].includes(data.injuryTo))injuryRows.push(item('hospital','Hospital attendance'));
+  if(['self','both'].includes(data.injuryTo))injuryRows.push(item('fitForWork','Currently able to perform normal duties'),item('daysAffected','Estimated restriction of normal duties'));
+ }else if(['no','unsure'].includes(data.injuryOccurred))injuryRows.push(item('nonInjuryImpact','Impact or potential harm'));
+ add('Injury and medical information',injuryRows,2);
+ add('Notification, witnesses and evidence',[item('supervisorTold','On-site manager notified'),item('agencyTold','Recruitment agency notified'),item('accidentBook','Incident recorded on site'),item('witnesses','Witnesses'),...(data.witnesses==='yes'?[item('witnessDetails','Witness information')]:[]),item('actionsTaken','Immediate action taken'),item('otherInformation','Other information'),['Supporting evidence',files.incidentEvidence?.name?'Selected in demo — not uploaded':'None selected']],3);
+ blocks.push(`<div class="warnbar compact" style="margin-bottom:0"><strong>Important:</strong> This preview is for an EOS incident report; it is not an HSE RIDDOR notification, an insurance claim, or an admission or determination of liability. The responsible organisation must assess any statutory reporting duty. If the situation remains urgent, call the appropriate emergency services and contact the site responsible person immediately.</div>`);
+}
+let message={holiday:'I confirm that the information above is accurate to the best of my knowledge. I understand this request does not authorise time off and that EOS must verify my accrued holiday pay balance and payment arrangements before confirming any payment.',change:'I confirm that I am requesting changes to my own records and understand that identity checks may be needed before changes take effect.',absence:'I confirm that the absence information is accurate to the best of my knowledge and understand EOS will review any statutory leave or pay eligibility.',expenses:'I confirm that, to the best of my knowledge, the expenses listed are genuine, the dates and amounts are accurate, and the evidence or explanation provided is complete. I understand EOS must review authorisation, eligibility and tax treatment and that this request does not guarantee reimbursement.',incident:'I confirm this report is accurate to the best of my knowledge. I understand it does not replace urgent notification to the on-site supervisor or recruitment agency, establish liability, guarantee insurance cover, or constitute an HSE RIDDOR report.'}[flow];
+return `<div class="helpbar">Please check the information below. Use <strong>Edit</strong> to revisit any section before continuing.</div><div class="review-list">${blocks.join('')}</div><label class="confirm-check"><input type="checkbox" id="declaration" data-key="declaration" ${data.declaration?'checked':''} required><span>${message}</span></label>`}
+function confirmation(){let descriptions={holiday:'In the live service, EOS would check your accrued holiday balance, review the requested payment amount and confirm the outcome and expected payment date. Holiday absence must still be agreed through your assignment provider.',change:'Your request has reached the end of this demonstration. In the live system, EOS would authenticate you, independently review the change, confirm approval and tell you when the records will be updated.',absence:'EOS would review the absence details, any applicable statutory leave/pay requirements and the need for supporting information.',expenses:'In a live service, EOS would check each expense, agency/client authorisation, evidence and relevant tax treatment. You would then be advised whether any reimbursement can be approved and, if so, how it will be processed.',incident:'In a live EOS service, the report would go to an authorised team member for human review. EOS would coordinate with the relevant agency or site, identify the appropriate responsible person and assess any need for urgent follow-up or statutory reporting. An online form does not replace immediate safety action.'};return `<div class="confirmation"><div class="mark">✓</div><h2>Journey preview completed</h2><p>${descriptions[flow]||''}</p><div class="not-submitted">Demo only — nothing has been sent to EOS. No reference number has been generated and no files have been uploaded.</div><button class="btn primary" type="button" data-action="home">Return to Contractor Support →</button></div>`}
+function currentTitle(){if(!flow)return '';const t=FLOW_META[flow][3][step];if(flow==='questions')return t;return t;}
+function introByFlow(){let m=FLOW_META[flow];return m?.[1]||''}
+
+function workflowUI(){let meta=FLOW_META[flow], labels=meta[3],last=labels.length-1;
+const stepUI=`<aside class="workflow-panel steps-panel" aria-label="Your progress"><h3>Your progress</h3>${labels.map((label,i)=>`<button type="button" class="step-row ${i===step?'current':i<step?'done':''}" ${i>step?'disabled':''} ${i===step?'aria-current="step"':''} data-action="go" data-go="${i}"><span class="step-dot">${i<step?'✓':i+1}</span><span class="step-label">${esc(label)}</span></button>`).join('')}</aside>`;
+let body={holiday:holidayContent,change:changeContent,absence:absenceContent,expenses:expensesContent,incident:incidentContent}[flow]();
+let noNext=step===last;
+const holidayHelp=flow==='holiday'&&step===0&&['advanced','unsure'].includes(data.holidayArrangement);
+let actions= noNext?'': `<div class="form-actions"><button class="btn" type="button" data-action="${step===0?'home':'prev'}">${step===0?'← Back to support':'← Back'}</button>${holidayHelp?'<a class="btn primary" href="contact-us.html?category=contractor">Ask EOS about holiday pay →</a>':`<button class="btn primary" type="button" data-action="next">${step===last-1?'Complete preview →':(step===last-2?'Review details →':'Continue →')}</button>`}</div>`;
+let holidaySecurity={holiday:'The live service must verify your identity, accrued holiday balance and payroll eligibility before confirming any payment.',change:'Sensitive changes require independent verification, authorised approval and confirmation through trusted contact details.',absence:'A live service needs restricted access, secure handling of supporting information and human review of leave and pay eligibility.',expenses:'A live service needs secure evidence handling, a clear audit trail and human review. This preview does not approve or pay expenses.',incident:'A live service needs secure handling of sensitive information, restricted access, human triage and appropriate retention. This preview does not notify anyone.'}[flow];
+let changeSpecial=flow==='change'?'<div class="side-card gold"><div class="side-lead">Independent checks</div><h3>Changes take effect after approval.</h3><p>For banking amendments, EOS should verify against trusted details already on file, use appropriate payment-account verification, record approval and notify the worker before making changes.</p></div>':'';let side=`<aside class="side">${changeSpecial}<div class="side-card gold"><div class="side-lead">${esc(meta[0])}</div><h3>A clear process, step by step.</h3><p>Only questions relevant to this request appear. The review screen lets you check and edit details before the final preview.</p></div><div class="side-card blue"><div class="side-lead" style="color:#245b8a">Your information</div><h3>Security comes first.</h3><p>${holidaySecurity}</p></div><div class="side-card dark"><div class="side-lead">Need help?</div><h3>Ask the EOS team.</h3><p>If you are unsure what to select, our support team can help.</p><p style="margin-top:12px"><a href="contact-us.html?category=contractor&amp;topic=support#contact-form-card">Contact EOS →</a></p></div></aside>`;
+return `<main id="main-content" class="main"><div class="wrap"><div class="workflow">${stepUI}<div class="workflow-panel form-panel"><div class="form-header"><div class="meta">Step ${step+1} of ${labels.length}</div><h2 id="stepHeading" tabindex="-1">${esc(currentTitle())}</h2><p>${flow==='incident'&&step===1?'Provide a factual description of the event and any continuing risk.':flow==='holiday'&&step===3?'Check your holiday request carefully and confirm the declaration.':step===labels.length-1?'The following screen is illustrative and does not submit a real request.':'Complete the information below. Required fields are marked with an asterisk.'}</p></div><form id="stepForm" autocomplete="off" novalidate><div class="form-body">${errorSummaryHTML()}${body}</div>${actions}</form></div>${side}</div></div></main>`}
+function showError(s){let e=$('#errorSummary');if(e){e.textContent=s;e.scrollIntoView({block:'center'});}}
+
+
+/* Pure Holiday Pay / Absence validators. Zero-based stages; today is YYYY-MM-DD.
+   The caller owns navigation, active-state cleanup, shared input-length limits,
+   field/error rendering, and revalidation of all earlier stages before completion.
+   files contains metadata only. items is accepted for the shared controller API. */
+const HOLIDAY_ABSENCE_TYPES = Object.freeze(['sickness','maternity','paternity','adoption','compassionate','other']);
+const HOLIDAY_ABSENCE_BRANCH_KEYS = Object.freeze({
+  sickness:['absenceStart','expectedReturn','currentlyOff','agencyNotified','absenceNotes'],
+  maternity:['dueWeek','plannedStart','actualBirth','plannedReturn','matb1','agencyNotified','absenceNotes'],
+  paternity:['paternityReason','dueDate','plannedStart','duration','agencyNotified','absenceNotes'],
+  adoption:['familyType','placementDate','plannedStart','plannedEnd','agencyNotified','absenceNotes'],
+  compassionate:['compassionateReason','relationship','absenceStart','expectedReturn','agencyNotified','absenceNotes'],
+  other:['otherAbsence','absenceStart','expectedReturn','agencyNotified','absenceNotes']
+});
+function holidayAbsenceText(value){return String(value??'').trim();}
+function holidayAbsenceCalendarDate(value){
+  const text=holidayAbsenceText(value);
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(text))return false;
+  const [year,month,day]=text.split('-').map(Number);
+  if(year<1||month<1||month>12)return false;
+  const leap=year%4===0&&(year%100!==0||year%400===0);
+  return day>=1&&day<=[31,leap?29:28,31,30,31,30,31,31,30,31,30,31][month-1];
+}
+function holidayAbsencePhone(value){
+  const text=holidayAbsenceText(value),digits=text.replace(/\D/g,'');
+  return text.length<=20&&/^\+?[0-9 ()-]+$/.test(text)&&digits.length>=7&&digits.length<=15;
+}
+function holidayAbsenceMoney(value){
+  const text=holidayAbsenceText(value);
+  if(!/^(?:\d+|\d*\.\d{1,2})$/.test(text))return false;
+  const [rawPounds,fraction='']=text.split('.');
+  const pounds=(rawPounds||'0').replace(/^0+(?=\d)/,''),pennies=fraction.padEnd(2,'0');
+  const pence=Number(pounds+pennies),amount=Number(text);
+  // Calculation/display safety only, not an EOS payment-policy cap.
+  return Number.isSafeInteger(pence)&&pence>0&&pence<=Math.floor(Number.MAX_SAFE_INTEGER/2)&&Number.isFinite(amount)&&amount.toFixed(2)===pounds+'.'+pennies;
+}
+function holidayAbsenceActiveKeys(values){
+  if(!Object.prototype.hasOwnProperty.call(HOLIDAY_ABSENCE_BRANCH_KEYS,values.absenceType))return [];
+  const keys=HOLIDAY_ABSENCE_BRANCH_KEYS[values.absenceType];
+  const active=keys.slice();
+  if(values.absenceType==='other'&&values.otherAbsence==='neonatal')active.splice(active.indexOf('agencyNotified'),0,'babyBirth','neonatalStart');
+  return active;
+}
+function holidayAbsenceChecks(step,values,today){
+  const issues=[];
+  const add=(key,message,issueStep=step)=>{if(!issues.some(issue=>issue.key===key&&issue.step===issueStep))issues.push({key,message,step:issueStep});};
+  const text=key=>holidayAbsenceText(values[key]);
+  const required=(key,label)=>{if(!text(key))add(key,'Enter '+label+'.');};
+  const enumeration=(key,allowed,message)=>{if(!allowed.includes(values[key]))add(key,message);};
+  const date=(key,label,isRequired=false,actual=false)=>{
+    const value=text(key);if(!value&&!isRequired)return;
+    if(!holidayAbsenceCalendarDate(value)){add(key,'Enter a valid '+label+'.');return;}
+    if(actual){
+      if(!holidayAbsenceCalendarDate(today))add(key,'The preview could not determine today’s date. Please reload before continuing.');
+      else if(value>today)add(key,'The '+label+' cannot be in the future.');
+    }
+  };
+  const ordered=(start,end,message)=>{if(holidayAbsenceCalendarDate(text(start))&&holidayAbsenceCalendarDate(text(end))&&text(end)<text(start))add(end,message);};
+  const person=phoneRequired=>{
+    required('first','your first name');required('last','your last name');required('agency','your recruitment agency');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text('email')))add('email','Enter a valid email address.');
+    if((phoneRequired||text('phone'))&&!holidayAbsencePhone(values.phone))add('phone','Enter a valid contact number using digits and standard phone punctuation.');
+  };
+  return {issues,add,text,required,enumeration,date,ordered,person};
+}
+function holidayAbsenceEvidence(file,check){
+  if(file===undefined||file===null)return;
+  if(typeof file!=='object'||Array.isArray(file)||!String(file.name??'').trim()||!/\.(pdf|jpe?g|png)$/i.test(String(file.name))||!Number.isSafeInteger(file.size)||file.size<=0||file.size>10*1024*1024){
+    check.add('absenceEvidence','Choose one non-empty sample PDF, JPG or PNG file, no larger than 10 MB.');return;
+  }
+  if(file.type&&!['application/pdf','image/jpeg','image/png'].includes(file.type))check.add('absenceEvidence','Choose a sample PDF, JPG or PNG file.');
+}
+function validateHolidayRequest(stage,data,files,items,today){
+  const values=data||{},check=holidayAbsenceChecks(stage,values,today);
+  if(stage===0){
+    check.enumeration('holidayArrangement',['accrued','advanced','unsure'],'Choose how your holiday pay is handled.');
+    if(['advanced','unsure'].includes(values.holidayArrangement))check.add('holidayArrangement','This payment request is for accrued holiday pay. Use the EOS support route to confirm your arrangement or an outstanding balance.');
+    if(values.holidayArrangement==='accrued')check.person(false);
+  }
+  if(stage===1){
+    check.date('holidayStart','holiday start date',true);check.date('holidayEnd','holiday end date',true);
+    check.ordered('holidayStart','holidayEnd','The holiday end date cannot be before the start date.');
+    check.enumeration('agencyNotified',['yes','no'],'Say whether you have informed your recruitment agency about these dates.');
+  }
+  if(stage===2){
+    check.date('paymentDate','preferred payment date',true);
+    if(holidayAbsenceCalendarDate(check.text('paymentDate'))){
+      if(!holidayAbsenceCalendarDate(today))check.add('paymentDate','The preview could not determine today’s date. Please reload before continuing.');
+      else if(check.text('paymentDate')<today)check.add('paymentDate','Choose today or a future date as your preferred payment date.');
+    }
+    check.enumeration('paymentChoice',['full','amount'],'Choose the amount you would like EOS to review.');
+    if(values.paymentChoice==='amount'&&!holidayAbsenceMoney(values.amountRequested))check.add('amountRequested','Enter a finite gross amount greater than zero, using no more than two decimal places.');
+  }
+  if(stage===3&&values.declaration!==true)check.add('declaration','Confirm the review declaration before continuing to the preview.');
+  return check.issues;
+}
+function validateAbsenceRequest(stage,data,files,items,today){
+  const values=data||{},check=holidayAbsenceChecks(stage,values,today);
+  if(stage===0)check.enumeration('absenceType',HOLIDAY_ABSENCE_TYPES,'Choose an absence type.');
+  if(stage===1){
+    if(!HOLIDAY_ABSENCE_TYPES.includes(values.absenceType)){check.add('absenceType','Choose an absence type before entering its details.',0);return check.issues;}
+    check.person(true);
+    check.enumeration('agencyNotified',['yes','no'],'Say whether you have notified your recruitment agency or assignment provider.');
+    switch(values.absenceType){
+      case 'sickness':
+        check.date('absenceStart','first date you were unable to work',true,true);check.date('expectedReturn','expected return date');
+        check.enumeration('currentlyOff',['yes','no'],'Say whether you are currently unable to work.');
+        check.ordered('absenceStart','expectedReturn','The expected return date cannot be before the first date of absence.');break;
+      case 'maternity':
+        check.date('dueWeek','date within the expected week of childbirth',true);check.date('plannedStart','planned maternity leave start date',true);
+        check.date('actualBirth','actual date of birth',false,true);check.date('plannedReturn','planned return date');
+        check.enumeration('matb1',['yes','no'],'Say whether you currently have a MATB1 certificate.');
+        check.ordered('plannedStart','plannedReturn','The planned return date cannot be before the planned leave start date.');break;
+      case 'paternity':
+        check.enumeration('paternityReason',['birth','adoption'],'Choose whether the leave relates to a birth or adoption.');
+        check.date('dueDate','expected or actual birth or placement date',true);check.date('plannedStart','planned paternity leave start date',true);
+        check.enumeration('duration',['one','two','other'],'Choose the anticipated leave period, or select To be discussed.');break;
+      case 'adoption':
+        check.enumeration('familyType',['adoption','shared'],'Choose adoption leave or shared parental leave.');
+        check.date('placementDate','expected placement or birth date',true);check.date('plannedStart','planned leave start date',true);check.date('plannedEnd','planned leave end date');
+        check.ordered('plannedStart','plannedEnd','The planned leave end date cannot be before the planned leave start date.');break;
+      case 'compassionate':
+        check.enumeration('compassionateReason',['bereavement','parental_bereavement','family','other'],'Choose the reason for compassionate leave.');
+        check.enumeration('relationship',['partner','child','parent','relative','other','private'],'Choose the relationship, or select Prefer not to say.');
+        check.date('absenceStart','leave start date',true);check.date('expectedReturn','expected return date');
+        check.ordered('absenceStart','expectedReturn','The expected return date cannot be before the leave start date.');break;
+      case 'other':
+        check.enumeration('otherAbsence',['personal','medical','training','neonatal','other'],'Choose the nature of the absence.');
+        check.date('absenceStart','absence start date',true);check.date('expectedReturn','expected return date');
+        check.ordered('absenceStart','expectedReturn','The expected return date cannot be before the absence start date.');
+        if(values.otherAbsence==='other')check.required('absenceNotes','a brief description without unnecessary sensitive details');
+        if(values.otherAbsence==='neonatal'){
+          check.date('babyBirth','baby’s date of birth',false,true);check.date('neonatalStart','date neonatal care started',false,true);
+          check.ordered('babyBirth','neonatalStart','The neonatal care start date cannot be before the date of birth.');
+        }break;
+    }
+    holidayAbsenceEvidence(files?.absenceEvidence,check);
+  }
+  if(stage===2&&values.declaration!==true)check.add('declaration','Confirm the review declaration before continuing to the preview.');
+  return check.issues;
+}
+
+/* Pure Expenses rules. No DOM, network, file-content access or persistent storage. */
+const EXPENSE_CATEGORIES = ['Travel','Mileage','Subsistence','Accommodation','Equipment / materials','Other'];
+const EXPENSE_TRAVEL_CATEGORIES = ['Travel','Mileage','Subsistence','Accommodation'];
+const EXPENSE_VEHICLES = ['Car or van','Motorcycle','Bicycle','Other'];
+const EXPENSE_FILE_LIMIT = 10 * 1024 * 1024;
+// Leave sufficient precision for the final pound-value display as well as integer pence.
+const EXPENSE_SAFE_PENCE = BigInt(Math.floor(Number.MAX_SAFE_INTEGER / 2));
+
+function expenseText(value){
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function expenseValidDate(value){
+  if(typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year,month,day] = value.split('-').map(Number);
+  if(year < 1 || month < 1 || month > 12 || day < 1) return false;
+  const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+  return day <= [31,leap ? 29 : 28,31,30,31,30,31,31,30,31,30,31][month-1];
+}
+
+function expenseDecimalParts(value){
+  if(typeof value !== 'string' && typeof value !== 'number') return null;
+  const raw = String(value).trim();
+  if(!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw)) return null;
+  const numeric = Number(raw);
+  if(!Number.isFinite(numeric) || numeric <= 0 || numeric > 999999) return null;
+  let [whole,fraction=''] = raw.split('.');
+  whole = (whole || '0').replace(/^0+(?=\d)/,'');
+  fraction = fraction.replace(/0+$/,'');
+  const units = BigInt(whole + fraction), scale = 10n ** BigInt(fraction.length);
+  return units > 999999n * scale ? null : {units,scale};
+}
+
+function expenseRoundToPence(units,scale){
+  const numerator = units * 100n;
+  let pence = numerator / scale;
+  if((numerator % scale) * 2n >= scale) pence += 1n;
+  return pence > 0n && pence <= EXPENSE_SAFE_PENCE ? Number(pence) : null;
+}
+
+function calculateExpenseItemPence(item){
+  if(!item || !EXPENSE_CATEGORIES.includes(item.category)) return null;
+  if(item.category === 'Mileage'){
+    const miles = expenseDecimalParts(item.miles), rate = expenseDecimalParts(item.rate);
+    return miles && rate ? expenseRoundToPence(miles.units * rate.units,miles.scale * rate.scale) : null;
+  }
+  const amount = expenseDecimalParts(item.amount);
+  if(!amount || (amount.units * 100n) % amount.scale !== 0n) return null;
+  return expenseRoundToPence(amount.units,amount.scale);
+}
+
+function calculateExpenseAmount(item){
+  const pence = calculateExpenseItemPence(item);
+  return pence === null ? null : pence / 100;
+}
+
+function calculateExpenseTotal(items){
+  if(!Array.isArray(items) || !items.length) return null;
+  let total = 0n;
+  for(const item of items){
+    const pence = calculateExpenseItemPence(item);
+    if(pence === null) return null;
+    total += BigInt(pence);
+    if(total > EXPENSE_SAFE_PENCE) return null;
+  }
+  return Number(total) / 100;
+}
+
+function expenseCalculatedDisplay(item){
+  const amount = calculateExpenseAmount({...item,category:'Mileage'});
+  return amount === null ? '' : amount.toFixed(2);
+}
+
+function expenseFileMetadataError(file){
+  if(!file || typeof file !== 'object' || Array.isArray(file)) return 'Choose a PDF, JPG or PNG file, or remove the selection and explain why evidence is unavailable.';
+  if(!expenseText(file.name) || !/\.(pdf|jpe?g|png)$/i.test(file.name)) return 'Choose a PDF, JPG or PNG file.';
+  if(typeof file.size !== 'number' || !Number.isSafeInteger(file.size) || file.size <= 0 || file.size > EXPENSE_FILE_LIMIT) return 'Choose a non-empty file no larger than 10 MB.';
+  if(file.type !== undefined && file.type !== '' && !['application/pdf','image/jpeg','image/png'].includes(file.type)) return 'Choose a PDF, JPG or PNG file.';
+  return '';
+}
+
+function validateExpensesRequest(stage,data,files,items,today){
+  const errors = [];
+  const add = (key,message,step=stage) => errors.push({key,message,step});
+  data = data && typeof data === 'object' ? data : {};
+  files = files && typeof files === 'object' ? files : {};
+  if(stage === 0){
+    for(const [key,label] of [['first','first name'],['last','last name'],['agency','recruitment agency']]){
+      if(!expenseText(data[key])) add(key,'Enter your ' + label + '.');
+    }
+    const email = expenseText(data.email);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) add('email','Enter a valid email address.');
+    const phone = expenseText(data.phone);
+    let digits = phone.replace(/\D/g,'');
+    if(digits.startsWith('00')) digits = digits.slice(2);
+    if(!/^\+?[0-9 ()-]+$/.test(phone) || digits.length < 9 || digits.length > 15) add('phone','Enter a valid mobile number, including the country code where needed.');
+    if(!['agency','other'].includes(data.expenseRoute)) add('expenseRoute','Select how these expenses are being submitted.');
+    if(!['yes','pending','no'].includes(data.preApproved)) add('preApproved','Select the current authorisation status.');
+  }
+  if(stage === 1 || stage === 2){
+    if(!Array.isArray(items) || !items.length){
+      add('expenseItems','Add at least one expense item.',1);
+      return errors;
+    }
+    const ids = new Set();
+    for(const item of items){
+      if(!item || !Number.isSafeInteger(item.id) || item.id < 1 || ids.has(item.id)){
+        add('expenseItems','An expense item could not be identified. Return to Expense items and add it again.',1);
+        return errors;
+      }
+      ids.add(item.id);
+    }
+  }
+  if(stage === 1){
+    for(let index=0;index<items.length;index++){
+      const item = items[index], label = 'Expense ' + (index+1), key = name => 'ex_' + item.id + '_' + name;
+      const categoryValid = EXPENSE_CATEGORIES.includes(item.category);
+      if(!categoryValid) add(key('category'),label + ': select an available expense category.');
+      if(!expenseValidDate(item.date) || !expenseValidDate(today) || item.date > today) add(key('date'),label + ': enter a real date that is not in the future.');
+      if(expenseText(item.description).length < 10) add(key('description'),label + ': describe the cost and business purpose in at least 10 characters.');
+      if(EXPENSE_TRAVEL_CATEGORIES.includes(item.category) && !['business','commuting','unsure'].includes(item.journeyType)) add(key('journeyType'),label + ': select the type of journey or expense.');
+      if(item.category === 'Mileage'){
+        if(!EXPENSE_VEHICLES.includes(item.vehicle)) add(key('vehicle'),label + ': select an available vehicle type.');
+        if(!expenseText(item.from)) add(key('from'),label + ': enter the journey start location.');
+        if(!expenseText(item.to)) add(key('to'),label + ': enter the journey end location.');
+        const miles = expenseDecimalParts(item.miles), rate = expenseDecimalParts(item.rate);
+        if(!miles) add(key('miles'),label + ': enter miles greater than zero and no more than 999999, using a decimal number.');
+        if(!rate) add(key('rate'),label + ': enter the requested rate greater than zero and no more than 999999, using a decimal number.');
+        if(miles && rate && calculateExpenseItemPence(item) === null) add(key('rate'),label + ': the calculated request must be at least £0.01 and within the calculation limit.');
+      }else if(categoryValid && calculateExpenseItemPence(item) === null){
+        add(key('amount'),label + ': enter an amount from £0.01 to £999999 in whole pence.');
+      }
+    }
+    if(!errors.length && calculateExpenseTotal(items) === null) add('expenseItems','The total is outside the calculation limit. Review the expense amounts.',1);
+  }
+  if(stage === 2){
+    items.forEach((item,index) => {
+      const fileKey = 'expenseFile_' + item.id, explanationKey = 'noReceipt_' + item.id;
+      const hasFile = Object.prototype.hasOwnProperty.call(files,fileKey) && files[fileKey] !== null && files[fileKey] !== undefined;
+      if(hasFile){
+        const error = expenseFileMetadataError(files[fileKey]);
+        if(error) add(fileKey,'Expense ' + (index+1) + ': ' + error);
+      }else if(expenseText(data[explanationKey]).length < 12){
+        add(explanationKey,'Expense ' + (index+1) + ': select supporting evidence or explain its absence and alternative evidence in at least 12 characters.');
+      }
+    });
+  }
+  if(stage === 3 && data.declaration !== true) add('declaration','Confirm the expenses declaration after reviewing your request.');
+  return errors;
+}
+
+function expenseLocalToday(){return londonToday();}
+
+// Format and completeness checks only. No identity, bank, medical or statutory decision.
+function detailsIncidentLocalDay(now=new Date()){
+ const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
+ const part=type=>parts.find(value=>value.type===type).value;
+ return part('year')+'-'+part('month')+'-'+part('day');
+}
+function detailsIncidentCalendarDate(value){
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;
+ const [year,month,day]=value.split('-').map(Number);
+ if(year<1||month<1||month>12||day<1||day>31)return false;
+ const date=new Date(0);date.setUTCHours(0,0,0,0);date.setUTCFullYear(year,month-1,day);
+ return date.getUTCFullYear()===year&&date.getUTCMonth()===month-1&&date.getUTCDate()===day;
+}
+function detailsIncidentRules(stage,data){
+ const errors=[];
+ const value=key=>String(data[key]??'').trim();
+ const add=(key,message,step=stage)=>{if(!errors.some(error=>error.key===key&&error.step===step))errors.push({key,message,step});};
+ const text=(key,label,required=false,max=200,min=1)=>{
+  const current=value(key);
+  if(required&&current.length<min)add(key,min>1?'Describe '+label.toLowerCase()+' in at least '+min+' characters.':'Enter '+label.toLowerCase()+'.');
+  if(current.length>max)add(key,'Keep '+label.toLowerCase()+' within '+max+' characters.');
+ };
+ const choice=(key,label,options,required=true)=>{const current=value(key);if((required||current)&&!options.includes(current))add(key,'Choose an available option for '+label.toLowerCase()+'.');};
+ const email=(key,label,required=false)=>{text(key,label,required,254);if(value(key)&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value(key)))add(key,'Enter a valid '+label.toLowerCase()+'.');};
+ const phone=(key,label,required=false)=>{
+  text(key,label,required,40);const current=value(key),digits=current.replace(/^00/,'').replace(/\D/g,'');
+  if(current&&(!/^\+?[0-9 ()-]+$/.test(current)||digits.length<7||digits.length>15))add(key,'Enter '+label.toLowerCase()+' using digits and an optional country code.');
+ };
+ const date=(key,label,required=false)=>{text(key,label,required,10);if(value(key)&&!detailsIncidentCalendarDate(value(key)))add(key,'Enter a real calendar date for '+label.toLowerCase()+'.');};
+ return {errors,value,add,text,choice,email,phone,date};
+}
+function detailsIncidentPerson(rules,agencyRequired=false){
+ rules.text('first','First name',true);rules.text('last','Last name',true);
+ rules.email('email','Existing email address',true);rules.phone('phone','Contact number',true);
+ rules.text('employee','Employee or payroll number');
+ if(agencyRequired){rules.text('agency','Recruitment agency',true);rules.text('assignment','Assignment or client');}
+}
+function detailsIncidentFile(key,files,add){
+ const file=files?.[key];if(file===undefined||file===null)return;
+ if(typeof file!=='object'||typeof file.name!=='string'||!file.name.trim()||file.name.length>255||!/\.(pdf|jpe?g|png)$/i.test(file.name.trim())){add(key,'Choose a PDF, JPG or PNG file.');return;}
+ if(typeof file.size!=='number'||!Number.isFinite(file.size)||file.size<=0||file.size>10*1024*1024)add(key,'Choose a non-empty file no larger than 10 MB.');
+ if(file.type&&!['application/pdf','image/jpeg','image/png'].includes(file.type))add(key,'Choose a PDF, JPG or PNG file.');
+}
+function validateChangeRequest(stage,data,files={},items=[],today=''){
+ const r=detailsIncidentRules(stage,data),type=r.value('changeType');
+ if(stage===0){r.choice('changeType','Type of change',['bank','address','contact','other']);return r.errors;}
+ if(stage===2){if(data.declaration!==true)r.add('declaration','Confirm the declaration before completing the preview.');return r.errors;}
+ if(stage!==1)return r.errors;
+ if(!['bank','address','contact','other'].includes(type)){r.add('changeType','Choose the type of change first.',0);return r.errors;}
+ detailsIncidentPerson(r);
+ if(type==='bank'){
+  r.text('accountHolder','Account holder name',true);r.text('bankName','Bank or building society name');r.text('buildingRef','Building Society Reference');
+  r.text('sortCode','Sort code',true,40);r.text('accountNumber','Account number',true,40);r.text('accountConfirm','Account number confirmation',true,40);
+  const sort=r.value('sortCode'),account=r.value('accountNumber'),confirmation=r.value('accountConfirm');
+  if(sort&&(!/^[0-9 -]+$/.test(sort)||!/^\d{6}$/.test(sort.replace(/[ -]/g,''))))r.add('sortCode','Enter six sort-code digits; spaces and hyphens are allowed.');
+  if(account&&(!/^[0-9 ]+$/.test(account)||!/^\d{8}$/.test(account.replace(/ /g,''))))r.add('accountNumber','Enter eight account-number digits; spaces are allowed.');
+  if(confirmation&&(!/^[0-9 ]+$/.test(confirmation)||!/^\d{8}$/.test(confirmation.replace(/ /g,''))||confirmation.replace(/ /g,'')!==account.replace(/ /g,'')))r.add('accountConfirm','Re-enter the same eight-digit account number.');
+  r.choice('bankOwnership','Account ownership',['yes','no']);r.choice('verificationContact','Existing verification contact',['existing-phone','existing-email']);
+  r.date('requestedEffectiveDate','Requested effective date');
+ }
+ if(type==='address'){
+  r.text('address1','New address line 1',true);r.text('address2','Address line 2');r.text('town','Town or city',true);
+  r.choice('country','Country',['UK','other']);
+  if(r.value('country')==='other'){r.text('otherCountry','Country name',true);r.text('postcode','Postcode or ZIP code',false,40);}
+  if(r.value('country')==='UK'){
+   r.text('postcode','UK postcode',true,40);
+   if(r.value('postcode')&&!/^(?:GIR0AA|[A-Z]{1,2}\d[A-Z\d]?\d[A-Z]{2})$/i.test(r.value('postcode').replace(/\s/g,'')))r.add('postcode','Enter a recognisable UK postcode.');
+  }
+  r.date('addressEffectiveDate','Move date');
+ }
+ if(type==='contact'){
+  r.email('newEmail','New email address');r.email('confirmNewEmail','Email confirmation',Boolean(r.value('newEmail')));r.phone('newPhone','New contact number');
+  r.choice('contactVerify','Existing verification contact',['existing-email','existing-phone']);
+  const newEmail=r.value('newEmail'),confirm=r.value('confirmNewEmail'),newPhone=r.value('newPhone');
+  if(!newEmail&&!newPhone)r.add('newEmail','Provide a changed email address, contact number or both.');
+  if(newEmail&&newEmail.toLowerCase()!==confirm.toLowerCase())r.add('confirmNewEmail','The two new email addresses must match.');
+  if(!newEmail&&confirm)r.add('confirmNewEmail','Enter a new email address or clear the confirmation.');
+  const normalizePhone=value=>value.replace(/^00/,'').replace(/\D/g,'');
+  const emailChanged=Boolean(newEmail)&&newEmail.toLowerCase()!==r.value('email').toLowerCase();
+  const phoneChanged=Boolean(newPhone)&&normalizePhone(newPhone)!==normalizePhone(r.value('phone'));
+  if((newEmail||newPhone)&&!emailChanged&&!phoneChanged)r.add('newEmail','At least one new contact detail must differ from the existing details you entered.');
+ }
+ if(type==='other'){
+  r.choice('otherType','Other detail to change',['name','emergency','other']);
+  if(r.value('otherType')==='name'){r.text('newFirst','New first name',true);r.text('newLast','New last name',true);r.text('nameNote','Name-change notes',false,2000);detailsIncidentFile('changeEvidence',files,r.add);}
+  if(r.value('otherType')==='emergency'){r.text('emergencyName','Emergency contact name',true);r.text('emergencyRelationship','Relationship',true);r.phone('emergencyPhone','Emergency contact number',true);r.text('emergencyNote','Emergency instructions',false,2000);}
+  if(r.value('otherType')==='other'){r.text('otherDescription','Requested amendment',true,2000);detailsIncidentFile('changeEvidence',files,r.add);}
+ }
+ return r.errors;
+}
+function validateIncidentRequest(stage,data,files={},items=[],today=''){
+ const r=detailsIncidentRules(stage,data);
+ if(stage===0){detailsIncidentPerson(r,true);r.choice('engagementType','EOS engagement',['umbrella','cis','other']);}
+ if(stage===1){
+  r.choice('incidentNature','Type of event',['injury','near-miss','danger','damage','other']);r.date('incidentDate','Incident date',true);
+  if(detailsIncidentCalendarDate(r.value('incidentDate'))&&detailsIncidentCalendarDate(today)&&r.value('incidentDate')>today)r.add('incidentDate','The incident date cannot be in the future.');
+  r.text('incidentTime','Approximate incident time',true,5);
+  if(r.value('incidentTime')&&!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(r.value('incidentTime')))r.add('incidentTime','Enter a time between 00:00 and 23:59.');
+  r.choice('incidentPlace','Incident location',['onsite','offsite','travel','other']);r.text('clientSite','Client or site name',true);r.text('locationDetail','Precise location',true);
+  r.text('incidentDescription','What happened',true,2000,15);r.text('activity','Work or activity',true);r.text('cause','Possible cause',false,2000);
+  r.choice('ongoingDanger','Ongoing danger',['yes','no','unsure']);
+ }
+ if(stage===2){
+  r.choice('injuryOccurred','Injury or illness',['yes','no','unsure']);
+  if(r.value('injuryOccurred')==='yes'){
+   r.choice('injuryTo','Person affected',['self','other','both']);
+   if(['self','other','both'].includes(r.value('injuryTo'))){
+    r.choice('firstAid','First aid',['yes','no','not sure']);r.choice('hospital','Hospital attendance',['yes','no','not sure']);
+   }
+   if(['self','both'].includes(r.value('injuryTo'))){
+    r.choice('injuredArea','Body area',['head','torso','back','arms','legs','eye','multiple','other']);
+    r.choice('injuryType','Nature of injury',['cut','sprain','burn','fracture','head','breathing','other']);
+    r.text('injuryDetails','Your injury or symptoms',true,2000,8);
+    r.choice('medicalTreatment','Medical treatment',['yes','no','not yet']);
+    if(r.value('medicalTreatment')==='yes')r.text('treatmentDetails','Relevant treatment details',true);
+    r.choice('fitForWork','Ability to perform normal duties',['yes','no','not sure']);
+    r.choice('daysAffected','Estimated work restriction',['none','1-3','4-7','over7','unknown']);
+   }
+   if(r.value('injuryTo')==='other')r.text('injuryDetails','Observed injury information',false,2000);
+  }else if(['no','unsure'].includes(r.value('injuryOccurred')))r.text('nonInjuryImpact','Impact or potential harm',false,2000);
+ }
+ if(stage===3){
+  r.choice('supervisorTold','Supervisor notification',['yes','no','not yet']);r.choice('agencyTold','Agency notification',['yes','no','not yet']);
+  r.choice('accidentBook','Site incident record',['yes','no','not sure']);r.choice('witnesses','Witnesses',['yes','no','not sure']);
+  if(r.value('witnesses')==='yes')r.text('witnessDetails','Witness information',false,2000);
+  r.text('actionsTaken','Immediate actions',false,2000);r.text('otherInformation','Other relevant information',false,2000);detailsIncidentFile('incidentEvidence',files,r.add);
+ }
+ if(stage===4&&data.declaration!==true)r.add('declaration','Confirm the declaration before completing the preview.');
+ return r.errors;
+}
+
+// Batch 12 shared prototype behaviour. No transport or persistent storage.
+function londonToday(now=new Date()) {
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
+  const get=t=>parts.find(p=>p.type===t).value;
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+function allowedSupportRoute(value) {
+  const route=String(value||'').toLowerCase();
+  return ['holiday','change','absence','expenses','incident'].includes(route)?route:'';
+}
+function supportFileError(meta) {
+  if(!meta||typeof meta.name!=='string'||!meta.name.trim()||meta.name.length>255) return 'Choose a PDF, JPG or PNG file.';
+  if(!/\.(pdf|jpg|jpeg|png)$/i.test(meta.name)) return 'Choose a PDF, JPG or PNG file.';
+  if(!Number.isSafeInteger(meta.size)||meta.size<=0||meta.size>10*1024*1024) return 'Choose a non-empty file no larger than 10 MB.';
+  if(meta.type&&!['application/pdf','image/jpeg','image/png'].includes(meta.type.toLowerCase())) return 'Choose a PDF, JPG or PNG file with a supported file type.';
+  return '';
+}
+function clearSupportBranches(route,key,value,answers,selectedFiles) {
+  const next={...answers}, nextFiles={...selectedFiles};
+  if(next[key]===value) return {data:next,files:nextFiles,changed:false};
+  const clear=keys=>keys.forEach(k=>delete next[k]);
+  if(route==='change'&&key==='changeType') {
+    Object.keys(next).forEach(k=>delete next[k]);
+    Object.keys(nextFiles).forEach(k=>delete nextFiles[k]);
+  }
+  if(route==='absence'&&key==='absenceType') {
+    Object.keys(next).filter(k=>!['first','last','email','phone','employee','agency'].includes(k)).forEach(k=>delete next[k]);
+    Object.keys(nextFiles).forEach(k=>delete nextFiles[k]);
+  }
+  if(route==='holiday'&&key==='holidayArrangement') {
+    clear(['first','last','email','phone','employee','agency','holidayStart','holidayEnd','agencyNotified','holidayNotes','paymentDate','paymentChoice','amountRequested']);
+  }
+  if(route==='holiday'&&key==='paymentChoice') clear(['amountRequested']);
+  if(route==='change'&&key==='country'&&value==='UK') clear(['otherCountry']);
+  if(route==='change'&&key==='otherType') {
+    clear(['newFirst','newLast','nameNote','emergencyName','emergencyRelationship','emergencyPhone','emergencyNote','otherDescription']);
+    delete nextFiles.changeEvidence;
+  }
+  if(route==='change'&&key==='newEmail') clear(['confirmNewEmail']);
+  if(route==='absence'&&key==='otherAbsence') clear(['babyBirth','neonatalStart','absenceNotes']);
+  if(route==='absence'&&key==='familyType') clear(['placementDate','plannedStart','plannedEnd','agencyNotified','absenceNotes']);
+  if(route==='absence'&&key==='paternityReason') clear(['dueDate','plannedStart','duration','agencyNotified','absenceNotes']);
+  if(route==='absence'&&key==='compassionateReason') clear(['relationship','absenceNotes']);
+  if(route==='absence'&&['otherAbsence','familyType','paternityReason','compassionateReason'].includes(key)) {
+    delete nextFiles.absenceEvidence;
+  }
+  if(route==='incident'&&key==='injuryOccurred') {
+    clear(['injuryTo','injuredArea','injuryType','injuryDetails','firstAid','medicalTreatment','treatmentDetails','hospital','fitForWork','daysAffected','nonInjuryImpact']);
+  }
+  if(route==='incident'&&key==='injuryTo') {
+    clear(['injuredArea','injuryType','injuryDetails','firstAid','medicalTreatment','treatmentDetails','hospital','fitForWork','daysAffected']);
+  }
+  if(route==='incident'&&key==='medicalTreatment'&&value!=='yes') clear(['treatmentDetails']);
+  if(route==='incident'&&key==='witnesses'&&value!=='yes') clear(['witnessDetails']);
+  if(route==='expenses'&&key==='expenseRoute') clear(['preApproved','approvalReference']);
+  next[key]=value;
+  if(key!=='declaration') next.declaration=false;
+  return {data:next,files:nextFiles,changed:true};
+}
+function changeExpenseValue(items,id,key,value,answers,selectedFiles) {
+  const nextItems=items.map(x=>({...x})), nextData={...answers}, nextFiles={...selectedFiles};
+  const item=nextItems.find(x=>x.id===id);
+  if(!item||item[key]===value) return {items:nextItems,data:nextData,files:nextFiles,changed:false};
+  if(key==='category') {
+    if(value!=='Mileage')['miles','rate','from','to','vehicle'].forEach(k=>delete item[k]);
+    if(value==='Mileage')delete item.amount;
+    if(!['Travel','Mileage','Subsistence','Accommodation'].includes(value))delete item.journeyType;
+  }
+  item[key]=value;nextData.declaration=false;
+  return {items:nextItems,data:nextData,files:nextFiles,changed:true};
+}
+function clearExpenseApprovers(items){return items.map(item=>{const next={...item};delete next.approvedBy;return next;});}
+function collectSupportErrors(route,stage,answers,selectedFiles,items,today,all=false) {
+  const validators={holiday:validateHolidayRequest,change:validateChangeRequest,absence:validateAbsenceRequest,expenses:validateExpensesRequest,incident:validateIncidentRequest};
+  if(!Object.hasOwn(validators,route)) return [{key:'stepHeading',message:'Choose a support request to continue.',step:0}];
+  const result=[];
+  for(let i=all?0:stage;i<=stage;i++) result.push(...validators[route](i,answers,selectedFiles,items,today));
+  const reviewStage={holiday:3,change:2,absence:2,expenses:3,incident:4}[route];
+  if(stage===reviewStage&&answers.declaration!==true) result.push({key:'declaration',message:'Please confirm the declaration after checking your answers.',step:reviewStage});
+  for(const [key,value] of Object.entries(answers)) if(typeof value==='string'&&value.length>4000) result.push({key,message:'Please shorten this answer to 4,000 characters or fewer.',step:0});
+  if(route==='expenses'&&stage>=1)for(const item of items)for(const [key,value] of Object.entries(item))if(typeof value==='string'&&value.length>4000)result.push({key:'ex_'+item.id+'_'+key,message:'Please shorten this expense answer to 4,000 characters or fewer.',step:1});
+  const seen=new Set();
+  return result.filter(e=>{const id=e.step+':'+e.key;if(seen.has(id))return false;seen.add(id);return true;}).sort((a,b)=>a.step-b.step);
+}
+function homeLink(){return '<a class="back" href="contractor-support.html">← Contractor Support</a>';}
+function txt(k,l,{type='text',req=false,place='',hint='',full=false,attrs=''}={}) {
+  const desc=hint?` aria-describedby="${esc(k)}-hint"`:'';
+  const limit=['text','email','tel'].includes(type)&&!attrs.includes('maxlength=')?' maxlength="4000"':'';
+  return `<div class="field ${full?'full':''}"><label for="${esc(k)}">${esc(l)}${req?' <span class="req">*</span>':''}</label><input id="${esc(k)}" data-key="${esc(k)}" name="${esc(k)}" type="${type}" ${req?'required':''} ${attrs}${limit}${desc} placeholder="${esc(place)}" value="${esc(data[k]??'')}">${hint?`<span id="${esc(k)}-hint" class="hint">${hint}</span>`:''}</div>`;
+}
+function textarea(k,l,{req=false,place='',full=true,hint=''}={}) {
+  return `<div class="field ${full?'full':''}"><label for="${esc(k)}">${esc(l)}${req?' <span class="req">*</span>':''}</label><textarea id="${esc(k)}" name="${esc(k)}" data-key="${esc(k)}" maxlength="4000" ${req?'required':''}${hint?` aria-describedby="${esc(k)}-hint"`:''} placeholder="${esc(place)}">${esc(data[k]??'')}</textarea>${hint?`<span id="${esc(k)}-hint" class="hint">${hint}</span>`:''}</div>`;
+}
+function select(k,l,opts,{req=false,full=false,placeholder='Select an option'}={}) {
+  return `<div class="field ${full?'full':''}"><label for="${esc(k)}">${esc(l)}${req?' <span class="req">*</span>':''}</label><select id="${esc(k)}" name="${esc(k)}" data-key="${esc(k)}" ${req?'required':''}><option value="">${esc(placeholder)}</option>${opts.map(o=>{const [v,t]=Array.isArray(o)?o:[o,o];return `<option value="${esc(v)}" ${data[k]===v?'selected':''}>${esc(t)}</option>`;}).join('')}</select></div>`;
+}
+function choices(k,arr,{cols=2,label=''}={}) {
+  const names={holidayArrangement:'How is your holiday pay handled?',paymentChoice:'How much accrued holiday pay are you requesting?',changeType:'What would you like to change?',bankOwnership:'Is this bank account in your own name?',absenceType:'What type of absence would you like to report?',expenseRoute:'How are these expenses being submitted?',preApproved:'What is the current authorisation status?',incidentNature:'What type of event are you reporting?',ongoingDanger:'Is there an immediate risk to anyone?',injuryOccurred:'Was anyone injured or made unwell?',injuryTo:'Who was injured or made unwell?'};
+  return `<fieldset id="${esc(k)}" class="choice-fieldset" tabindex="-1"><legend class="sr-only">${esc(label||names[k]||pretty(k.replace(/([A-Z])/g,' $1')))}</legend><div class="choice-grid ${cols===3?'three':''}">${arr.map(([val,title,desc])=>`<label class="choice ${data[k]===val?'selected':''}"><input class="choice-radio" id="${esc(k)}--${esc(val)}" name="${esc(k)}" type="radio" data-choice="${esc(k)}" value="${esc(val)}" ${data[k]===val?'checked':''} required><strong>${esc(title)}</strong>${desc?`<small>${esc(desc)}</small>`:''}</label>`).join('')}</div></fieldset>`;
+}
+function radio(k,question,labels=['Yes','No']) {
+  return `<div class="field full"><div class="fieldset-label">${esc(question)} <span class="req">*</span></div>${choices(k,labels.map(x=>[x.toLowerCase(),x,'']),{label:question})}</div>`;
+}
+function upload(k,l,opts={}) {
+  const selected=files[k];
+  return `<div class="field ${opts.full?'full':''}"><label for="${esc(k)}">${esc(l)}</label><input type="file" id="${esc(k)}" data-file="${esc(k)}" accept=".pdf,.jpg,.jpeg,.png" aria-describedby="${esc(k)}-hint"><span id="${esc(k)}-hint" class="file-note">PDF, JPG or PNG · up to 10 MB · example files only; nothing is uploaded</span>${selected?`<div class="file-summary">Selected for this preview: ${esc(selected.name)} (${Math.ceil(selected.size/1024)} KB). Only its name, size and type are held in page memory.</div><button class="inline-link" type="button" data-action="file-remove" data-file-key="${esc(k)}">Remove selected file</button>`:''}</div>`;
+}
+function homeUI() {
+  return `<main id="main-content" class="main"><div class="wrap"><div class="workflow-panel form-panel"><div class="form-body"><h2 id="stepHeading" tabindex="-1">Choose your support request</h2><p>Return to Contractor Support to choose the request you need.</p><a class="btn primary" href="contractor-support.html">View support requests →</a><p>General questions and formal complaints use the <a class="inline-link" href="contact-us.html">Contact Us process</a>.</p></div></div></div></main>`;
+}
+function render(focusId='') {
+  const heading=flow?FLOW_META[flow][0]:'Here when you need us.';
+  const sub=flow?introByFlow():'Find the right support and understand what happens next.';
+  const header=`<a class="skip-link" href="#main-content">Skip to content</a><header class="topbar"><div class="wrap top-inner"><a href="contractor-support.html" aria-label="EOS Contractor Support"><img class="eos-support-logo" src="../assets/eos-logo-official-reversed.png" alt="EOS — Progress. Together."></a><nav class="topnav" aria-label="Support navigation"><a href="knowledge-hub.html">Knowledge Hub</a><a href="contractor-support.html" class="active">Contractor Support</a><a class="pill" href="contact-us.html">Contact EOS →</a></nav></div></header><section class="hero"><div class="wrap">${flow?homeLink():''}<div class="eyebrow">${flow?'Contractor support · '+FLOW_META[flow][2]:'Contractor support'}</div><h1>${esc(heading)}</h1><p>${esc(sub)}</p></div></section>`;
+  const strip=`<div class="demo-strip"><div class="wrap"><strong>Interactive design prototype:</strong> Use fictional details and example files only. Nothing is submitted or saved. Entries and file metadata remain in this page’s memory until you leave, reload or reset it.</div></div>`;
+  $('#app').innerHTML=header+strip+(flow?workflowUI():homeUI())+`<footer class="footer"><div class="wrap"><a href="contractor-support.html" aria-label="EOS Contractor Support"><img class="eos-support-logo footer-brand" src="../assets/eos-logo-official-reversed.png" alt="EOS — Progress. Together."></a><div class="assist-links"><a href="knowledge-hub.html">Knowledge Hub</a><a href="contact-us.html">Contact Us</a><span>2026</span></div></div></footer>`;
+  document.title='EOS | '+(flow?FLOW_META[flow][0]:'Contractor Support');
+  decorateErrors();
+  if(focusId) {
+    const focus=document.getElementById(focusId)||document.getElementById('stepHeading');
+    focus?.focus({preventScroll:focusId!=='stepHeading'});
+  }
+}
+function errorSummaryHTML() {
+  if(!activeErrors.length)return '';
+  return `<div id="errorSummary" class="error-summary" tabindex="-1" role="alert"><h3>Please check the following</h3><ul>${activeErrors.map(e=>`<li><a href="#${esc(e.key)}" data-error-key="${esc(e.key)}">${esc(e.message)}</a></li>`).join('')}</ul></div>`;
+}
+function decorateErrors() {
+  for(const err of activeErrors) {
+    const target=document.getElementById(err.key);
+    if(!target)continue;
+    const id=err.key+'-error';
+    const note=document.createElement('p');note.id=id;note.className='field-error b12-field-error';note.textContent=err.message;
+    const group=target.tagName==='FIELDSET';
+    const controls=group?[...target.querySelectorAll('input')]:[target];
+    for(const input of controls) {
+      input.setAttribute('aria-invalid','true');
+      const desc=[input.getAttribute('aria-describedby'),id].filter(Boolean).join(' ');input.setAttribute('aria-describedby',desc);
+    }
+    (group?target:target.closest('.field')||target.parentElement).appendChild(note);
+  }
+}
+function focusErrorKey(key) {
+  const target=document.getElementById(key);
+  if(!target){$('#errorSummary')?.focus();return;}
+  const control=target.tagName==='FIELDSET'?(target.querySelector('input:checked')||target.querySelector('input')):target;
+  control?.focus();
+}
+function announceStep() {
+  const status=document.getElementById('journeyStatus');
+  if(status)status.textContent=flow?`Step ${step+1} of ${FLOW_META[flow][3].length}: ${currentTitle()}`:'Choose a support request.';
+}
+function resetSupportState() {
+  step=0;data={};files={};expenseSequence=1;expenseItems=[{id:1}];finished=false;activeErrors=[];
+}
+function nav(route) {
+  resetSupportState();flow=allowedSupportRoute(route);
+  if(location.protocol!=='about:')history.pushState({},'',location.pathname+(flow?'?flow='+flow:''));
+  render('stepHeading');announceStep();
+}
+function showErrors(errors) {
+  if(!errors.length)return;
+  const firstStage=errors[0].step;
+  if(Number.isInteger(firstStage)&&firstStage>=0&&firstStage<step)step=firstStage;
+  activeErrors=errors.filter(e=>e.step===step);
+  if(!activeErrors.length)activeErrors=[{key:'stepHeading',message:errors[0].message,step}];
+  render();$('#errorSummary')?.focus();announceStep();
+}
+function validate() {
+  const reviewStage=FLOW_META[flow][3].length-2;
+  const errors=collectSupportErrors(flow,step,data,files,expenseItems,londonToday(),step===reviewStage);
+  if(errors.length){showErrors(errors);return false;}
+  activeErrors=[];return true;
+}
+function setSupportValue(key,value) {
+  const result=clearSupportBranches(flow,key,value,data,files);
+  data=result.data;files=result.files;
+  if(result.changed&&flow==='expenses'&&key==='expenseRoute')expenseItems=clearExpenseApprovers(expenseItems);
+  if(result.changed)activeErrors=[];
+  if(result.changed&&key==='newEmail') {const confirm=document.getElementById('confirmNewEmail');if(confirm)confirm.value='';}
+  return result.changed;
+}
+function refreshExpenseAmounts(id) {
+  const item=expenseItems.find(x=>x.id===id), field=document.getElementById('ex_'+id+'_computed');
+  if(item&&field)field.value=expenseCalculatedDisplay(item);
+  const tally=$('.expense-tally');if(tally)tally.textContent='Total requested: '+money(expenseTotal());
+}
+document.addEventListener('click',event=>{
+  const errorLink=event.target.closest('[data-error-key]');
+  if(errorLink){event.preventDefault();focusErrorKey(errorLink.dataset.errorKey);return;}
+  const button=event.target.closest('[data-action]');if(!button)return;
+  const act=button.dataset.action;
+  if(act==='home'){location.assign('contractor-support.html');return;}
+  if(!flow)return;
+  if(act==='prev'||act==='go') {
+    const dest=act==='prev'?step-1:Number(button.dataset.go);
+    if(!Number.isInteger(dest)||dest<0||dest>=step)return;
+    step=dest;data.declaration=false;finished=false;activeErrors=[];render('stepHeading');announceStep();return;
+  }
+  if(act==='next') {
+    if(!validate())return;
+    const last=FLOW_META[flow][3].length-1;
+    if(step>=last)return;
+    step++;finished=step===last;render('stepHeading');announceStep();return;
+  }
+  if(act==='expense-add') {
+    expenseItems.push({id:++expenseSequence});data.declaration=false;activeErrors=[];render('ex_'+expenseSequence+'_category');return;
+  }
+  if(act==='expense-remove') {
+    const id=Number(button.dataset.index);
+    if(expenseItems.length<=1)return;
+    expenseItems=expenseItems.filter(x=>x.id!==id);delete files['expenseFile_'+id];delete data['noReceipt_'+id];data.declaration=false;activeErrors=[];render('expenseItems');return;
+  }
+  if(act==='file-remove') {
+    delete files[button.dataset.fileKey];data.declaration=false;activeErrors=[];render(button.dataset.fileKey);return;
+  }
+});
+document.addEventListener('input',event=>{
+  const el=event.target;
+  if(el.matches('[data-key]')&&el.tagName!=='SELECT'&&!['radio','checkbox'].includes(el.type))setSupportValue(el.dataset.key,el.value);
+  if(el.matches('[data-expense]')&&el.tagName!=='SELECT') {
+    const result=changeExpenseValue(expenseItems,Number(el.dataset.expense),el.dataset.exkey,el.value,data,files);
+    expenseItems=result.items;data=result.data;files=result.files;
+    if(result.changed)activeErrors=[];
+    if(['miles','rate','amount'].includes(el.dataset.exkey))refreshExpenseAmounts(Number(el.dataset.expense));
+  }
+});
+document.addEventListener('change',event=>{
+  const el=event.target;
+  if(el.matches('[data-file]')) {
+    const key=el.dataset.file;delete files[key];data.declaration=false;activeErrors=[];
+    const item=el.files?.[0];
+    if(item){const meta={name:item.name,size:item.size,type:item.type};const problem=supportFileError(meta);if(problem){activeErrors=[{key,message:problem,step}];render();$('#errorSummary')?.focus();return;}files[key]=meta;if(key.startsWith('expenseFile_'))delete data['noReceipt_'+key.slice('expenseFile_'.length)];}
+    render(key);return;
+  }
+  if(el.matches('[data-choice]')) {setSupportValue(el.dataset.choice,el.value);render(el.id);return;}
+  if(el.matches('[data-key]')) {
+    setSupportValue(el.dataset.key,el.type==='checkbox'?el.checked:el.value);
+    if(el.dataset.key==='declaration')render(el.id);
+    if(el.tagName==='SELECT'&&['country','otherType','otherAbsence','familyType','paternityReason','compassionateReason','injuryTo','injuryType','hospital','daysAffected'].includes(el.dataset.key))render(el.id);
+    return;
+  }
+  if(el.matches('[data-expense]')) {
+    const result=changeExpenseValue(expenseItems,Number(el.dataset.expense),el.dataset.exkey,el.value,data,files);
+    expenseItems=result.items;data=result.data;files=result.files;
+    if(result.changed)activeErrors=[];
+    if(['category','journeyType'].includes(el.dataset.exkey))render(el.id);
+  }
+});
+window.addEventListener('popstate',()=>{resetSupportState();flow=allowedSupportRoute(new URLSearchParams(location.search).get('flow'));render('stepHeading');announceStep();});
+render();
+
+</script></body></html>

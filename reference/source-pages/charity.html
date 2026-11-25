@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Charity | EOS — Progress. Together.</title>
+<meta content="EOS is proud to support Edward's Trust, providing free specialist bereavement support for children, young people and parents across the West Midlands." name="description"/>
+<style>
+:root{--navy:#111b39;--navy-deep:#0d1631;--ink:#192648;--text:#44516e;--warm:#f6f3ee;--amber:#ed9d27;--gold:#ffb548;--offwhite:#fbfaf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#eceae6}
+body{margin:0;font-family:Inter,'Inter Display',Arial,sans-serif;font-weight:400;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+.page{max-width:1440px;margin:0 auto;overflow:hidden;background:white;box-shadow:0 0 25px #1524420e}
+.eyebrow{display:flex;gap:16px;align-items:center;font-size:15.5px;font-weight:680;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin:0 0 22px}
+.eyebrow:after{content:"";height:2px;width:53px;background:var(--gold);display:block}
+section{position:relative}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:'Inter Display',Inter,Arial,sans-serif;letter-spacing:-2.9px;font-weight:350}
+h2{font-size:62px;line-height:1.105;margin-bottom:25px}
+p{font-size:20px;line-height:1.57;letter-spacing:-.13px;color:var(--text);margin:0 0 19px}
+/* EOS charity hero: proportions, typography and palette matched to the approved About Us page. */
+.hero{height:690px;background-color:var(--navy);background-image:url('/images/charity-01.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:#f7b95c33}
+.hero-inner{position:relative;z-index:1;padding:65px 100px 62px;height:100%}
+.logo{display:inline-flex;flex-direction:column;gap:4px;color:white;align-items:flex-start;line-height:1}
+.logotype{transform:scaleX(1.55);transform-origin:left center;font-family:'Inter Display',Inter,Arial,sans-serif;font-size:84px;letter-spacing:-9px;font-weight:260;line-height:.86;display:inline-block;white-space:nowrap}
+.logotype .sun-o{background:linear-gradient(113deg,#fff 6%,#fff 38%,#f3a63b 62%,#ffc36d 96%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.tagline{font-size:12.5px;font-weight:650;color:#f5ae45;letter-spacing:4px;line-height:1.3;margin:12px 0 0 6px}
+.hero-copy{max-width:600px;margin-top:55px}
+.hero .eyebrow{color:#ffc071;margin-bottom:16px}
+.hero h1{font-size:72px;line-height:1.04;color:white;font-weight:350;letter-spacing:-4.2px;max-width:600px;margin-bottom:19px}
+.hero h1 span{color:#ffd08c}
+.hero .sub{font-size:26px;line-height:1.32;color:#f1e3d3;font-weight:430;margin-bottom:19px}
+.hero .rule{height:2px;width:53px;background:#f4ab3c;margin:0 0 17px}
+.hero .desc{font-size:19px;line-height:1.55;color:#e0e2eb;max-width:570px}
+/* Charity background, photo and ring motif. */
+.story{background:#f7f5f1;display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;min-height:624px;padding:83px 100px 85px}
+.story .copy{max-width:605px;position:relative;z-index:2}
+.story .copy h2{font-size:67px;max-width:580px}
+.story .photo{height:454px;position:relative;min-width:0}
+.story .photo:before{content:"";position:absolute;width:203px;height:203px;border:26px solid rgba(243,170,56,.31);border-right-color:rgba(246,196,107,.15);border-bottom-color:transparent;border-radius:50%;left:-55px;top:-36px}
+.story .photo img{display:block;position:relative;width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:0 17px 40px #1624421d}
+/* A restrained navy interlude, aligned with About Us principle section. */
+.support{padding:80px 100px 91px;background:linear-gradient(120deg,#0e1733 0%,#182648 59%,#0e1834 100%);overflow:hidden;min-height:685px}
+.support:before{content:"";position:absolute;width:520px;height:520px;border:70px solid #f1a63a0a;border-radius:50%;top:-242px;right:-223px;pointer-events:none}
+.support .intro-wrap{position:relative;z-index:2}
+.support h2{color:#fff;font-size:61px;margin:0 0 15px}
+.support .intro{font-size:20px;line-height:1.5;max-width:995px;color:#cbd1df;margin-bottom:40px}
+.support-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px;position:relative;z-index:1}
+.support-card{background:white;border-radius:17px;min-height:305px;padding:33px 32px 36px;box-shadow:0 12px 34px #0910222b}
+.cardtop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
+.service-icon{height:81px;width:81px;background:radial-gradient(circle at 49% 45%,#fffaf4 4%,#fbf0dd 100%);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.service-icon svg{height:44px;width:44px;fill:none;stroke:#f2a331;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.number{font-size:19px;letter-spacing:2px;font-weight:650;color:#e89622}
+.support-card h3{font-size:28px;font-weight:550;letter-spacing:-.75px;line-height:1.16;color:var(--ink);margin:0 0 12px}
+.support-card p{font-size:18px;line-height:1.51;margin:0;color:#48536d;max-width:340px}
+/* End-of-page destination for visitors to give directly to Edward's Trust. */
+.give{display:grid;grid-template-columns:1.24fr .76fr;align-items:center;gap:40px;min-height:560px;padding:87px 100px 91px;background:#fff;overflow:hidden}
+.give .copy{max-width:800px;position:relative;z-index:2}
+.give h2{font-size:67px;max-width:755px;margin-bottom:29px}
+.give p{max-width:770px;line-height:1.52}
+.ctas{display:flex;gap:17px;flex-wrap:wrap;margin-top:31px}
+.button{min-height:54px;padding:0 23px 0 26px;display:inline-flex;align-items:center;justify-content:space-between;gap:27px;border:1.5px solid var(--amber);border-radius:999px;font-size:14px;font-weight:720;letter-spacing:1.05px;text-transform:uppercase;transition:background .2s,color .2s}
+.button.primary{color:#152140;background:#f6b14b;border-color:#f6b14b}
+.button.primary:hover{background:#ffd087}
+.button.secondary{color:var(--ink);background:white}
+.button.secondary:hover{background:#fff6ea}
+.button .arrow{font-size:23px;line-height:1;font-weight:400;color:inherit}
+.give .note{font-size:15px;margin-top:19px;line-height:1.5;color:#8b8790}
+.give-art{min-height:390px;position:relative;display:flex;align-items:center;justify-content:center}
+.give-art .outer{position:absolute;width:505px;height:505px;border-radius:50%;background:conic-gradient(from 194deg,transparent 0deg,rgba(247,210,147,.08) 80deg,#f8e9cf 148deg,#ffbd54 214deg,#ffaf36 275deg,transparent 350deg);-webkit-mask:radial-gradient(transparent 59%,#000 60%);mask:radial-gradient(transparent 59%,#000 60%);transform:rotate(-13deg)}
+.give-art .inner{position:absolute;width:345px;height:345px;border:1px solid #26334a23;border-radius:50%}
+.give-art .circle-caption{position:absolute;bottom:45px;left:13px;transform:rotate(-90deg);transform-origin:left bottom;color:#afa59a;letter-spacing:4px;font-size:13px;white-space:nowrap}
+.footer{background:#0b1227;color:#a8b2cb;display:flex;align-items:center;justify-content:space-between;padding:25px 100px;font-size:14px;letter-spacing:.5px}
+.footer .brand{font-weight:320;font-size:31px;letter-spacing:-3px;color:white}
+.footer .strap{font-size:13px;letter-spacing:1px}
+.footer .right{font-size:13px;letter-spacing:1px}
+@media(max-width:900px){.page{width:100%}.hero{height:650px;background-position:60% center}.hero-inner{padding:48px 7%}.logotype{font-size:72px}.hero-copy{margin-top:86px;max-width:520px}.hero h1{font-size:62px}.hero .desc{font-size:18px}.story,.give{grid-template-columns:1fr;gap:50px;padding:65px 7%;min-height:0}.story .copy{max-width:720px}.story .photo{height:400px}.support{padding:67px 7%}.support-cards{grid-template-columns:1fr 1fr}.support-card{min-height:285px}.give-art{display:none}.footer{padding:26px 7%}h2,.story .copy h2,.give h2,.support h2{font-size:50px}}
+@media(max-width:610px){.hero{height:auto;min-height:690px;background-position:67% center}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#101b39ea 0%,#101b39b6 65%,#101b3960 100%)}.hero-inner{padding:40px 7% 65px}.hero-copy{margin-top:100px}.logotype{font-size:64px}.tagline{font-size:10px;letter-spacing:3px}.hero h1{font-size:49px;letter-spacing:-2.2px}.hero .sub{font-size:22px}.hero .desc{font-size:17px}.story,.give{padding:58px 7%}.story .photo{height:285px}.support{padding:58px 7%}.support-cards{grid-template-columns:1fr}.support-card{min-height:0}.story .copy h2,.give h2,.support h2{font-size:43px;letter-spacing:-1.8px}.eyebrow{font-size:12px;letter-spacing:2.5px}.footer{gap:14px;flex-wrap:wrap}.footer .strap{display:none}.ctas{flex-direction:column;align-items:flex-start}.button{min-width:268px}}
+</style>
+<style>
+/* Brand proof: original official EOS artwork, consistent rendering; source concepts preserved separately. */
+.eos-exact-logo{display:block!important;width:86px!important;height:auto!important;max-height:48px!important;object-fit:contain!important;aspect-ratio:1006 / 370!important;flex:none!important;}
+footer .eos-exact-logo,.footer .eos-exact-logo{width:75px!important;}
+.eos-review-note{display:none!important}
+</style><meta content="noindex,nofollow" name="robots"/><link rel="stylesheet" href="../assets/eos-shell-overrides.css"><script defer src="../assets/eos-site-shell.js"></script><style id="eos-charity-review-update">
+/* Page accessibility refinements; approved artwork and copy remain unchanged. */
+body[data-eos-unified="charity"] .story .eyebrow,
+body[data-eos-unified="charity"] .give .eyebrow,
+body[data-eos-unified="charity"] .support-card .number{color:#8a5700;}
+body[data-eos-unified="charity"] .give .note{color:#645f6b;}
+body[data-eos-unified="charity"] .give .button:focus-visible{outline:3px solid #192648;outline-offset:4px;}
+@media(max-width:610px){
+body[data-eos-unified="charity"] .give .copy{min-width:0;}
+body[data-eos-unified="charity"] .give .button{min-width:min(268px,100%);max-width:100%;line-height:1.4;}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto;}
+body[data-eos-unified="charity"] .button{transition:none;}
+}
+</style></head>
+<body data-eos-unified="charity"><eos-site-header></eos-site-header>
+<main class="page" id="main-content" tabindex="-1">
+<section aria-labelledby="hero-title" class="hero">
+<div class="hero-inner">
+<div aria-label="EOS. Progress Together." class="logo">
+<img alt="EOS" class="eos-exact-logo" src="../assets/eos-logo-official-reversed.png"/>
+<span class="tagline">PROGRESS. TOGETHER.</span>
+</div>
+<div class="hero-copy">
+<div class="eyebrow">GIVING BACK</div>
+<h1 id="hero-title">Making a<br/>difference,<br/><span>together.</span></h1>
+<p class="sub">Proudly supporting Edward’s Trust.</p>
+<div aria-hidden="true" class="rule"></div>
+<p class="desc">At EOS, we believe in supporting the communities we're part of. We're proud to stand alongside Edward’s Trust and the families it supports across the West Midlands.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="chosen-charity-title" class="story">
+<div class="copy">
+<div class="eyebrow">OUR CHOSEN CHARITY</div>
+<h2 id="chosen-charity-title">Supporting<br/>Edward’s Trust.</h2>
+<p>Edward’s Trust is a Birmingham-based charity providing free, specialist bereavement support to children, young people and parents across the West Midlands.</p>
+<p>Through compassionate counselling, wellbeing therapies and peer support, they offer a safe space for people to be heard, find understanding and navigate life after the death of someone close.</p>
+</div>
+<div class="photo">
+<img alt="Illustrative photograph of an adult comforting a child outdoors" src="/images/charity-02.jpg"/>
+</div>
+</section>
+<section aria-labelledby="services-title" class="support">
+<div class="intro-wrap">
+<div class="eyebrow">HOW THEY HELP</div>
+<h2 id="services-title">Support when it matters most.</h2>
+<p class="intro">Edward’s Trust provides a range of free services tailored to bereaved children, young people and parents, helping them access the support that feels right for them.</p>
+</div>
+<div class="support-cards">
+<article class="support-card">
+<div class="cardtop"><span aria-hidden="true" class="service-icon"><svg viewbox="0 0 64 64"><circle cx="25" cy="20" r="7"></circle><circle cx="42" cy="24" r="5"></circle><path d="M10 49v-6c0-8 6-14 15-14s15 6 15 14v6"></path><path d="M44 34c7 1 11 6 11 13v2"></path></svg></span><span class="number">01</span></div>
+<h3>Counselling</h3>
+<p>One-to-one and family counselling with specialist bereavement support professionals.</p>
+</article>
+<article class="support-card">
+<div class="cardtop"><span aria-hidden="true" class="service-icon"><svg viewbox="0 0 64 64"><path d="M32 51c-10-8-10-18 0-32 10 14 10 24 0 32Z"></path><path d="M31 51c-13-2-20-9-21-22 13 2 21 9 21 22Z"></path><path d="M33 51c13-2 20-9 21-22-13 2-21 9-21 22Z"></path><path d="M15 48c4 6 11 9 17 9s13-3 17-9"></path></svg></span><span class="number">02</span></div>
+<h3>Wellbeing therapies</h3>
+<p>A range of therapeutic activities that support wellbeing, self-care and emotional resilience.</p>
+</article>
+<article class="support-card">
+<div class="cardtop"><span aria-hidden="true" class="service-icon"><svg viewbox="0 0 64 64"><circle cx="22" cy="21" r="7"></circle><circle cx="43" cy="21" r="7"></circle><path d="M7 49v-5c0-9 7-15 15-15 7 0 12 4 14 10"></path><path d="M57 49v-5c0-9-6-15-14-15-3 0-6 1-8 3"></path><path d="m27 48 5 5 5-5"></path></svg></span><span class="number">03</span></div>
+<h3>Peer support</h3>
+<p>Opportunities to connect with others who understand through supportive groups and shared experiences.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="give-title" class="give">
+<div class="copy">
+<div class="eyebrow">MAKE AN IMPACT</div>
+<h2 id="give-title">Help them be there<br/>when it matters.</h2>
+<p>Edward’s Trust relies on the generosity of supporters to continue its vital work. Every contribution helps provide care, understanding and hope for bereaved families.</p>
+<div class="ctas">
+<a class="button primary" href="https://edwardstrust.org.uk/donate/" rel="noopener noreferrer" target="_blank">Donate directly <span aria-hidden="true" class="arrow">↗</span></a>
+<a class="button secondary" href="https://edwardstrust.org.uk/" rel="noopener noreferrer" target="_blank">Explore Edward’s Trust <span aria-hidden="true" class="arrow">↗</span></a>
+</div>
+<p class="note">Donations are made directly to Edward’s Trust, not through EOS.</p>
+</div>
+<div aria-hidden="true" class="give-art"><div class="outer"></div><div class="inner"></div><div class="circle-caption">PROGRESS. TOGETHER.</div></div>
+</section>
+<footer class="footer"><img alt="EOS" class="eos-exact-logo" src="../assets/eos-logo-official-reversed.png"/><span class="strap">PROGRESS. TOGETHER.</span><span class="right">CHARITY   •   2026</span></footer>
+</main>
+<eos-site-footer></eos-site-footer></body>
+</html>

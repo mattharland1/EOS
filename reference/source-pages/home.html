@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101936" name="theme-color"/>
+<meta content="EOS — Built to raise the standard. A fresh approach to contractor payroll for contractors and recruitment agencies." name="description"/>
+<title>EOS — Built to raise the standard. | Progress. Together.</title>
+<style>
+:root {--navy:#101936;--navy-light:#172443;--ink:#172343;--body:#515c73;--cream:#f7f5f1;--gold:#f0a434;--gold-light:#ffd18a;--line:#e6e2dc;--shadow:0 19px 52px rgba(19,28,51,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e9eb;color:var(--ink);font-family:Inter,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid #e7a23c;outline-offset:4px}
+.page{max-width:1440px;margin:0 auto;background:#fff;overflow:hidden;box-shadow:0 0 65px rgba(11,20,48,.10)}
+.container{max-width:1248px;padding:0 38px;margin:0 auto}
+/* Navigation follows the established EOS page concepts. */
+.navbar{height:96px;background:#fff;position:relative;z-index:20;border-bottom:1px solid #ebe9e5}
+.navbar .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:35px}
+.wordmark{display:flex;flex-direction:column;width:max-content;flex-shrink:0}
+.wordmark .name{font-family:'Inter Display',Inter,Arial,sans-serif;font-size:55px;font-weight:250;line-height:.78;letter-spacing:-6px;color:var(--navy)}
+.wordmark .name .o{color:#e5a04a}
+.wordmark .strap{font-size:9px;font-weight:780;color:#c17d20;letter-spacing:2.35px;padding-left:5px;margin-top:13px}
+.navlinks{display:flex;align-items:center;gap:27px;margin-left:auto}
+.navlinks a{font-size:13px;font-weight:620;white-space:nowrap;color:#293450;transition:color .2s}
+.navlinks a:hover{color:#c68628}
+.navlinks .join{border-radius:100px;background:#f4ae45;color:#101936;padding:15px 20px;font-weight:750}
+.mobile-toggle{display:none;background:none;border:1px solid #dedbd5;color:var(--navy);border-radius:9px;padding:10px 14px;font:inherit;font-size:12px;font-weight:700;letter-spacing:1.3px;align-items:center;gap:9px}.menu-bars{display:inline-flex;flex-direction:column;gap:4px}.menu-bars i{display:block;width:12px;height:1.5px;background:var(--navy)}
+/* Shared typography */
+.eyebrow{display:flex;gap:15px;align-items:center;font-size:11px;font-weight:790;letter-spacing:3px;text-transform:uppercase;color:#c3852b;margin:0 0 23px}
+.eyebrow:after{content:"";width:43px;height:1px;background:#e9a040;flex-shrink:0}
+.eyebrow.light{color:#ffc16a}
+.eyebrow.light:after{background:#ffc16a}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:'Inter Display',Inter,Arial,sans-serif;font-weight:320;letter-spacing:-2.7px}
+h1{font-size:81px;line-height:1.08;letter-spacing:-4.3px}
+h2{font-size:60px;line-height:1.10}
+h3{font-size:25px;line-height:1.2;letter-spacing:-.9px}
+p{line-height:1.64;color:var(--body);font-size:17px}
+.section{padding:98px 0 106px}
+.section-head{max-width:790px;margin-bottom:41px}
+.section-head p{max-width:720px;margin-bottom:0}
+.btn{border-radius:100px;padding:16px 25px;min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:22px;font-weight:730;font-size:13px;white-space:nowrap;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn .arrow{font-size:17px;font-weight:450}
+.btn-gold{background:linear-gradient(110deg,#f3a32c,#ffc56d);color:#17213c;box-shadow:0 10px 25px rgba(250,175,64,.16)}
+.btn-outline-white{border:1px solid rgba(255,213,154,.77);color:#fff;background:rgba(255,255,255,.025)}
+.btn-dark{background:var(--navy);color:white}
+.btn-outline{border:1px solid #dea351;color:#24314e;background:#fff}
+.link{display:inline-flex;gap:15px;align-items:center;font-size:13px;font-weight:770;color:var(--ink)}
+.link .arrow{color:#d28b2a;font-size:19px;font-weight:440}
+/* Reused ORIGINAL brand SVG icons — from the EOS 21-icon family. */
+.eos-icon{height:68px;width:68px;display:block;flex-shrink:0;overflow:visible;color:#bf8429}
+.eos-icon .orbit-echo{opacity:.27}
+.eos-icon .eos-pictogram-mark{stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+/* Hero */
+.hero{position:relative;background:linear-gradient(130deg,#0a1127 1%,#101936 59%,#1c2b4e 100%);min-height:694px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 73% 67%,rgba(213,148,67,.10),transparent 40%),linear-gradient(90deg,rgba(12,20,40,0) 44%,rgba(17,29,56,.48));pointer-events:none;z-index:-1}
+.hero .container{position:relative;width:100%;z-index:3;display:flex;align-items:center}
+.hero-copy{max-width:765px;padding:80px 0 95px}
+.hero h1{color:#fff;max-width:760px;margin:0 0 30px}
+.hero h1 em{color:#fac16d;font-weight:300;font-style:normal}
+.hero-copy .lede{color:#d4dbea;max-width:590px;font-size:19px;line-height:1.63;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+.hero-footer{font-size:11px;letter-spacing:2.3px;color:#aab4cf;margin-top:73px;font-weight:660;text-transform:uppercase}
+.hero-art{position:absolute;right:-132px;top:-58px;width:750px;height:750px;pointer-events:none;opacity:.97;z-index:1}
+.hero-art .sunring{position:absolute;inset:82px;border:80px solid rgba(240,174,78,.92);border-left-color:rgba(253,209,145,.08);border-bottom-color:rgba(236,172,91,.08);border-right-color:rgba(255,187,94,.48);border-radius:50%;transform:rotate(-25deg);box-shadow:inset 0 0 28px rgba(255,224,171,.07),0 0 60px rgba(255,180,86,.06)}
+.hero-art .inner-ring{position:absolute;inset:181px;border:1px solid rgba(250,194,113,.3);border-radius:50%}
+.hero-art .orbit{position:absolute;inset:10px;border:1px solid rgba(255,255,255,.045);border-radius:50%}
+.hero-art .gold-flare{position:absolute;right:180px;bottom:130px;width:300px;height:270px;background:radial-gradient(ellipse at center,rgba(255,189,97,.20),transparent 66%);filter:blur(13px)}
+.hero-art .orbit-type{position:absolute;left:190px;top:330px;font-size:10px;letter-spacing:3.1px;color:rgba(255,226,181,.6);transform:rotate(-25deg);font-weight:650;text-transform:uppercase}
+.hero-art:after{content:"";position:absolute;left:-100px;bottom:-16px;background:var(--navy);width:980px;height:230px;transform:rotate(-17deg);box-shadow:0 -25px 70px rgba(6,10,27,.35)}
+/* Audience */
+.audience{background:#f8f6f2;padding-top:103px;padding-bottom:106px}
+.audience .section-head{margin-bottom:39px}
+.audience .section-head h2{max-width:820px}
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}
+.audience-card{position:relative;border-radius:19px;min-height:496px;padding:46px 48px 42px;overflow:hidden;display:flex;flex-direction:column}
+.audience-card.contractor{background:white;border:1px solid #e8e5df;box-shadow:var(--shadow)}
+.audience-card.agency{background:linear-gradient(155deg,#14203f,#0d1630);color:#fff;box-shadow:0 18px 34px rgba(11,20,40,.12)}
+.audience-card.agency:before{content:"";width:345px;height:345px;position:absolute;right:-200px;top:-142px;border:52px solid rgba(255,199,108,.085);border-radius:50%;transform:rotate(20deg)}
+.audience-card .icon-hold{height:84px;margin-bottom:19px;position:relative;z-index:1}
+.audience-card.agency .eos-icon{color:#f8d39a}
+.audience-card .mini{font-size:11px;font-weight:790;letter-spacing:2.6px;color:#ba7b22;margin-bottom:16px;position:relative;z-index:1}
+.audience-card.agency .mini{color:#fbc46f}
+.audience-card h3{font-size:34px;line-height:1.16;letter-spacing:-1.15px;font-weight:370;margin-bottom:24px;max-width:405px;position:relative;z-index:1}
+.audience-card p{max-width:435px;font-size:16px;line-height:1.7;margin-bottom:30px;position:relative;z-index:1}
+.audience-card.agency p{color:#d7deea}
+.audience-card .link{margin-top:auto;position:relative;z-index:1}
+.audience-card.agency .link{color:#f9c778}
+.audience-card.agency .link .arrow{color:#f9c778}
+/* Difference */
+.difference{background:linear-gradient(125deg,#101936,#172545);position:relative;overflow:hidden}
+.difference:before{content:"";position:absolute;right:-230px;top:-345px;width:750px;height:750px;border:83px solid rgba(241,162,51,.055);border-radius:50%;pointer-events:none}
+.difference .container{position:relative;z-index:1}
+.difference h2{color:white}
+.difference .section-head p{color:#c4cfdf}
+.difference-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.diff-card{border:1px solid rgba(226,237,253,.15);background:rgba(255,255,255,.045);min-height:340px;padding:30px 26px 29px;border-radius:16px;display:flex;flex-direction:column}
+.diff-card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:24px}
+.diff-card .eos-icon{color:#fce0af;height:68px;width:68px}
+.diff-card .no{font-size:11px;letter-spacing:1.7px;color:#fac575;font-weight:800;margin-top:8px}
+.diff-card h3{font-size:22px;line-height:1.27;letter-spacing:-.55px;color:#fff;margin-bottom:16px;font-weight:470}
+.diff-card p{font-size:14px;line-height:1.58;color:#cbd3e2;margin:0}
+/* Solutions */
+.solutions{background:#fff;padding-top:103px}
+.solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.solution-card{background:#fff;border:1px solid #e8e7e4;border-radius:17px;min-height:390px;padding:32px 33px 33px;box-shadow:0 12px 35px rgba(18,32,59,.045);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.solution-card:before{content:"";position:absolute;width:220px;height:220px;right:-94px;top:-134px;border:30px solid rgba(251,197,114,.16);border-radius:50%;pointer-events:none}
+.solution-card:nth-child(2){background:#152140;border-color:#152140}
+.solution-card:nth-child(2):before{border-color:rgba(251,197,114,.10)}
+.solution-card:nth-child(2) .eos-icon{color:#ffda9f}
+.solution-card .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;position:relative;z-index:1}
+.solution-card .no{font-size:11px;letter-spacing:1.6px;color:#b97b26;font-weight:780;padding-top:9px}
+.solution-card:nth-child(2) .no{color:#f5be71}
+.solution-card h3{font-size:28px;font-weight:480;margin-bottom:11px;position:relative;z-index:1}
+.solution-card .subtitle{font-size:15px;font-weight:700;color:#9d6b2e;margin-bottom:16px;line-height:1.45}
+.solution-card p{font-size:15px;line-height:1.61;margin-bottom:25px;position:relative;z-index:1}
+.solution-card .link{margin-top:auto;position:relative;z-index:1}
+.solution-card:nth-child(2) h3,.solution-card:nth-child(2) .link{color:#fff}
+.solution-card:nth-child(2) .subtitle{color:#f2bd76}
+.solution-card:nth-child(2) p{color:#ced6e4}
+.solution-footer{display:flex;align-items:center;justify-content:space-between;gap:30px;border-radius:13px;margin-top:19px;background:#f7f5f1;padding:25px 30px}
+.solution-footer p{font-size:15px;line-height:1.5;margin:0}
+/* Knowledge */
+.knowledge{background:#f7f5f1}
+.knowledge-head{display:flex;gap:65px;align-items:flex-end;justify-content:space-between;margin-bottom:41px}
+.knowledge-head h2{max-width:650px;margin-bottom:0}
+.knowledge-head .intro{max-width:365px;font-size:16px;margin-bottom:4px}
+.knowledge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.knowledge-card{background:#fff;border:1px solid #eae6de;border-radius:16px;padding:28px 27px 31px;min-height:298px;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(23,32,55,.04)}
+.knowledge-card .eos-icon{width:58px;height:58px;margin-bottom:32px}
+.knowledge-card h3{font-size:20px;margin-bottom:13px;font-weight:600;letter-spacing:-.45px}
+.knowledge-card p{font-size:14px;line-height:1.56;margin:0}
+.knowledge-actions{margin-top:34px}
+/* Charity */
+.charity{background:white;padding-top:103px;padding-bottom:108px}
+.charity-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.charity-copy{max-width:540px}
+.charity-copy h2{margin-bottom:23px}
+.charity-copy p{font-size:17px;margin-bottom:17px}
+.charity-copy .btn{margin-top:17px}
+.charity-photo{position:relative;min-height:410px}
+.charity-photo:before{content:"";position:absolute;top:-36px;left:-32px;width:165px;height:165px;border:28px solid rgba(243,179,72,.26);border-bottom-color:transparent;border-radius:50%;z-index:0}
+.charity-photo img{position:relative;z-index:1;width:100%;height:410px;object-fit:cover;object-position:center center;display:block;border-radius:19px;box-shadow:0 15px 43px rgba(15,25,47,.12)}
+.charity-photo .credit{position:absolute;bottom:18px;left:18px;background:rgba(15,25,47,.83);border:1px solid rgba(255,255,255,.12);z-index:2;color:#f3f3f7;font-size:11px;padding:10px 14px;border-radius:8px;letter-spacing:.4px}
+/* CTA */
+.closing{background:linear-gradient(113deg,#0d152e,#192647);padding:97px 0 100px;position:relative;overflow:hidden;text-align:center}
+.closing:before{content:"";position:absolute;width:620px;height:620px;right:-240px;top:-280px;border:80px solid rgba(245,172,66,.15);border-left-color:rgba(245,172,66,.035);border-bottom-color:rgba(245,172,66,.035);border-radius:50%}
+.closing:after{content:"";position:absolute;width:490px;height:490px;left:-260px;bottom:-300px;border:60px solid rgba(245,172,66,.09);border-radius:50%}
+.closing .container{position:relative;z-index:1}
+.closing .eyebrow{justify-content:center}
+.closing h2{color:#fff;margin-bottom:22px}
+.closing p{max-width:725px;margin:0 auto 29px;font-size:18px;color:#ccd5e7}
+.closing .actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+.demo-message{color:#e1d4c1!important;margin-top:20px!important;font-size:13px!important}.closing .tagline{font-size:12px;font-weight:760;color:#ffce86;letter-spacing:3.3px;text-transform:uppercase;margin-top:57px}
+/* Footer */
+.footer{background:#090f22;color:#bbc3d1;padding:39px 0 33px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:35px}
+.footer .wordmark .name{color:#fff;font-size:44px}
+.footer .wordmark .strap{font-size:7px;letter-spacing:1.9px;margin-top:9px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:#c9d0dd}
+.footer-small{margin-top:30px;padding-top:21px;border-top:1px solid #283149;color:#8b96ae;display:flex;justify-content:space-between;gap:30px;font-size:11px;line-height:1.5}
+/* Responsive */
+@media (max-width:1100px){.navlinks{gap:16px}.navlinks a{font-size:11px}.container{padding:0 27px}.hero-art{right:-250px;opacity:.65}.difference-grid,.knowledge-grid{grid-template-columns:repeat(2,1fr)}.diff-card{min-height:260px}.knowledge-card{min-height:238px}.solution-card{padding:26px 22px}}
+@media (max-width:760px){
+ .page{width:100%;box-shadow:none}.container{padding:0 23px}
+ .navbar{height:79px}.navbar .container{padding:0 23px}
+ .wordmark .name{font-size:48px}.wordmark .strap{font-size:8px;margin-top:10px}
+ .mobile-toggle{display:inline-flex}.navlinks{display:none;position:absolute;left:0;right:0;top:79px;z-index:30;background:#fff;padding:20px 23px 25px;border-bottom:1px solid #e2dfd9;box-shadow:0 18px 25px #10193618;flex-direction:column;align-items:stretch;gap:0}
+ .navlinks.open{display:flex}.navlinks a{font-size:14px;padding:13px 2px;border-bottom:1px solid #efedea}.navlinks .join{margin-top:13px;text-align:center;border:0}
+ h1{font-size:53px;letter-spacing:-2.9px;line-height:1.09}h2{font-size:40px;letter-spacing:-1.8px}h3{font-size:24px}
+ .section{padding:72px 0 78px}.eyebrow{font-size:10px;letter-spacing:2.25px;margin-bottom:19px}.eyebrow:after{width:29px}
+ p{font-size:15px}.section-head{margin-bottom:29px}.section-head p{font-size:15px}
+ .hero{min-height:675px;align-items:flex-start}.hero .container{align-items:flex-start}.hero-copy{padding:77px 0 36px;max-width:100%}.hero h1{margin-bottom:24px}.hero-copy .lede{font-size:16px;line-height:1.65;max-width:460px}.hero-art{width:540px;height:540px;right:-326px;top:210px;opacity:.43}.hero-art .sunring{inset:70px;border-width:68px}.hero-art .inner-ring{inset:155px}.hero-art .orbit-type{display:none}.hero-footer{font-size:9px;letter-spacing:1.65px;margin-top:58px;max-width:300px;line-height:1.65}
+ .btn{font-size:12px;padding:14px 19px;min-height:47px;gap:11px}
+ .audience-grid,.charity-grid{grid-template-columns:1fr;gap:16px}.audience-card{min-height:380px;padding:30px 28px 33px}.audience-card .icon-hold{height:69px;margin-bottom:12px}.audience-card .eos-icon{height:60px;width:60px}.audience-card h3{font-size:29px;letter-spacing:-1px;margin-bottom:14px}.audience-card p{font-size:14px;line-height:1.65;margin-bottom:24px}.audience-card .mini{font-size:10px;letter-spacing:2px}
+ .difference-grid,.knowledge-grid{grid-template-columns:1fr 1fr;gap:12px}.diff-card{min-height:286px;padding:22px 16px 24px}.diff-card .top{margin-bottom:20px}.diff-card .eos-icon{height:52px;width:52px}.diff-card h3{font-size:18px}.diff-card p{font-size:12px;line-height:1.5}.diff-card .no{font-size:10px}
+ .solution-grid{grid-template-columns:1fr;gap:13px}.solution-card{min-height:330px;padding:28px}.solution-card .top{margin-bottom:8px}.solution-card .eos-icon{height:65px;width:65px}.solution-card h3{font-size:25px}.solution-card p{font-size:14px}.solution-footer{align-items:flex-start;flex-direction:column;padding:23px;gap:13px}.solution-footer p{font-size:14px}
+ .knowledge-head{display:block;margin-bottom:27px}.knowledge-head h2{margin-bottom:15px}.knowledge-head .intro{max-width:100%;font-size:15px}.knowledge-card{min-height:235px;padding:23px 18px}.knowledge-card .eos-icon{height:51px;width:51px;margin-bottom:17px}.knowledge-card h3{font-size:17px}.knowledge-card p{font-size:12px}
+ .charity-grid{gap:38px}.charity-copy p{font-size:15px}.charity-photo,.charity-photo img{height:285px;min-height:285px}.charity-photo:before{height:130px;width:130px;top:-22px;left:-15px;border-width:22px}
+ .closing{padding:72px 0 80px}.closing p{font-size:15px}.closing .tagline{margin-top:43px}
+ .footer-row{align-items:start;flex-direction:column;gap:28px}.footer-links{gap:16px 20px}.footer-small{flex-direction:column;gap:7px}
+}
+@media(max-width:400px){.container{padding:0 19px}.hero h1{font-size:49px}.hero-actions{gap:9px}.btn{font-size:11px;padding:13px 14px}.difference-grid,.knowledge-grid{gap:9px}.diff-card{padding:21px 13px}.diff-card h3{font-size:17px}.diff-card p{font-size:11.5px}.knowledge-card{padding:21px 14px}.knowledge-card h3{font-size:16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} .btn{transition:none}}
+</style>
+<style>
+/* Brand proof: original official EOS artwork, consistent rendering; source concepts preserved separately. */
+.eos-exact-logo{display:block!important;width:86px!important;height:auto!important;max-height:48px!important;object-fit:contain!important;aspect-ratio:1006 / 370!important;flex:none!important;}
+footer .eos-exact-logo,.footer .eos-exact-logo{width:75px!important;}
+.eos-review-note{display:none!important}
+</style><meta content="noindex,nofollow" name="robots"/><link rel="stylesheet" href="../assets/eos-shell-overrides.css"><script defer src="../assets/eos-site-shell.js"></script>
+<style id="eos-review-06nov-home-services">
+/* 6 Nov review: align homepage service overview with the current EOS service system. */
+.solution-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.solution-card{position:relative;border-radius:17px;padding:28px 22px 27px;display:flex;flex-direction:column;min-height:410px;overflow:hidden;box-shadow:0 9px 24px #11193612}
+.solution-card:before{display:none!important}
+.solution-card.light{background:#fff;border:1px solid #e8e5e0;color:var(--ink)}
+.solution-card.dark{background:linear-gradient(145deg,#1b294d,#0e1835);border:1px solid transparent;color:#fff}
+.solution-card .service-glow{position:absolute;right:-87px;top:-103px;width:235px;height:235px;border:25px solid #f5b75545;border-radius:50%}
+.solution-card.dark .service-glow{border-color:#ffc37547}
+.solution-card .service-top{position:relative;display:flex;justify-content:space-between;align-items:center;margin-bottom:27px;z-index:1}
+.solution-card .service-symbol{width:52px;height:52px;border:1px solid #e5aa4d69;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#dc9b34}
+.solution-card .service-symbol svg{width:26px;height:26px}
+.solution-card .service-num{font-size:13px;letter-spacing:1px;font-weight:760;color:#db942a}
+.solution-card.dark .service-num,.solution-card.dark .service-symbol{color:#fbb44d}
+.solution-card h3{position:relative;font-size:27px;line-height:1.06;font-weight:510;letter-spacing:-.8px;margin:0 0 17px;min-height:58px;z-index:1}
+.solution-card p{position:relative;font-size:14.6px;line-height:1.5;margin:0 0 22px;color:#47556e;z-index:1}
+.solution-card.dark p{color:#cbd3e2}
+.solution-card .link{margin-top:auto;position:relative;z-index:1;font-size:12.9px;white-space:normal}
+.solution-card.dark h3,.solution-card.dark .link{color:#fff}
+.solution-card.dark .arrow{color:#f0aa40}
+@media(max-width:1100px){.solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.solution-card{min-height:350px}}
+@media(max-width:650px){.solution-grid{grid-template-columns:1fr}.solution-card{min-height:0;padding:25px 24px}.solution-card h3{min-height:0;font-size:26px}.solution-card .service-top{margin-bottom:20px}}
+</style>
+<style id="eos-review-20nov-home-contrast">
+/* Scoped light-surface text correction; preserve decorative gold and dark-section colours. */
+body[data-eos-unified="home"] main .eyebrow:not(.light),
+body[data-eos-unified="home"] .audience-card.contractor .mini,
+body[data-eos-unified="home"] .solution-card.light .service-num{color:#8A5700;}
+</style>
+</head><body data-eos-unified="home"><eos-site-header></eos-site-header>
+<div class="page">
+<header class="navbar" id="top"><div class="container">
+<a aria-label="EOS — Home" class="wordmark" href="#top"><img alt="EOS" class="eos-exact-logo" src="../assets/eos-logo-official.png"/><span class="strap">PROGRESS. TOGETHER.</span></a>
+<button aria-controls="primary-nav" aria-expanded="false" class="mobile-toggle" id="menu-toggle" type="button">MENU <span aria-hidden="true" class="menu-bars"><i></i><i></i></span></button>
+<nav aria-label="Main navigation" class="navlinks" id="primary-nav">
+<a href="for-contractors.html">For Contractors</a><a href="#audiences">Recruitment Agencies</a><a href="#solutions">Our Services</a><a href="#knowledge">Knowledge Hub</a><a href="#difference">About EOS</a><a href="#contact">Contact Us</a><a class="join" href="join-us.html">Join Us <span aria-hidden="true">↗</span></a>
+</nav>
+</div></header>
+<main id="main-content" tabindex="-1">
+<section aria-labelledby="hero-title" class="hero">
+<div aria-hidden="true" class="hero-art"><div class="orbit"></div><div class="sunring"></div><div class="inner-ring"></div><div class="gold-flare"></div><div class="orbit-type">progress / together / possibility</div></div>
+<div class="container"><div class="hero-copy">
+<div class="eyebrow light">Introducing EOS <span aria-hidden="true">/</span> Progress. Together.</div>
+<h1 id="hero-title">Built to raise<br/>the <em>standard.</em></h1>
+<p class="lede">EOS brings a fresh approach to contractor payroll, combining intelligent technology, responsible processes and genuine expertise to deliver a better experience for contractors and recruitment agencies.</p>
+<div class="hero-actions"><a class="btn btn-gold" href="for-contractors.html">For Contractors <span aria-hidden="true" class="arrow">↗</span></a><a class="btn btn-outline-white" href="recruitment-agencies.html">For Recruitment Agencies <span aria-hidden="true" class="arrow">↗</span></a></div>
+<div class="hero-footer">A fresh perspective on payroll and partnership.</div>
+</div></div>
+</section>
+<section aria-labelledby="audience-title" class="section audience" id="audiences"><div class="container">
+<div class="section-head"><div class="eyebrow">Who we work with</div><h2 id="audience-title">Your world of work.<br/>Our commitment to better.</h2></div>
+<div class="audience-grid">
+<article class="audience-card contractor"><div class="icon-hold"><svg aria-label="Contractor Benefits" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-9" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-9)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M24 14c4.5 4 9.5 5.6 9.5 12 0 5.1-4.5 8.6-9.5 11-5-2.4-9.5-5.9-9.5-11 0-6.4 5-8 9.5-12Z"></path>
+<path d="M24 21v10M19 26h10"></path>
+<circle cx="24" cy="26" r="2.3"></circle></g></svg></div><div class="mini">For Contractors</div><h3>Your work matters. So does how you're paid.</h3><p>Whether you're joining a new assignment or exploring your payroll options, you deserve a straightforward experience from the start. EOS combines clear pay information, thoughtful digital onboarding and practical support.</p><a class="link" href="for-contractors.html">Explore Contractor Services <span aria-hidden="true" class="arrow">↗</span></a></article>
+<article class="audience-card agency"><div class="icon-hold"><svg aria-label="A team that understands recruitment" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-21" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-21)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<circle cx="24" cy="16" r="3"></circle><circle cx="15" cy="29" r="3"></circle><circle cx="33" cy="29" r="3"></circle>
+<path d="M22.2 18.5 17 26m8.8-7.5L31 26M18 29h12"></path></g></svg></div><div class="mini">For Recruitment Agencies</div><h3>The partner you deserve.</h3><p>You work hard to build your agency's reputation. Your payroll partner should be just as committed to protecting it. We combine intelligent technology, considered compliance and genuine partnership to reflect the standards you expect.</p><a class="link" href="recruitment-agencies.html">Discover EOS for Agencies <span aria-hidden="true" class="arrow">↗</span></a></article>
+</div>
+</div></section>
+<section aria-labelledby="difference-title" class="section difference" id="difference"><div class="container">
+<div class="section-head"><div class="eyebrow light">The EOS difference</div><h2 id="difference-title">Where higher standards<br/>take shape.</h2><p>The value of a payroll partner goes far beyond payday. It's in how people are welcomed, how information is handled and how confidently everyone can move forward.</p></div>
+<div class="difference-grid">
+<article class="diff-card"><div class="top"><svg aria-label="Less repetition. Easier onboarding." class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-1" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-1)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<rect height="12" rx="2.5" width="11" x="16" y="15"></rect>
+<path d="M20 19h4M20 23h3M29 18.5c3.7.7 6 3.7 6 7 0 4.3-3.2 7.5-7.4 7.5H19"></path>
+<path d="m22.5 29.6-3.6 3.4 3.6 3.2"></path></g></svg><span class="no">01</span></div><h3>A simpler way to get started.</h3><p>Digital-first registration designed to reduce repeated requests for information and make getting started more intuitive.</p></article>
+<article class="diff-card"><div class="top"><svg aria-label="Clarity at every step." class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-2" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-2)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="m24 13 9 11-9 11-9-11Z"></path>
+<circle cx="24" cy="24" r="3"></circle>
+<path d="M24 15.5v3M24 29.5v3M15.5 24h3M29.5 24h3"></path></g></svg><span class="no">02</span></div><h3>Clarity in every detail.</h3><p>Better explanations of payroll arrangements, pay and what happens next — so you're not left guessing.</p></article>
+<article class="diff-card"><div class="top"><svg aria-label="Compliance considered early." class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-4" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-4)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M24 13c3.5 2.2 7.1 3.3 10 3.4v8.3c0 5-3.7 9.1-10 12.3-6.3-3.2-10-7.3-10-12.3v-8.3c2.9-.1 6.5-1.2 10-3.4Z"></path>
+<path d="m19 25 3.2 3.3L29 21"></path></g></svg><span class="no">03</span></div><h3>Compliance by design.</h3><p>Appropriate checks, responsible practices and careful oversight considered throughout the process.</p></article>
+<article class="diff-card"><div class="top"><svg aria-label="A genuine partnership approach" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-19" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-19)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M14 19c4-4 6-4 10 0l2 2m8 8c-4 4-6 4-10 0l-2-2"></path>
+<path d="M17 30c-3-2-4-4-4-6s1-4 4-6m14 0c3 2 4 4 4 6s-1 4-4 6"></path>
+<path d="m20 24 4-4 4 4-4 4Z"></path></g></svg><span class="no">04</span></div><h3>Partnership with purpose.</h3><p>Clear communication, accountability and relationships that deliver value beyond the initial introduction.</p></article>
+</div>
+</div></section>
+<section aria-labelledby="solutions-title" class="section solutions" id="solutions"><div class="container">
+<div class="section-head"><div class="eyebrow">Our services</div><h2 id="solutions-title">Different ways of working.<br/>One clear standard.</h2><p>From Umbrella PAYE and CIS to PAYE Bureau, non-CIS business engagements and international payroll, EOS brings specialist knowledge and thoughtful processes together.</p></div>
+<div class="solution-grid">
+<article class="solution-card light"><div aria-hidden="true" class="service-glow"></div><div class="service-top"><span class="service-symbol"><svg aria-label="Umbrella PAYE" class="eos-pictogram" fill="none" role="img" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-5" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-5)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M12.5 23.5c1.7-7.6 5.5-11.5 11.5-11.5s9.8 3.9 11.5 11.5c-3.4-2.5-7.2-2.5-11.5 0-4.3-2.5-8.1-2.5-11.5 0Z"></path>
+<path d="M24 23.5v9c0 3-3.8 3.7-5.4 1.4"></path></g></svg></span><span class="service-num">01</span></div><h3>Umbrella PAYE</h3><p>Umbrella employment for eligible temporary workers, with digital registration, clear pay information and ongoing employment support.</p><a class="link" href="our-services.html#umbrella">Explore Umbrella PAYE <span aria-hidden="true" class="arrow">↗</span></a></article>
+<article class="solution-card dark"><div aria-hidden="true" class="service-glow"></div><div class="service-top"><span class="service-symbol"><svg aria-label="CIS Payroll" class="eos-pictogram" fill="none" role="img" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-6" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-6)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="m13.5 21.5 10.5-8 10.5 8M16 20v14h16V20"></path>
+<path d="M19 24h10M19 29h10M24 24v10"></path>
+<circle cx="24" cy="18.5" r="1.2"></circle></g></svg></span><span class="service-num">02</span></div><h3>CIS Payroll</h3><p>CIS payment administration for eligible construction subcontractors, with verification, appropriate deductions and supporting records.</p><a class="link" href="our-services.html#cis">Explore CIS Payroll <span aria-hidden="true" class="arrow">↗</span></a></article>
+<article class="solution-card light"><div aria-hidden="true" class="service-glow"></div><div class="service-top"><span class="service-symbol"><svg aria-label="PAYE Bureau" class="eos-pictogram" fill="none" role="img" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-7" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-7)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M15 14h17.5v20H15Z"></path>
+<path d="M19 19h9.5M19 23.5h9.5M19 28h4"></path>
+<path d="m25.2 29.2 2 2 4.1-4.5"></path></g></svg></span><span class="service-num">03</span></div><h3>PAYE Bureau</h3><p>Our PAYE Bureau service supports payroll calculations and reporting for agencies employing their own PAYE workers, while the agency retains its employer responsibilities.</p><a class="link" href="our-services.html#bureau">Explore PAYE Bureau <span aria-hidden="true" class="arrow">↗</span></a></article>
+<article class="solution-card dark"><div aria-hidden="true" class="service-glow"></div><div class="service-top"><span class="service-symbol"><svg class="eos-pictogram" fill="none" viewbox="0 0 48 48"><path d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="currentColor" stroke-linecap="round" stroke-width="3.6"></path><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M17 13.5h12l5 5v16.2H17Z"></path><path d="M29 13.5v5h5M20 22h10M20 26h5.5"></path><path d="m20 31 3-2.4 2 1.8 4.5-3.5"></path></g></svg></span><span class="service-num">04</span></div><h3>Sole Trader / Limited Company</h3><p>A distinct non-CIS route for eligible business engagements where the contractual relationship and working practices support the arrangement.</p><a class="link" href="our-services.html#sole-trader-limited">Explore Sole Trader / Limited Company <span aria-hidden="true" class="arrow">↗</span></a></article>
+<article class="solution-card light"><div aria-hidden="true" class="service-glow"></div><div class="service-top"><span class="service-symbol"><svg aria-label="International Payroll" class="eos-pictogram" fill="none" role="img" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-8" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-8)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<circle cx="24" cy="24" r="11"></circle>
+<path d="M13.3 24h21.4M24 13c-5 5.5-6.2 16.4 0 22M24 13c5 5.5 6.2 16.4 0 22"></path>
+<path d="M16 17.4h16M16 30.6h16"></path></g></svg></span><span class="service-num">05</span></div><h3>International Payroll</h3><p>Through our partnership with Safeguard Global, agencies can explore international payroll arrangements while retaining EOS as their point of contact. Availability depends on the country and engagement.</p><a class="link" href="our-services.html#international">Explore International Payroll <span aria-hidden="true" class="arrow">↗</span></a></article>
+</div>
+<div class="solution-footer"><p><strong>Something more specialist?</strong> Tell us what your workforce needs. We'd welcome a conversation about the options available.</p><a class="link" href="contact-us.html">Talk to Our Team <span aria-hidden="true" class="arrow">↗</span></a></div>
+</div></section>
+<section aria-labelledby="knowledge-title" class="section knowledge" id="knowledge"><div class="container">
+<div class="eyebrow">The EOS Knowledge Hub</div><div class="knowledge-head"><h2 id="knowledge-title">The answers you need.<br/>Without the noise.</h2><p class="intro">Practical guidance, useful tools and informed perspectives to make contracting easier to understand.</p></div>
+<div class="knowledge-grid">
+<article class="knowledge-card"><svg aria-label="Agency Resources &amp; Support" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-11" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-11)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M13.5 16h21v14H23l-5.5 5v-5h-4Z"></path>
+<path d="M18 21h12M18 25h8"></path>
+<circle cx="31" cy="25" r="1"></circle></g></svg><h3>Help &amp; FAQs</h3><p>Straight answers to important questions, without unnecessary complexity.</p></article>
+<article class="knowledge-card"><svg aria-label="Payroll processing" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-17" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-17)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M15.5 14.5h17v20h-17Z"></path>
+<path d="M19.5 20h9M19.5 24h6"></path>
+<circle cx="28" cy="29" r="4"></circle><path d="M27 27.5h2.3l-2.4 3h2.5"></path></g></svg><h3>Tools &amp; Calculators</h3><p>Illustrative figures to help you understand earnings, deductions and payroll arrangements.</p></article>
+<article class="knowledge-card"><svg aria-label="Reporting &amp; support" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-18" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-18)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M14 33V23m7 10V20m7 13V16m7 17V13"></path>
+<path d="m13.5 20 8-6 6 2 7-6"></path>
+<circle cx="35" cy="10" r="1.5"></circle></g></svg><h3>News &amp; Insights</h3><p>Relevant industry developments and perspectives on a changing sector.</p></article>
+<article class="knowledge-card"><svg aria-label="Training &amp; Development" class="eos-icon" fill="none" role="presentation" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<defs><lineargradient gradientunits="objectBoundingBox" id="sun-12" x1=".12" x2=".95" y1=".05" y2=".85"><stop stop-color="#ffe4b6"></stop><stop offset=".45" stop-color="#ffc26c"></stop><stop offset="1" stop-color="#e39528"></stop></lineargradient></defs>
+<path class="orbit-crest" d="M12.1 11.3 A19.5 19.5 0 0 1 42.4 25.8" stroke="url(#sun-12)" stroke-linecap="round" stroke-width="3.6"></path>
+<path class="orbit-echo" d="M34.5 37.6 A19.5 19.5 0 0 1 6.5 24.5" opacity=".27" stroke="currentColor" stroke-linecap="round" stroke-width="1.55"></path>
+<circle cx="39.8" cy="14.5" fill="#f6ae43" r="1.6"></circle>
+<g class="eos-pictogram-mark" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+<path d="M24 17.5c-4.4-3.1-8.2-3.2-11-2v17c4-1.2 7.8-1 11 2.2 3.2-3.2 7-3.4 11-2.2v-17c-2.8-1.2-6.6-1.1-11 2Z"></path>
+<path d="M24 17.5v17.2M16.5 21.5l4 .5M27.5 22l4-.5"></path></g></svg><h3>Guides &amp; Resources</h3><p>Helpful guides, resources and contacts, organised in one place.</p></article>
+</div>
+<div class="knowledge-actions"><a class="btn btn-dark" href="knowledge-hub.html">Explore the Knowledge Hub <span aria-hidden="true" class="arrow">↗</span></a></div>
+</div></section>
+<section aria-labelledby="charity-title" class="section charity" id="charity"><div class="container">
+<div class="charity-grid"><div class="charity-copy"><div class="eyebrow">Beyond payroll</div><h2 id="charity-title">Progress should<br/>reach further.</h2><p>Building a better business means more than delivering a better service. It's also about recognising the difference we can make beyond our everyday work.</p><p>That's why we're proud to support <strong>Edward's Trust</strong>, a Birmingham charity providing bereavement support to children, young people and families.</p><a class="btn btn-outline" href="charity.html">Our Charity Partnership <span aria-hidden="true" class="arrow">↗</span></a></div>
+<div class="charity-photo"><img alt="Adult embracing a child outdoors" src="/images/charity-02.jpg"/><span class="credit">Proudly supporting Edward's Trust</span></div></div>
+</div></section>
+
+<section aria-labelledby="contact-title" class="closing" id="contact"><div class="container">
+<div class="eyebrow light">The next step</div><h2 id="contact-title">Expect more from your<br/>payroll partner.</h2><p>Whether you're a contractor looking for clarity or a recruitment agency looking for a better way to work, we'd welcome the opportunity to show you what EOS has to offer.</p>
+<div class="actions"><a class="btn btn-gold" href="join-us.html">Join EOS <span aria-hidden="true" class="arrow">↗</span></a><a class="btn btn-outline-white" href="contact-us.html">Speak to Our Team <span aria-hidden="true" class="arrow">↗</span></a></div>
+<p class="demo-message" hidden="" id="demo-message" role="status">Concept preview: registration and contact destinations will be connected during implementation.</p>
+<div class="tagline">Progress. Together.</div>
+</div></section>
+</main>
+<footer class="footer"><div class="container">
+<div class="footer-row"><a aria-label="EOS — Back to top" class="wordmark" href="#top"><img alt="EOS" class="eos-exact-logo" src="../assets/eos-logo-official-reversed.png"/><span class="strap">PROGRESS. TOGETHER.</span></a><nav aria-label="Footer navigation" class="footer-links"><a href="#audiences">Contractors</a><a href="#audiences">Agencies</a><a href="#solutions">Services</a><a href="#knowledge">Knowledge Hub</a><a href="#charity">Charity</a><a href="#contact">Contact</a></nav></div>
+<div class="footer-small"><span>EOS · Progress. Together.</span><span>Homepage design concept — not a live registration or service portal.</span></div>
+</div></footer>
+</div>
+<script>
+const t=document.getElementById('menu-toggle'),n=document.getElementById('primary-nav');
+t.addEventListener('click',()=>{const state=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!state));n.classList.toggle('open',!state)});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');t.setAttribute('aria-expanded','false')}));
+document.querySelectorAll('.demo-action').forEach(b=>b.addEventListener('click',()=>{document.getElementById('demo-message').hidden=false;}));
+</script>
+<eos-site-footer></eos-site-footer>
+</body></html>

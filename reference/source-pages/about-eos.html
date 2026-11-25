@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en-GB"><head><meta content="width=device-width,initial-scale=1" name="viewport"/><meta charset="utf-8"><style>
+:root{--navy:#101936;--navy2:#192548;--ink:#182345;--orange:#f1a22c;--paper:#f8f7f4}
+*{box-sizing:border-box}html,body{padding:0;margin:0;background:var(--paper);font-family:Inter,'Arial',sans-serif;color:var(--ink)}
+.page{width:1440px;margin:0 auto;overflow:hidden;background:#fff}
+.hero{width:100%;height:687px;display:block;object-fit:cover}
+.section{padding:76px 100px}
+.eyebrow{font-size:16px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#d88b1b;display:flex;align-items:center;gap:15px;margin:0 0 23px}
+.eyebrow:after{content:'';display:block;width:49px;height:2px;background:#efa632}
+h2{font-size:61px;line-height:1.075;letter-spacing:-2.5px;font-weight:320;margin:0 0 30px}
+p{font-size:20px;line-height:1.58;margin:0 0 18px;color:#43506b;letter-spacing:-.15px}
+.story{display:grid;grid-template-columns:1.12fr .88fr;gap:75px;align-items:center;background:#f7f5f1;min-height:548px}
+.story .text{max-width:600px}.story .photo{position:relative;height:375px}
+.story .photo img{height:100%;width:100%;object-fit:cover;object-position:40% center;border-radius:19px;box-shadow:0 16px 48px #1020391e}
+.story .photo:before{content:'';position:absolute;z-index:0;left:-38px;top:-39px;width:146px;height:146px;border:21px solid #f4b34f;border-bottom-color:transparent;border-left-color:#f8e8c6;opacity:.35;border-radius:50%}
+.story .photo img{position:relative;z-index:1}
+.principles{background:linear-gradient(128deg,#0d1630 0%,#172342 60%,#0f1935 100%);padding-top:79px;padding-bottom:91px;position:relative}
+.principles:before{content:'';position:absolute;right:-230px;top:-240px;width:510px;height:510px;border:68px solid rgba(247,171,55,.06);border-radius:50%}
+.principles h2,.principles p{color:#fff}.principles h2{font-size:59px;margin-bottom:12px}.principles .intro{font-size:20px;color:#c4cadb;max-width:820px;line-height:1.48;margin-bottom:37px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.card{background:#fff;border-radius:17px;padding:28px 32px 28px;min-height:291px;box-shadow:0 9px 25px rgba(0,0,0,.09)}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;height:89px}
+.card .top img{display:block;width:159px;height:77px;object-fit:contain;object-position:left center;mix-blend-mode:multiply}
+.card .num{font-size:19px;letter-spacing:2px;color:#e29320;font-weight:600;margin-top:7px}
+.card h3{font-size:29px;line-height:1.12;font-weight:500;letter-spacing:-.6px;margin:1px 0 9px;color:#152142}
+.card p{font-size:17.5px;line-height:1.43;margin:0;color:#45516b}
+.people{background:#f3f0eb;min-height:545px;display:grid;grid-template-columns: .88fr 1.12fr;gap:87px;align-items:center}
+.people img{height:385px;width:100%;object-fit:cover;border-radius:19px;box-shadow:0 14px 37px #1724401c}
+.people h2{font-size:57px;letter-spacing:-2px}
+.people p{max-width:590px}
+.closing{min-height:438px;padding:79px 100px 87px;background:radial-gradient(ellipse at 88% 115%,#b67b48aa 0%,#293149 37%,#101833 78%);position:relative;overflow:hidden}
+.closing .arc{position:absolute;width:650px;height:650px;border:81px solid rgba(247,171,58,.30);border-left-color:rgba(250,185,77,.04);border-bottom-color:rgba(249,182,73,.03);right:-80px;top:-275px;border-radius:100%;transform:rotate(10deg)}
+.closing .line{position:absolute;width:850px;height:1px;background:linear-gradient(90deg,transparent,#e4a34e55,transparent);right:0;bottom:71px}
+.closing h2{color:#fff;max-width:760px;font-size:66px;line-height:1.08;margin:3px 0 22px}
+.closing p{color:#cfd3e2;max-width:770px;margin-bottom:32px}
+.ctas{display:flex;gap:16px}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:30px;padding:0 24px;text-transform:uppercase;font-size:14px;letter-spacing:1.4px;font-weight:650}
+.cta.primary{background:#f4a936;color:#15203d}.cta.secondary{border:1px solid #d6a55d;color:#fff}
+.footer{padding:27px 100px;background:#0b1227;color:#bcc5d5;font-size:14px;display:flex;justify-content:space-between;align-items:center;letter-spacing:.5px}
+.footer .brand{font-size:32px;font-weight:320;letter-spacing:-2px;color:white}
+
+/* Revised white interlude, no generic stock photography */
+.built{min-height:535px;display:grid;grid-template-columns:1.27fr .73fr;gap:40px;align-items:center;position:relative;overflow:hidden;background:#fff;padding-top:80px;padding-bottom:80px}
+.built .copy{position:relative;z-index:2;max-width:735px}
+.built h2{font-size:63px;line-height:1.08;max-width:700px;margin-bottom:28px}
+.built p{font-size:21px;line-height:1.55;max-width:690px}
+.built .btn{display:inline-flex;align-items:center;gap:32px;border:1.8px solid #e39a28;color:#11213e;border-radius:100px;padding:15px 24px;margin-top:16px;text-transform:uppercase;letter-spacing:1.3px;font-size:14px;font-weight:750;text-decoration:none}
+.built .btn em{font-size:24px;font-style:normal;font-weight:400;color:#e39a28;line-height:13px}
+.built .art{position:relative;min-height:390px;align-self:stretch;display:flex;align-items:center;justify-content:center}
+.built .ring{position:absolute;width:500px;height:500px;border-radius:50%;background:conic-gradient(from 195deg,rgba(255,255,255,0) 0deg,rgba(252,215,161,.15) 80deg,#f7e5ca 145deg,#ffc05a 210deg,#ffb342 268deg,rgba(255,255,255,0) 350deg);-webkit-mask:radial-gradient(transparent 59%,#000 60%);mask:radial-gradient(transparent 59%,#000 60%);transform:rotate(-16deg)}
+.built .ring-under{position:absolute;width:344px;height:344px;border:1px solid rgba(23,39,71,.14);border-radius:50%}
+.built .art-label{position:absolute;bottom:44px;left:58px;transform:rotate(-90deg);transform-origin:left bottom;letter-spacing:4px;font-size:14px;color:#b1a79a;text-transform:uppercase;white-space:nowrap}
+.sunrise-finale{display:block;width:100%;height:auto;object-fit:cover}
+.footer{padding:20px 100px}
+
+/* Final copy update: more vertical space for agreed text; retain original brand design */
+.built{min-height:810px;padding-top:80px;padding-bottom:80px}
+.built h2{font-size:61px;line-height:1.06;margin-bottom:28px}
+.built p{font-size:19.5px;line-height:1.49;margin-bottom:17px;max-width:715px}
+.built .closing-thought{font-weight:600;color:#182345;margin-top:20px;margin-bottom:20px;max-width:680px}
+.built .btn{margin-top:8px}
+</style><style>
+/* Brand proof: original official EOS artwork, consistent rendering; source concepts preserved separately. */
+.eos-exact-logo{display:block!important;width:86px!important;height:auto!important;max-height:48px!important;object-fit:contain!important;aspect-ratio:1006 / 370!important;flex:none!important;}
+footer .eos-exact-logo,.footer .eos-exact-logo{width:75px!important;}
+.eos-review-note{display:none!important}
+</style><meta content="noindex,nofollow" name="robots"/><link href="../assets/eos-shell-overrides.css" rel="stylesheet"/><script defer="" src="../assets/eos-site-shell.js"></script><title>About EOS | Progress. Together.</title><meta content="Discover the thinking, principles and people behind EOS, a new approach to contractor payroll and recruitment agency partnerships." name="description"/><style id="eos-about-team-fix">
+.eos-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.eos-team-section{background:#fff;padding-top:86px;padding-bottom:88px;scroll-margin-top:112px}
+.eos-team-inner{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:8%;max-width:1240px;margin:auto}
+.eos-team-heading h2{font-size:clamp(38px,4vw,59px);font-weight:350;line-height:1.09;letter-spacing:-2px;margin:0 0 25px}
+.eos-team-heading p{max-width:600px;font-size:19px;line-height:1.6;margin-bottom:30px}
+.eos-team-contact{display:inline-flex;align-items:center;gap:27px;border:1.5px solid #db9e41;border-radius:100px;padding:14px 21px;font-size:13px;font-weight:780;letter-spacing:1px;color:#14223e;text-decoration:none;text-transform:uppercase}
+.eos-team-contact span{color:#c5842a;font-size:20px}
+.eos-team-panel{position:relative;overflow:hidden;min-height:320px;border-radius:18px;background:linear-gradient(145deg,#101a35,#1d2b4e);display:flex;align-items:center;padding:48px 42px;color:#fff}
+.eos-team-orbit{width:350px;height:350px;position:absolute;right:-157px;top:-127px;border:0;border-radius:50%;background:conic-gradient(from 220deg,transparent 0deg,rgba(252,208,143,.04) 60deg,#d68c27 145deg,#ffbe5b 245deg,transparent 340deg);-webkit-mask:radial-gradient(transparent 59%,#000 60%);mask:radial-gradient(transparent 59%,#000 60%);opacity:.52;transform:rotate(14deg)}
+.eos-team-panel-inner{position:relative;z-index:1;max-width:350px}
+.eos-panel-label{font-size:11px;letter-spacing:2.2px;color:#ebba6d;font-weight:700}
+.eos-team-panel h3{color:#fff;font-size:30px;font-weight:400;letter-spacing:-.7px;line-height:1.2;margin:20px 0 15px}
+.eos-team-panel p{color:#d9dfed;font-size:16px;line-height:1.65}
+.eos-panel-status{display:inline-block;color:#d4b27f;font-size:11px;line-height:1.6;padding:8px 0;border-top:1px solid #ffffff35;margin-top:10px}
+@media(max-width:860px){.eos-team-section{padding:54px 5vw}.eos-team-inner{gap:25px}.eos-team-panel{padding:30px 26px;min-height:280px}}
+@media(max-width:670px){.eos-team-section{padding:46px 22px}.eos-team-inner{grid-template-columns:minmax(0,1fr)}.eos-team-heading h2{font-size:36px;letter-spacing:-1px}.eos-team-heading p{font-size:17px}.eos-team-panel{min-height:246px}.eos-team-panel h3{font-size:26px}}
+</style><style id="eos-about-readable-mobile-copy">
+/* Preserve the approved desktop artwork; expose its exact words as semantic text.
+   On mobile the text accompanies the unchanged images at readable sizes. */
+.eos-about-responsive-copy{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:670px){
+  .eos-about-responsive-copy{position:static!important;width:auto!important;height:auto!important;padding:28px 22px 30px!important;margin:0!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important}
+  .eos-about-hero-copy{background:var(--navy);color:#fff}
+  .eos-about-finale-copy{background:var(--paper);color:var(--ink)}
+  .eos-about-responsive-copy .eos-about-copy-eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;line-height:1.5;text-transform:uppercase;color:#d88b1b;margin:0 0 14px}
+  .eos-about-hero-copy .eos-about-copy-eyebrow{color:#f4b34f}
+  .eos-about-responsive-copy .eos-about-copy-heading{font-size:clamp(32px,7.8vw,42px);line-height:1.08;letter-spacing:-1.4px;font-weight:400;margin:0 0 18px;color:inherit;overflow-wrap:break-word}
+  body[data-eos-unified="about-eos"] .eos-about-hero-copy p{font-size:17px;line-height:1.55;letter-spacing:-.15px;margin:0;color:#d9dfed}
+  .eos-about-finale-copy .eos-about-copy-heading{margin-bottom:0}
+}
+</style></head><body data-eos-unified="about-eos"><eos-site-header></eos-site-header><main class="page" id="main-content" tabindex="-1">
+<img alt="People working together against a city sunrise." class="hero" decoding="async" src="../assets/eos-about-hero-official-logo.png"/>
+<section aria-labelledby="eos-about-heading" class="eos-about-responsive-copy eos-about-hero-copy">
+<div class="eos-about-copy-eyebrow">About us</div>
+<h1 class="eos-about-copy-heading" id="eos-about-heading">A new dawn for contracting</h1>
+<p>We’re building a smarter, fairer and more transparent future for contractors and recruitment agencies — powered by people, driven by technology and built on partnership.</p>
+</section>
+<section class="section story"><div class="text"><div class="eyebrow">Our story</div><h2>Built for a<br/>brighter future.</h2><p>EOS was created to bring a fresh approach to contracting. A business that combines intelligent technology with real human support, where compliance, fairness and clarity aren't just talked about — they're built into everything we do.</p><p>We believe the contracting market should work better for everyone. That means simpler processes, clearer information and a partner you can rely on to help you move forward with confidence.</p></div><div class="photo"><img alt="Two people collaborating over a laptop." src="/images/about-eos-01.png"/></div></section>
+<section class="section principles"><div class="eyebrow">The principles behind EOS</div><h2>Four principles. One approach.</h2><p class="intro">Four principles that guide our decisions, shape our approach and define how we work.</p><div class="cards">
+<div class="card"><div class="top"><img alt="" src="/images/about-eos-02.png"/><div class="num">01</div></div><h3>Clarity</h3><p>We make the complex straightforward. From onboarding to payday, we believe everyone deserves clear information, simple processes and the confidence of knowing exactly where they stand.</p></div>
+<div class="card"><div class="top"><img alt="" src="/images/about-eos-03.png"/><div class="num">02</div></div><h3>Innovation</h3><p>We challenge outdated ways of working. By combining intelligent technology, purposeful automation and human expertise, we create smarter, more efficient experiences that make contracting easier for everyone.</p></div>
+<div class="card"><div class="top"><img alt="" src="/images/about-eos-04.png"/><div class="num">03</div></div><h3>Protection</h3><p>Compliance isn't an afterthought. It's built into everything we do. Through responsible practices, careful oversight and unwavering integrity, we help protect contractors, recruitment agencies and the wider supply chain.</p></div>
+<div class="card"><div class="top"><img alt="" src="/images/about-eos-05.png"/><div class="num">04</div></div><h3>Partnership</h3><p>We believe progress is built together. By listening, taking ownership and building genuine relationships, we work alongside our contractors and agency partners to create lasting value and shared success.</p></div>
+</div></section>
+<section class="section built"><div class="copy"><div class="eyebrow">Built differently</div><h2>A better way<br/>to work.</h2><p>Contracting shouldn't be complicated. Yet too often, repeated requests for the same information, disconnected systems and outdated processes make everyday tasks harder and more time-consuming than they need to be.</p><p>EOS is being built to change that. From the first registration to every payday, we're rethinking how the experience should work — reducing unnecessary administration, simplifying interactions and making information easier to access and understand.</p><p>For contractors, that means fewer obstacles and greater confidence. For recruitment agencies, it means less time spent chasing information and more time focused on their business.</p><p class="closing-thought">Because the best processes are the ones that make life easier for everyone.</p><a class="btn" href="#meet-the-team" title="Go to the Meet the Team section">Meet the team <em>→</em></a></div><div aria-hidden="true" class="art"><div class="ring"></div><div class="ring-under"></div><div class="art-label">Progress. Together.</div></div></section>
+<section aria-labelledby="eos-team-heading" class="section eos-team-section" id="meet-the-team">
+<div class="eos-team-inner"><div class="eos-team-heading"><div class="eyebrow">Meet the team</div>
+<h2 id="eos-team-heading">The people behind the progress.</h2>
+<p>Behind every straightforward process and considered decision are people who care about getting the details right.</p>
+<a class="eos-team-contact" href="contact-us.html">Speak to our team <span aria-hidden="true">↗</span></a>
+</div><div class="eos-team-panel"><div aria-hidden="true" class="eos-team-orbit"></div>
+<div class="eos-team-panel-inner"><span class="eos-panel-label">THE EOS TEAM</span>
+<h3>Great service starts with people.</h3><p>Our team brings together service, operational expertise and a commitment to doing things properly.</p>
+</div></div></div>
+</section><img alt="Golden sunrise over a city skyline." class="sunrise-finale" src="/images/about-eos-06.png"/>
+<section aria-labelledby="eos-about-finale-heading" class="eos-about-responsive-copy eos-about-finale-copy">
+<div class="eos-about-copy-eyebrow">Progress. Together.</div>
+<h2 class="eos-about-copy-heading" id="eos-about-finale-heading">A brighter future for everyone in contracting.</h2>
+</section>
+<div class="footer"><span class="brand">eos</span><span>PROGRESS. TOGETHER.</span><span>ABOUT EOS   •   2026</span></div>
+</main><eos-site-footer></eos-site-footer></body></html>
